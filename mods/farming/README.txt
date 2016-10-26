@@ -19,7 +19,7 @@ Created by PilzAdam (CC BY 3.0):
 
 Created by BlockMen (CC BY 3.0):
   farming_tool_diamondhoe.png
-  farming_tool_steelhoe.png
+  farming_tool_ironhoe.png
   farming_tool_stonehoe.png
   farming_tool_woodhoe.png
 

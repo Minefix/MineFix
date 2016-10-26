@@ -166,8 +166,8 @@ xpanes.register_pane("bar", {
 	groups = {cracky=2},
 	sounds = default.node_sound_stone_defaults(),
 	recipe = {
-		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"},
-		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"}
+		{"default:iron_ingot", "default:iron_ingot", "default:iron_ingot"},
+		{"default:iron_ingot", "default:iron_ingot", "default:iron_ingot"}
 	}
 })
 

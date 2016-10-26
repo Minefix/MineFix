@@ -1,29 +1,29 @@
 minetest.register_craft({
 	type = "shapeless",
-	output = "minefixnodes:andesite 2",
-	recipe = {"minefixnodes:diorite", "default:cobble"}
+	output = "minefix_nodes:andesite 2",
+	recipe = {"minefix_nodes:diorite", "default:cobble"}
 })
 
 minetest.register_craft({
-	output = "minefixnodes:andesite_polished 4",
+	output = "minefix_nodes:andesite_polished 4",
 	recipe = {
-		{"minefixnodes:andesite", "minefixnodes:andesite"},
-		{"minefixnodes:andesite", "minefixnodes:andesite"}
+		{"minefix_nodes:andesite", "minefix_nodes:andesite"},
+		{"minefix_nodes:andesite", "minefix_nodes:andesite"}
 	}
 })
 
 minetest.register_craft({
-	output = "minefixnodes:diorite_polished 4",
+	output = "minefix_nodes:diorite_polished 4",
 	recipe = {
-		{"minefixnodes:diorite", "minefixnodes:diorite"},
-		{"minefixnodes:diorite", "minefixnodes:diorite"}
+		{"minefix_nodes:diorite", "minefix_nodes:diorite"},
+		{"minefix_nodes:diorite", "minefix_nodes:diorite"}
 	}
 })
 
 minetest.register_craft({
-	output = "minefixnodes:granite_polished 4",
+	output = "minefix_nodes:granite_polished 4",
 	recipe = {
-		{"minefixnodes:granite", "minefixnodes:granite"},
-		{"minefixnodes:granite", "minefixnodes:granite"}
+		{"minefix_nodes:granite", "minefix_nodes:granite"},
+		{"minefix_nodes:granite", "minefix_nodes:granite"}
 	}
 })

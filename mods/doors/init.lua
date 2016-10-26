@@ -416,19 +416,19 @@ doors.register("door_wood", {
 		}
 })
 
-doors.register("door_steel", {
-		tiles = {{name = "doors_door_steel.png", backface_culling = true}},
-		description = "Steel Door",
-		inventory_image = "doors_item_steel.png",
+doors.register("door_iron", {
+		tiles = {{name = "doors_door_iron.png", backface_culling = true}},
+		description = "Iron Door",
+		inventory_image = "doors_item_iron.png",
 		protected = true,
 		groups = {cracky = 1, level = 2},
 		sounds = default.node_sound_stone_defaults(),
-		sound_open = "doors_steel_door_open",
-		sound_close = "doors_steel_door_close",
+		sound_open = "doors_iron_door_open",
+		sound_close = "doors_iron_door_close",
 		recipe = {
-			{"default:steel_ingot", "default:steel_ingot"},
-			{"default:steel_ingot", "default:steel_ingot"},
-			{"default:steel_ingot", "default:steel_ingot"},
+			{"default:iron_ingot", "default:iron_ingot"},
+			{"default:iron_ingot", "default:iron_ingot"},
+			{"default:iron_ingot", "default:iron_ingot"},
 		}
 })
 
@@ -473,7 +473,7 @@ function doors.register_door(name, def)
 	local modname = name:sub(1, i - 1)
 	if not def.tiles then
 		if def.protected then
-			def.tiles = {{name = "doors_door_steel.png", backface_culling = true}}
+			def.tiles = {{name = "doors_door_iron.png", backface_culling = true}}
 		else
 			def.tiles = {{name = "doors_door_wood.png", backface_culling = true}}
 		end
@@ -519,7 +519,7 @@ function doors.register_trapdoor(name, def)
 	if not name:find(":") then
 		name = "doors:" .. name
 	end
-	
+
 	local name_closed = name
 	local name_opened = name.."_open"
 
@@ -614,16 +614,16 @@ doors.register_trapdoor("doors:trapdoor", {
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, door = 1},
 })
 
-doors.register_trapdoor("doors:trapdoor_steel", {
-	description = "Steel Trapdoor",
-	inventory_image = "doors_trapdoor_steel.png",
-	wield_image = "doors_trapdoor_steel.png",
-	tile_front = "doors_trapdoor_steel.png",
-	tile_side = "doors_trapdoor_steel_side.png",
+doors.register_trapdoor("doors:trapdoor_iron", {
+	description = "Iron Trapdoor",
+	inventory_image = "doors_trapdoor_iron.png",
+	wield_image = "doors_trapdoor_iron.png",
+	tile_front = "doors_trapdoor_iron.png",
+	tile_side = "doors_trapdoor_iron_side.png",
 	protected = true,
 	sounds = default.node_sound_stone_defaults(),
-	sound_open = "doors_steel_door_open",
-	sound_close = "doors_steel_door_close",
+	sound_open = "doors_iron_door_open",
+	sound_close = "doors_iron_door_close",
 	groups = {cracky = 1, level = 2, door = 1},
 })
 
@@ -637,10 +637,10 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = 'doors:trapdoor_steel',
+	output = 'doors:trapdoor_iron',
 	recipe = {
-		{'default:steel_ingot', 'default:steel_ingot'},
-		{'default:steel_ingot', 'default:steel_ingot'},
+		{'default:iron_ingot', 'default:iron_ingot'},
+		{'default:iron_ingot', 'default:iron_ingot'},
 	}
 })
 

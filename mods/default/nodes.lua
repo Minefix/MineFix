@@ -96,7 +96,7 @@ default:stone_with_coal
 default:coalblock
 
 default:stone_with_iron
-default:steelblock
+default:ironblock
 
 default:stone_with_gold
 default:goldblock
@@ -155,10 +155,8 @@ default:chest_locked
 default:bookshelf
 
 default:sign_wall_wood
-default:sign_wall_steel
 
 default:ladder_wood
-default:ladder_steel
 
 default:fence_wood
 default:fence_acacia_wood
@@ -938,13 +936,13 @@ minetest.register_node("default:stone_with_iron", {
 	description = "Iron Ore",
 	tiles = {"default_stone.png^default_mineral_iron.png"},
 	groups = {cracky = 2},
-	drop = 'default:iron_lump',
+	drop = 'default:iron_ingot',
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:steelblock", {
-	description = "Steel Block",
-	tiles = {"default_steel_block.png"},
+minetest.register_node("default:ironblock", {
+	description = "Iron Block",
+	tiles = {"default_iron_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 1, level = 2},
 	sounds = default.node_sound_stone_defaults(),
@@ -1796,11 +1794,6 @@ register_sign("wood", "Wooden", {
 	groups = {choppy = 2, attached_node = 1, flammable = 2, oddly_breakable_by_hand = 3}
 })
 
-register_sign("steel", "Steel", {
-	sounds = default.node_sound_defaults(),
-	groups = {cracky = 2, attached_node = 1}
-})
-
 minetest.register_node("default:ladder_wood", {
 	description = "Wooden Ladder",
 	drawtype = "signlike",
@@ -1822,28 +1815,6 @@ minetest.register_node("default:ladder_wood", {
 	groups = {choppy = 2, oddly_breakable_by_hand = 3, flammable = 2},
 	legacy_wallmounted = true,
 	sounds = default.node_sound_wood_defaults(),
-})
-
-minetest.register_node("default:ladder_steel", {
-	description = "Steel Ladder",
-	drawtype = "signlike",
-	tiles = {"default_ladder_steel.png"},
-	inventory_image = "default_ladder_steel.png",
-	wield_image = "default_ladder_steel.png",
-	paramtype = "light",
-	paramtype2 = "wallmounted",
-	sunlight_propagates = true,
-	walkable = false,
-	climbable = true,
-	is_ground_content = false,
-	selection_box = {
-		type = "wallmounted",
-		--wall_top = = <default>
-		--wall_bottom = = <default>
-		--wall_side = = <default>
-	},
-	groups = {cracky = 2},
-	sounds = default.node_sound_stone_defaults(),
 })
 
 default.register_fence("default:fence_wood", {
