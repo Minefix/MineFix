@@ -10,8 +10,6 @@ minetest.register_alias("mapgen_water_source", "default:water_source")
 minetest.register_alias("mapgen_river_water_source", "default:river_water_source")
 minetest.register_alias("mapgen_lava_source", "default:lava_source")
 minetest.register_alias("mapgen_gravel", "default:gravel")
-minetest.register_alias("mapgen_desert_stone", "default:desert_stone")
-minetest.register_alias("mapgen_desert_sand", "default:desert_sand")
 minetest.register_alias("mapgen_dirt_with_snow", "default:dirt_with_snow")
 minetest.register_alias("mapgen_snowblock", "default:snowblock")
 minetest.register_alias("mapgen_snow", "default:snow")
@@ -73,8 +71,7 @@ function default.register_ores()
 	minetest.register_ore({
 		ore_type        = "blob",
 		ore             = "default:sand",
-		wherein         = {"default:stone", "default:sandstone",
-			"default:desert_stone"},
+		wherein         = {"default:stone", "default:sandstone"},
 		clust_scarcity  = 16 * 16 * 16,
 		clust_size      = 5,
 		y_min           = -31,
@@ -678,11 +675,11 @@ function default.register_biomes()
 	minetest.register_biome({
 		name = "desert",
 		--node_dust = "",
-		node_top = "default:desert_sand",
+		node_top = "default:sand",
 		depth_top = 1,
-		node_filler = "default:desert_sand",
+		node_filler = "default:sand",
 		depth_filler = 1,
-		node_stone = "default:desert_stone",
+		node_stone = "default:sandstone",
 		--node_water_top = "",
 		--depth_water_top = ,
 		--node_water = "",
@@ -702,7 +699,7 @@ function default.register_biomes()
 		depth_top = 1,
 		node_filler = "default:sand",
 		depth_filler = 3,
-		node_stone = "default:desert_stone",
+		node_stone = "default:sandstone",
 		--node_water_top = "",
 		--depth_water_top = ,
 		--node_water = "",
@@ -895,7 +892,7 @@ function default.register_mgv6_decorations()
 
 	minetest.register_decoration({
 		deco_type = "simple",
-		place_on = {"default:desert_sand"},
+		place_on = {"default:sand"},
 		sidelen = 16,
 		noise_params = {
 			offset = -0.012,
@@ -937,7 +934,7 @@ function default.register_mgv6_decorations()
 
 	minetest.register_decoration({
 		deco_type = "simple",
-		place_on = {"default:desert_sand", "default:dirt_with_snow"},
+		place_on = {"default:sand", "default:dirt_with_snow"},
 		sidelen = 16,
 		noise_params = {
 			offset = 0,
@@ -1259,7 +1256,7 @@ function default.register_decorations()
 
 	minetest.register_decoration({
 		deco_type = "schematic",
-		place_on = {"default:desert_sand"},
+		place_on = {"default:sand"},
 		sidelen = 16,
 		noise_params = {
 			offset = -0.0003,
@@ -1281,7 +1278,7 @@ function default.register_decorations()
 
 	minetest.register_decoration({
 		deco_type = "simple",
-		place_on = {"default:desert_sand"},
+		place_on = {"default:sand"},
 		sidelen = 16,
 		noise_params = {
 			offset = -0.0003,
@@ -1352,7 +1349,7 @@ function default.register_decorations()
 
 	minetest.register_decoration({
 		deco_type = "simple",
-		place_on = {"default:desert_sand", "default:dirt_with_snow"},
+		place_on = {"default:sand", "default:dirt_with_snow"},
 		sidelen = 16,
 		noise_params = {
 			offset = 0,

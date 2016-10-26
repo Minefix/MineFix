@@ -40,7 +40,3 @@ walls.register("walls:cobble", "Cobblestone Wall", "default_cobble.png",
 
 walls.register("walls:mossycobble", "Mossy Cobblestone Wall", "default_mossycobble.png",
 		"default:mossycobble", default.node_sound_stone_defaults())
-
-walls.register("walls:desertcobble", "Desert Cobblestone Wall", "default_desert_cobble.png",
-		"default:desert_cobble", default.node_sound_stone_defaults())
-

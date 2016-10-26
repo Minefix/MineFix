@@ -22,11 +22,6 @@ default:stonebrick
 default:stone_block
 default:mossycobble
 
-default:desert_stone
-default:desert_cobble
-default:desert_stonebrick
-default:desert_stone_block
-
 default:sandstone
 default:sandstonebrick
 default:sandstone_block
@@ -46,7 +41,6 @@ default:dirt_with_dry_grass
 default:dirt_with_snow
 
 default:sand
-default:desert_sand
 default:silver_sand
 
 default:gravel
@@ -226,42 +220,6 @@ minetest.register_node("default:mossycobble", {
 })
 
 
-minetest.register_node("default:desert_stone", {
-	description = "Desert Stone",
-	tiles = {"default_desert_stone.png"},
-	groups = {cracky = 3, stone = 1},
-	drop = 'default:desert_cobble',
-	legacy_mineral = true,
-	sounds = default.node_sound_stone_defaults(),
-})
-
-minetest.register_node("default:desert_cobble", {
-	description = "Desert Cobblestone",
-	tiles = {"default_desert_cobble.png"},
-	is_ground_content = false,
-	groups = {cracky = 3, stone = 2},
-	sounds = default.node_sound_stone_defaults(),
-})
-
-minetest.register_node("default:desert_stonebrick", {
-	description = "Desert Stone Brick",
-	paramtype2 = "facedir",
-	place_param2 = 0,
-	tiles = {"default_desert_stone_brick.png"},
-	is_ground_content = false,
-	groups = {cracky = 2, stone = 1},
-	sounds = default.node_sound_stone_defaults(),
-})
-
-minetest.register_node("default:desert_stone_block", {
-	description = "Desert Stone Block",
-	tiles = {"default_desert_stone_block.png"},
-	is_ground_content = false,
-	groups = {cracky = 2, stone = 1},
-	sounds = default.node_sound_stone_defaults(),
-})
-
-
 minetest.register_node("default:sandstone", {
 	description = "Sandstone",
 	tiles = {"default_sandstone.png"},
@@ -376,13 +334,6 @@ minetest.register_node("default:dirt_with_snow", {
 minetest.register_node("default:sand", {
 	description = "Sand",
 	tiles = {"default_sand.png"},
-	groups = {crumbly = 3, falling_node = 1, sand = 1},
-	sounds = default.node_sound_sand_defaults(),
-})
-
-minetest.register_node("default:desert_sand", {
-	description = "Desert Sand",
-	tiles = {"default_desert_sand.png"},
 	groups = {crumbly = 3, falling_node = 1, sand = 1},
 	sounds = default.node_sound_sand_defaults(),
 })
