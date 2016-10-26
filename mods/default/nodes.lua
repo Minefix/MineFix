@@ -32,8 +32,6 @@ default:sandstonebrick
 default:sandstone_block
 
 default:obsidian
-default:obsidianbrick
-default:obsidian_block
 
 Soft / Non-Stone
 ----------------
@@ -162,7 +160,6 @@ default:fence_pine_wood
 default:fence_aspen_wood
 
 default:glass
-default:obsidian_glass
 
 default:rail
 
@@ -288,24 +285,6 @@ minetest.register_node("default:sandstone_block", {
 minetest.register_node("default:obsidian", {
 	description = "Obsidian",
 	tiles = {"default_obsidian.png"},
-	sounds = default.node_sound_stone_defaults(),
-	groups = {cracky = 1, level = 2},
-})
-
-minetest.register_node("default:obsidianbrick", {
-	description = "Obsidian Brick",
-	paramtype2 = "facedir",
-	place_param2 = 0,
-	tiles = {"default_obsidian_brick.png"},
-	is_ground_content = false,
-	sounds = default.node_sound_stone_defaults(),
-	groups = {cracky = 1, level = 2},
-})
-
-minetest.register_node("default:obsidian_block", {
-	description = "Obsidian Block",
-	tiles = {"default_obsidian_block.png"},
-	is_ground_content = false,
 	sounds = default.node_sound_stone_defaults(),
 	groups = {cracky = 1, level = 2},
 })
@@ -1780,17 +1759,6 @@ minetest.register_node("default:glass", {
 	is_ground_content = false,
 	groups = {cracky = 3, oddly_breakable_by_hand = 3},
 	sounds = default.node_sound_glass_defaults(),
-})
-
-minetest.register_node("default:obsidian_glass", {
-	description = "Obsidian Glass",
-	drawtype = "glasslike_framed_optional",
-	tiles = {"default_obsidian_glass.png", "default_obsidian_glass_detail.png"},
-	paramtype = "light",
-	is_ground_content = false,
-	sunlight_propagates = true,
-	sounds = default.node_sound_glass_defaults(),
-	groups = {cracky = 3},
 })
 
 
