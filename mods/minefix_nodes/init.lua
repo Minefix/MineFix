@@ -1,4 +1,4 @@
-local modpath = minetest.get_modpath("minefixnodes")
+local modpath = minetest.get_modpath("minefix_nodes")
 
 dofile(modpath .. "/blocks.lua")
 dofile(modpath .. "/items.lua")

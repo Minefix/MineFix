@@ -9,9 +9,9 @@ Place all your textures in `textures/`.
 
 The following is a list of required textures and their file names:
 
-* minefixnodes_andesite.png
-* minefixnodes_andesite_polished.png
-* minefixnodes_diorite.png
-* minefixnodes_diorite_polished.png
-* minefixnodes_granite.png
-* minefixnodes_granite_polished.png
+* minefix_nodes_andesite.png
+* minefix_nodes_andesite_polished.png
+* minefix_nodes_diorite.png
+* minefix_nodes_diorite_polished.png
+* minefix_nodes_granite.png
+* minefix_nodes_granite_polished.png
