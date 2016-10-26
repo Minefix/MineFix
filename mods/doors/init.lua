@@ -19,7 +19,8 @@ function doors.get(pos)
 				end
 				return _doors.door_toggle(self.pos, nil, player)
 			end,
-			close = function(self, player)
+			close =
+			 function(self, player)
 				if not self:state() then
 					return false
 				end
@@ -445,21 +446,6 @@ doors.register("door_glass", {
 			{"default:glass", "default:glass"},
 			{"default:glass", "default:glass"},
 		}
-})
-
-doors.register("door_obsidian_glass", {
-		tiles = {"doors_door_obsidian_glass.png"},
-		description = "Obsidian Glass Door",
-		inventory_image = "doors_item_obsidian_glass.png",
-		groups = {cracky=3},
-		sounds = default.node_sound_glass_defaults(),
-		sound_open = "doors_glass_door_open",
-		sound_close = "doors_glass_door_close",
-		recipe = {
-			{"default:obsidian_glass", "default:obsidian_glass"},
-			{"default:obsidian_glass", "default:obsidian_glass"},
-			{"default:obsidian_glass", "default:obsidian_glass"},
-		},
 })
 
 -- Capture mods using the old API as best as possible.

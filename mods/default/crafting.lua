@@ -442,39 +442,6 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = 'default:obsidian_shard 9',
-	recipe = {
-		{'default:obsidian'}
-	}
-})
-
-minetest.register_craft({
-	output = 'default:obsidian',
-	recipe = {
-		{'default:obsidian_shard', 'default:obsidian_shard', 'default:obsidian_shard'},
-		{'default:obsidian_shard', 'default:obsidian_shard', 'default:obsidian_shard'},
-		{'default:obsidian_shard', 'default:obsidian_shard', 'default:obsidian_shard'},
-	}
-})
-
-minetest.register_craft({
-	output = 'default:obsidianbrick 4',
-	recipe = {
-		{'default:obsidian', 'default:obsidian'},
-		{'default:obsidian', 'default:obsidian'}
-	}
-})
-
-minetest.register_craft({
-	output = 'default:obsidian_block 9',
-	recipe = {
-		{'default:obsidian', 'default:obsidian', 'default:obsidian'},
-		{'default:obsidian', 'default:obsidian', 'default:obsidian'},
-		{'default:obsidian', 'default:obsidian', 'default:obsidian'},
-	}
-})
-
-minetest.register_craft({
 	output = 'default:stonebrick 4',
 	recipe = {
 		{'default:stone', 'default:stone'},
@@ -540,12 +507,6 @@ minetest.register_craft({
 	type = "cooking",
 	output = "default:glass",
 	recipe = "group:sand",
-})
-
-minetest.register_craft({
-	type = "cooking",
-	output = "default:obsidian_glass",
-	recipe = "default:obsidian_shard",
 })
 
 minetest.register_craft({
