@@ -477,26 +477,6 @@ stairs.register_stair_and_slab(
 )
 
 stairs.register_stair_and_slab(
-	"copperblock",
-	"default:copperblock",
-	{cracky = 1, level = 2},
-	{"default_copper_block.png"},
-	"Copper Block Stair",
-	"Copper Block Slab",
-	default.node_sound_stone_defaults()
-)
-
-stairs.register_stair_and_slab(
-	"bronzeblock",
-	"default:bronzeblock",
-	{cracky = 1, level = 2},
-	{"default_bronze_block.png"},
-	"Bronze Block Stair",
-	"Bronze Block Slab",
-	default.node_sound_stone_defaults()
-)
-
-stairs.register_stair_and_slab(
 	"goldblock",
 	"default:goldblock",
 	{cracky = 1},

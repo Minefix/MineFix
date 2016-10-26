@@ -57,18 +57,6 @@ minetest.register_tool("default:pick_steel", {
 		damage_groups = {fleshy=4},
 	},
 })
-minetest.register_tool("default:pick_bronze", {
-	description = "Bronze Pickaxe",
-	inventory_image = "default_tool_bronzepick.png",
-	tool_capabilities = {
-		full_punch_interval = 1.0,
-		max_drop_level=1,
-		groupcaps={
-			cracky = {times={[1]=4.00, [2]=1.60, [3]=0.80}, uses=30, maxlevel=2},
-		},
-		damage_groups = {fleshy=4},
-	},
-})
 minetest.register_tool("default:pick_mese", {
 	description = "Mese Pickaxe",
 	inventory_image = "default_tool_mesepick.png",
@@ -133,19 +121,6 @@ minetest.register_tool("default:shovel_steel", {
 		max_drop_level=1,
 		groupcaps={
 			crumbly = {times={[1]=1.50, [2]=0.90, [3]=0.40}, uses=30, maxlevel=2},
-		},
-		damage_groups = {fleshy=3},
-	},
-})
-minetest.register_tool("default:shovel_bronze", {
-	description = "Bronze Shovel",
-	inventory_image = "default_tool_bronzeshovel.png",
-	wield_image = "default_tool_bronzeshovel.png^[transformR90",
-	tool_capabilities = {
-		full_punch_interval = 1.1,
-		max_drop_level=1,
-		groupcaps={
-			crumbly = {times={[1]=1.50, [2]=0.90, [3]=0.40}, uses=40, maxlevel=2},
 		},
 		damage_groups = {fleshy=3},
 	},
@@ -217,18 +192,6 @@ minetest.register_tool("default:axe_steel", {
 		damage_groups = {fleshy=4},
 	},
 })
-minetest.register_tool("default:axe_bronze", {
-	description = "Bronze Axe",
-	inventory_image = "default_tool_bronzeaxe.png",
-	tool_capabilities = {
-		full_punch_interval = 1.0,
-		max_drop_level=1,
-		groupcaps={
-			choppy={times={[1]=2.50, [2]=1.40, [3]=1.00}, uses=30, maxlevel=2},
-		},
-		damage_groups = {fleshy=4},
-	},
-})
 minetest.register_tool("default:axe_mese", {
 	description = "Mese Axe",
 	inventory_image = "default_tool_meseaxe.png",
@@ -290,18 +253,6 @@ minetest.register_tool("default:sword_steel", {
 		max_drop_level=1,
 		groupcaps={
 			snappy={times={[1]=2.5, [2]=1.20, [3]=0.35}, uses=30, maxlevel=2},
-		},
-		damage_groups = {fleshy=6},
-	}
-})
-minetest.register_tool("default:sword_bronze", {
-	description = "Bronze Sword",
-	inventory_image = "default_tool_bronzesword.png",
-	tool_capabilities = {
-		full_punch_interval = 0.8,
-		max_drop_level=1,
-		groupcaps={
-			snappy={times={[1]=2.5, [2]=1.20, [3]=0.35}, uses=40, maxlevel=2},
 		},
 		damage_groups = {fleshy=6},
 	}

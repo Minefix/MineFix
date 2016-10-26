@@ -98,10 +98,6 @@ default:coalblock
 default:stone_with_iron
 default:steelblock
 
-default:stone_with_copper
-default:copperblock
-default:bronzeblock
-
 default:stone_with_gold
 default:goldblock
 
@@ -954,31 +950,6 @@ minetest.register_node("default:stone_with_iron", {
 minetest.register_node("default:steelblock", {
 	description = "Steel Block",
 	tiles = {"default_steel_block.png"},
-	is_ground_content = false,
-	groups = {cracky = 1, level = 2},
-	sounds = default.node_sound_stone_defaults(),
-})
-
-
-minetest.register_node("default:stone_with_copper", {
-	description = "Copper Ore",
-	tiles = {"default_stone.png^default_mineral_copper.png"},
-	groups = {cracky = 2},
-	drop = 'default:copper_lump',
-	sounds = default.node_sound_stone_defaults(),
-})
-
-minetest.register_node("default:copperblock", {
-	description = "Copper Block",
-	tiles = {"default_copper_block.png"},
-	is_ground_content = false,
-	groups = {cracky = 1, level = 2},
-	sounds = default.node_sound_stone_defaults(),
-})
-
-minetest.register_node("default:bronzeblock", {
-	description = "Bronze Block",
-	tiles = {"default_bronze_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 1, level = 2},
 	sounds = default.node_sound_stone_defaults(),
