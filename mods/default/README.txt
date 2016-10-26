@@ -74,7 +74,7 @@ Splizard (CC BY-SA 3.0):
 
 Zeg9 (CC BY-SA 3.0):
   default_coal_block.png
-  default_steel_block.png
+  default_iron_block.png
   default_gold_block.png
 
 paramat (CC BY-SA 3.0):
@@ -115,7 +115,7 @@ BlockMen (CC BY-SA 3.0):
   default_clay_brick.png
   default_iron_ingot.png
   default_gold_ingot.png
-  default_tool_steelsword.png
+  default_tool_ironsword.png
   default_diamond.png
   default_book.png
   default_tool_*.png
@@ -147,14 +147,12 @@ Neuromancer (CC BY-SA 3.0):
   default_furnace_*.png
 
 Gambit (CC BY-SA 3.0):
-  default_iron_lump.png
   default_gold_lump.png
   default_clay_lump.png
   default_coal.png
   default_grass_*.png
   default_paper.png
   default_diamond_block.png
-  default_ladder_steel.png
   default_sign_wall_wood.png
   default_flint.png
   default_snow.png

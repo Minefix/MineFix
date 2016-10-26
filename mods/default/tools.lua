@@ -45,9 +45,9 @@ minetest.register_tool("default:pick_stone", {
 		damage_groups = {fleshy=3},
 	},
 })
-minetest.register_tool("default:pick_steel", {
-	description = "Steel Pickaxe",
-	inventory_image = "default_tool_steelpick.png",
+minetest.register_tool("default:pick_iron", {
+	description = "Iron Pickaxe",
+	inventory_image = "default_tool_ironpick.png",
 	tool_capabilities = {
 		full_punch_interval = 1.0,
 		max_drop_level=1,
@@ -100,10 +100,10 @@ minetest.register_tool("default:shovel_stone", {
 		damage_groups = {fleshy=2},
 	},
 })
-minetest.register_tool("default:shovel_steel", {
-	description = "Steel Shovel",
-	inventory_image = "default_tool_steelshovel.png",
-	wield_image = "default_tool_steelshovel.png^[transformR90",
+minetest.register_tool("default:shovel_iron", {
+	description = "Iron Shovel",
+	inventory_image = "default_tool_ironshovel.png",
+	wield_image = "default_tool_ironshovel.png^[transformR90",
 	tool_capabilities = {
 		full_punch_interval = 1.1,
 		max_drop_level=1,
@@ -155,9 +155,9 @@ minetest.register_tool("default:axe_stone", {
 		damage_groups = {fleshy=3},
 	},
 })
-minetest.register_tool("default:axe_steel", {
-	description = "Steel Axe",
-	inventory_image = "default_tool_steelaxe.png",
+minetest.register_tool("default:axe_iron", {
+	description = "Iron Axe",
+	inventory_image = "default_tool_ironaxe.png",
 	tool_capabilities = {
 		full_punch_interval = 1.0,
 		max_drop_level=1,
@@ -208,9 +208,9 @@ minetest.register_tool("default:sword_stone", {
 		damage_groups = {fleshy=4},
 	}
 })
-minetest.register_tool("default:sword_steel", {
-	description = "Steel Sword",
-	inventory_image = "default_tool_steelsword.png",
+minetest.register_tool("default:sword_iron", {
+	description = "Iron Sword",
+	inventory_image = "default_tool_ironsword.png",
 	tool_capabilities = {
 		full_punch_interval = 0.8,
 		max_drop_level=1,

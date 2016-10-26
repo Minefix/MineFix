@@ -12,11 +12,11 @@ farming.register_hoe(":farming:hoe_stone", {
 	material = "group:stone"
 })
 
-farming.register_hoe(":farming:hoe_steel", {
-	description = "Steel Hoe",
-	inventory_image = "farming_tool_steelhoe.png",
+farming.register_hoe(":farming:hoe_iron", {
+	description = "Iron Hoe",
+	inventory_image = "farming_tool_ironhoe.png",
 	max_uses = 200,
-	material = "default:steel_ingot"
+	material = "default:iron_ingot"
 })
 
 farming.register_hoe(":farming:hoe_diamond", {
