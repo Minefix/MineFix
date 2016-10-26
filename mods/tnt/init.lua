@@ -538,7 +538,7 @@ function tnt.register_tnt(def)
 			description = def.description,
 			tiles = {tnt_top, tnt_bottom, tnt_side},
 			is_ground_content = false,
-			groups = {dig_immediate = 2, mesecon = 2, tnt = 1},
+			groups = {dig_immediate = 2, tnt = 1},
 			sounds = default.node_sound_wood_defaults(),
 			on_punch = function(pos, node, puncher)
 				if puncher:get_wielded_item():get_name() == "default:torch" then
@@ -550,13 +550,6 @@ function tnt.register_tnt(def)
 					tnt.boom(pos, def)
 				end)
 			end,
-			mesecons = {effector =
-				{action_on =
-					function(pos)
-						tnt.boom(pos, def)
-					end
-				}
-			},
 		})
 	end
 

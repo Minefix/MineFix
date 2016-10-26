@@ -36,6 +36,5 @@ To craft TNT surround gunpowder with 4 wood in a + shape.
 There are different ways to blow up TNT:
   1. Hit it with a torch.
   2. Hit a gunpowder fuse that leads to a TNT block with a torch or flint-and-steel.
-  3. Activate it with mesecons (fastest way).
 
 Be aware of the damage radius of 6 blocks!
