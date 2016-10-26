@@ -44,8 +44,6 @@ VanessaE (CC BY-SA 3.0):
   default_desert_sand.png
   default_desert_stone.png
   default_sand.png
-  default_mese_crystal.png
-  default_mese_crystal_fragment.png
 
 Calinou (CC BY-SA 3.0):
   default_brick.png
@@ -107,7 +105,6 @@ paramat (CC BY-SA 3.0):
   default_dry_grass_*.png
   default_grass.png
   default_grass_side.png
-  default_mese_block.png
   default_silver_sand.png
 
 brunob.santos (CC BY-SA 4.0):
@@ -129,8 +126,6 @@ BlockMen (CC BY-SA 3.0):
   default_chest_lock.png
   default_chest_side.png
   default_chest_top.png
-  default_mineral_mese.png
-  default_meselamp.png
   bubble.png
   gui_*.png
 

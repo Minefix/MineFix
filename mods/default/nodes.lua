@@ -101,9 +101,6 @@ default:steelblock
 default:stone_with_gold
 default:goldblock
 
-default:stone_with_mese
-default:mese
-
 default:stone_with_diamond
 default:diamondblock
 
@@ -175,8 +172,6 @@ default:obsidian_glass
 default:rail
 
 default:brick
-
-default:meselamp
 
 Misc
 ----
@@ -953,24 +948,6 @@ minetest.register_node("default:steelblock", {
 	is_ground_content = false,
 	groups = {cracky = 1, level = 2},
 	sounds = default.node_sound_stone_defaults(),
-})
-
-
-minetest.register_node("default:stone_with_mese", {
-	description = "Mese Ore",
-	tiles = {"default_stone.png^default_mineral_mese.png"},
-	groups = {cracky = 1},
-	drop = "default:mese_crystal",
-	sounds = default.node_sound_stone_defaults(),
-})
-
-minetest.register_node("default:mese", {
-	description = "Mese Block",
-	tiles = {"default_mese_block.png"},
-	paramtype = "light",
-	groups = {cracky = 1, level = 2},
-	sounds = default.node_sound_stone_defaults(),
-	light_source = 3,
 })
 
 
@@ -1973,18 +1950,6 @@ minetest.register_node("default:brick", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-
-minetest.register_node("default:meselamp", {
-	description = "Mese Lamp",
-	drawtype = "glasslike",
-	tiles = {"default_meselamp.png"},
-	paramtype = "light",
-	sunlight_propagates = true,
-	is_ground_content = false,
-	groups = {cracky = 3, oddly_breakable_by_hand = 3},
-	sounds = default.node_sound_glass_defaults(),
-	light_source = default.LIGHT_MAX,
-})
 
 --
 -- Misc

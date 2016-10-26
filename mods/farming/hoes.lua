@@ -19,13 +19,6 @@ farming.register_hoe(":farming:hoe_steel", {
 	material = "default:steel_ingot"
 })
 
-farming.register_hoe(":farming:hoe_mese", {
-	description = "Mese Hoe",
-	inventory_image = "farming_tool_mesehoe.png",
-	max_uses = 350,
-	material = "default:mese_crystal"
-})
-
 farming.register_hoe(":farming:hoe_diamond", {
 	description = "Diamond Hoe",
 	inventory_image = "farming_tool_diamondhoe.png",
