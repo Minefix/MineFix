@@ -112,7 +112,7 @@ end
 minetest.register_craftitem("bucket:bucket_empty", {
 	description = "Empty Bucket",
 	inventory_image = "bucket.png",
-	stack_max = 99,
+	stack_max = 16,
 	liquids_pointable = true,
 	on_use = function(itemstack, user, pointed_thing)
 		-- Must be pointing to node
@@ -179,16 +179,6 @@ bucket.register_liquid(
 )
 
 bucket.register_liquid(
-	"default:river_water_source",
-	"default:river_water_flowing",
-	"bucket:bucket_river_water",
-	"bucket_river_water.png",
-	"River Water Bucket",
-	{water_bucket = 1},
-	true
-)
-
-bucket.register_liquid(
 	"default:lava_source",
 	"default:lava_flowing",
 	"bucket:bucket_lava",
@@ -202,4 +192,3 @@ minetest.register_craft({
 	burntime = 60,
 	replacements = {{"bucket:bucket_lava", "bucket:bucket_empty"}},
 })
-
