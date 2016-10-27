@@ -57,8 +57,6 @@ Jordach (CC BY-SA 3.0):
 PilzAdam (CC BY-SA 3.0):
   default_jungleleaves.png
   default_junglesapling.png
-  default_obsidian_glass.png
-  default_obsidian_shard.png
   default_mineral_gold.png
 
 jojoa1997 (CC BY-SA 3.0):
@@ -88,14 +86,9 @@ paramat (CC BY-SA 3.0):
   default_junglewood.png
   default_jungletree_top.png
   default_sandstone_brick.png
-  default_obsidian_brick.png
   default_stone_brick.png
   default_sandstone_block.png
-  default_obsidian_block.png
   default_stone_block.png
-  default_river_water.png
-  default_river_water_source_animated.png
-  default_river_water_flowing_animated.png
   default_dry_grass.png
   default_dry_grass_side.png
   default_dry_grass_*.png
