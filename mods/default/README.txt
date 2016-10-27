@@ -41,8 +41,6 @@ RealBadAngel's animated water (CC BY-SA 3.0):
   default_water_flowing_animated.png
 
 VanessaE (CC BY-SA 3.0):
-  default_desert_sand.png
-  default_desert_stone.png
   default_sand.png
 
 Calinou (CC BY-SA 3.0):
@@ -89,19 +87,14 @@ paramat (CC BY-SA 3.0):
   default_jungletree_top.png
   default_sandstone_brick.png
   default_stone_brick.png
-  default_desert_stone_brick.png
   default_sandstone_block.png
   default_stone_block.png
-  default_desert_stone_block.png
   default_dry_grass.png
   default_dry_grass_side.png
   default_dry_grass_*.png
   default_grass.png
   default_grass_side.png
   default_silver_sand.png
-
-brunob.santos (CC BY-SA 4.0):
-  default_desert_cobble.png
 
 BlockMen (CC BY-SA 3.0):
   default_wood.png

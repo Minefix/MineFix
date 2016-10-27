@@ -346,45 +346,6 @@ stairs.register_stair_and_slab(
 	default.node_sound_stone_defaults()
 )
 
-stairs.register_stair_and_slab(
-	"desert_stone",
-	"default:desert_stone",
-	{cracky = 3},
-	{"default_desert_stone.png"},
-	"Desert Stone Stair",
-	"Desert Stone Slab",
-	default.node_sound_stone_defaults()
-)
-
-stairs.register_stair_and_slab(
-	"desert_cobble",
-	"default:desert_cobble",
-	{cracky = 3},
-	{"default_desert_cobble.png"},
-	"Desert Cobblestone Stair",
-	"Desert Cobblestone Slab",
-	default.node_sound_stone_defaults()
-)
-
-stairs.register_stair_and_slab(
-	"desert_stonebrick",
-	"default:desert_stonebrick",
-	{cracky = 2},
-	{"default_desert_stone_brick.png"},
-	"Desert Stone Brick Stair",
-	"Desert Stone Brick Slab",
-	default.node_sound_stone_defaults()
-)
-
-stairs.register_stair_and_slab(
-	"desert_stone_block",
-	"default:desert_stone_block",
-	{cracky = 2},
-	{"default_desert_stone_block.png"},
-	"Desert Stone Block Stair",
-	"Desert Stone Block Slab",
-	default.node_sound_stone_defaults()
-)
 
 stairs.register_stair_and_slab(
 	"sandstone",

@@ -77,7 +77,7 @@ function flowers.flower_spread(pos, node)
 	pos.y = pos.y - 1
 	local under = minetest.get_node(pos)
 	pos.y = pos.y + 1
-	if under.name == "default:desert_sand" then
+	if under.name == "default:sand" then
 		minetest.set_node(pos, {name = "default:dry_shrub"})
 		return
 	elseif under.name ~= "default:dirt_with_grass" and
@@ -113,7 +113,7 @@ minetest.register_abm({
 	label = "Flower spread",
 	nodenames = {"group:flora"},
 	neighbors = {"default:dirt_with_grass", "default:dirt_with_dry_grass",
-		"default:desert_sand"},
+		"default:sand"},
 	interval = 13,
 	chance = 96,
 	action = function(...)

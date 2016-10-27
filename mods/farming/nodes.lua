@@ -48,40 +48,6 @@ minetest.register_node("farming:soil_wet", {
 	}
 })
 
-minetest.override_item("default:desert_sand", {
-	groups = {crumbly=3, falling_node=1, sand=1, soil = 1},
-	soil = {
-		base = "default:desert_sand",
-		dry = "farming:desert_sand_soil",
-		wet = "farming:desert_sand_soil_wet"
-	}
-})
-minetest.register_node("farming:desert_sand_soil", {
-	description = "Desert Sand Soil",
-	drop = "default:desert_sand",
-	tiles = {"farming_desert_sand_soil.png", "default_desert_sand.png"},
-	groups = {crumbly=3, not_in_creative_inventory = 1, falling_node=1, sand=1, soil = 2, desert = 1, field = 1},
-	sounds = default.node_sound_sand_defaults(),
-	soil = {
-		base = "default:desert_sand",
-		dry = "farming:desert_sand_soil",
-		wet = "farming:desert_sand_soil_wet"
-	}
-})
-
-minetest.register_node("farming:desert_sand_soil_wet", {
-	description = "Wet Desert Sand Soil",
-	drop = "default:desert_sand",
-	tiles = {"farming_desert_sand_soil_wet.png", "farming_desert_sand_soil_wet_side.png"},
-	groups = {crumbly=3, falling_node=1, sand=1, not_in_creative_inventory=1, soil=3, wet = 1, desert = 1, field = 1},
-	sounds = default.node_sound_sand_defaults(),
-	soil = {
-		base = "default:desert_sand",
-		dry = "farming:desert_sand_soil",
-		wet = "farming:desert_sand_soil_wet"
-	}
-})
-
 minetest.register_node("farming:straw", {
 	description = "Straw",
 	tiles = {"farming_straw.png"},
@@ -111,7 +77,7 @@ minetest.register_abm({
 		end
 		local nn_def = minetest.registered_nodes[nn.name] or nil
 		pos.y = pos.y - 1
-		
+
 		if nn_def and nn_def.walkable and minetest.get_item_group(nn.name, "plant") == 0 then
 			minetest.set_node(pos, {name = base})
 			return
@@ -133,7 +99,7 @@ minetest.register_abm({
 					if minetest.get_item_group(nn.name, "plant") == 0 and minetest.get_item_group(nn.name, "seed") == 0 then
 						minetest.set_node(pos, {name = base})
 					end
-					
+
 				-- if its wet turn it back into dry soil
 				elseif wet_lvl == 1 then
 					minetest.set_node(pos, {name = dry})
@@ -144,7 +110,7 @@ minetest.register_abm({
 })
 
 
-for i = 1, 5 do		
+for i = 1, 5 do
 	minetest.override_item("default:grass_"..i, {drop = {
 		max_items = 1,
 		items = {
@@ -153,7 +119,7 @@ for i = 1, 5 do
 		}
 	}})
 end
-	
+
 minetest.override_item("default:junglegrass", {drop = {
 	max_items = 1,
 	items = {
