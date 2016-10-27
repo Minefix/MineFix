@@ -12,9 +12,9 @@ cart = {
 	physical = false,
 	collisionbox = {-0.5,-0.5,-0.5, 0.5,0.5,0.5},
 	visual = "mesh",
-	mesh = "cart.x",
+	mesh = "minefix_cart.x",
 	visual_size = {x=1, y=1},
-	textures = {"cart.png"},
+	textures = {"minefix_cart.png"},
 
 	driver = nil,
 	velocity = {x=0, y=0, z=0},
