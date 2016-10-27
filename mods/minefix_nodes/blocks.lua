@@ -1,3 +1,5 @@
+-- Stones
+
 minetest.register_node("minefix_nodes:andesite", {
 	description = "Andesite",
 	tiles = {"minefix_nodes_andesite.png"},
@@ -38,4 +40,21 @@ minetest.register_node("minefix_nodes:granite_polished", {
 	tiles = {"minefix_nodes_granite_polished.png"},
 	is_ground_content = false,
 	groups = {cracky = 3}
+})
+
+-- Haybale
+
+minetest.register_node("minefix_nodes:haybale", {
+	description = "Haybale",
+	tiles = {
+		"minefix_nodes_haybale_top.png",
+		"minefix_nodes_haybale_top.png",
+		"minefix_nodes_haybale_side.png",
+		"minefix_nodes_haybale_side.png",
+		"minefix_nodes_haybale_side.png",
+		"minefix_nodes_haybale_side.png"
+	},
+	is_ground_content = false,
+	groups = {snappy=3, flammable=4, fall_damage_add_percent=-30},
+	sounds = default.node_sound_leaves_defaults(),
 })

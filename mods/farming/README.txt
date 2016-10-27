@@ -23,9 +23,6 @@ Created by BlockMen (CC BY 3.0):
   farming_tool_stonehoe.png
   farming_tool_woodhoe.png
 
-Created by MasterGollum (CC BY 3.0):
-  farming_straw.png
-
 Created by Gambit (CC BY 3.0):
   farming_wheat.png
   farming_wheat_*.png
