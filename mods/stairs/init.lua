@@ -358,51 +358,11 @@ stairs.register_stair_and_slab(
 )
 
 stairs.register_stair_and_slab(
-	"sandstonebrick",
-	"default:sandstonebrick",
-	{cracky = 2},
-	{"default_sandstone_brick.png"},
-	"Sandstone Brick Stair",
-	"Sandstone Brick Slab",
-	default.node_sound_stone_defaults()
-)
-
-stairs.register_stair_and_slab(
-	"sandstone_block",
-	"default:sandstone_block",
-	{cracky = 2},
-	{"default_sandstone_block.png"},
-	"Sandstone Block Stair",
-	"Sandstone Block Slab",
-	default.node_sound_stone_defaults()
-)
-
-stairs.register_stair_and_slab(
 	"brick",
 	"default:brick",
 	{cracky = 3},
 	{"default_brick.png"},
 	"Brick Stair",
 	"Brick Slab",
-	default.node_sound_stone_defaults()
-)
-
-stairs.register_stair_and_slab(
-	"straw",
-	"farming:straw",
-	{snappy = 3, flammable = 4},
-	{"farming_straw.png"},
-	"Straw Stair",
-	"Straw Slab",
-	default.node_sound_leaves_defaults()
-)
-
-stairs.register_stair_and_slab(
-	"goldblock",
-	"default:goldblock",
-	{cracky = 1},
-	{"default_gold_block.png"},
-	"Gold Block Stair",
-	"Gold Block Slab",
 	default.node_sound_stone_defaults()
 )
