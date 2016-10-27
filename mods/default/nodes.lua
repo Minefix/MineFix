@@ -19,7 +19,6 @@ Stone
 default:stone
 default:cobble
 default:stonebrick
-default:stone_block
 default:mossycobble
 
 default:sandstone
@@ -109,13 +108,6 @@ default:grass_3
 default:grass_4
 default:grass_5
 
-Corals
-------
-
-default:coral_brown
-default:coral_orange
-default:coral_skeleton
-
 Liquids
 -------
 (1. Source 2. Flowing)
@@ -185,14 +177,6 @@ minetest.register_node("default:stonebrick", {
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_stone_brick.png"},
-	is_ground_content = false,
-	groups = {cracky = 2, stone = 1},
-	sounds = default.node_sound_stone_defaults(),
-})
-
-minetest.register_node("default:stone_block", {
-	description = "Stone Block",
-	tiles = {"default_stone_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, stone = 1},
 	sounds = default.node_sound_stone_defaults(),
@@ -1015,34 +999,6 @@ for i = 2, 5 do
 		},
 	})
 end
-
-
---
--- Corals
---
-
-minetest.register_node("default:coral_brown", {
-	description = "Brown Coral",
-	tiles = {"default_coral_brown.png"},
-	groups = {cracky = 3},
-	drop = "default:coral_skeleton",
-	sounds = default.node_sound_stone_defaults(),
-})
-
-minetest.register_node("default:coral_orange", {
-	description = "Orange Coral",
-	tiles = {"default_coral_orange.png"},
-	groups = {cracky = 3},
-	drop = "default:coral_skeleton",
-	sounds = default.node_sound_stone_defaults(),
-})
-
-minetest.register_node("default:coral_skeleton", {
-	description = "Coral Skeleton",
-	tiles = {"default_coral_skeleton.png"},
-	groups = {cracky = 3},
-	sounds = default.node_sound_stone_defaults(),
-})
 
 
 --

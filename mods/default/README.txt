@@ -88,7 +88,6 @@ paramat (CC BY-SA 3.0):
   default_sandstone_brick.png
   default_stone_brick.png
   default_sandstone_block.png
-  default_stone_block.png
   default_grass.png
   default_grass_side.png
   default_silver_sand.png
@@ -147,11 +146,6 @@ asl97 (CC BY-SA 3.0):
 
 KevDoy (CC BY-SA 3.0)
   heart.png
-
-Pithydon (CC BY-SA 3.0)
-  default_coral_brown.png
-  default_coral_orange.png
-  default_coral_skeleton.png
 
 Ferk (CC0 1.0)
   default_item_smoke.png

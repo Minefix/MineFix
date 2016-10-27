@@ -101,3 +101,21 @@ minetest.register_craft({
 		{"minefix_nodes:granite", "minefix_nodes:granite"}
 	}
 })
+
+-- Haybale
+
+minetest.register_craft({
+	output = "minefix_nodes:haybale 1",
+	recipe = {
+		{"farming:wheat", "farming:wheat", "farming:wheat"},
+		{"farming:wheat", "farming:wheat", "farming:wheat"},
+		{"farming:wheat", "farming:wheat", "farming:wheat"},
+	}
+})
+
+minetest.register_craft({
+	output = "farming:wheat 9",
+	recipe = {
+		{"minefix_nodes:haybale"},
+	}
+})
