@@ -165,14 +165,22 @@ minetest.register_node("minefix_nether:fence_nether_brick", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
--- Register stair and slab
+-- Register stairs and slabs
 
-stairs.register_stair_and_slab(
-	"minefix_nether_brick",
+minefix_nodes.register_slab(
+	"netherbrick",
+	"minefix_nether:brick",
+	"Nether Brick Slab",
+	{"minefix_nether_brick.png"},
+	{cracky = 3},
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair(
+	"nether_brick",
 	"minefix_nether:brick",
 	{cracky = 2, level = 2},
 	{"minefix_nether_brick.png"},
 	"Nether brick stairs",
-	"Nether brick slab",
 	default.node_sound_stone_defaults()
 )

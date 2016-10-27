@@ -1,4 +1,4 @@
 stairs
 default
+minefix_nodes
 fire
-moreblocks?
