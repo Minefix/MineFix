@@ -15,5 +15,5 @@ minetest.register_craftitem(":fire:flint_and_steel", {
 
 minetest.register_craftitem("minefix_nether:brick_bar", {
 	description = "Nether Brick",
-	inventory_image = "nether_brick_bar.png"
+	inventory_image = "minefix_nether_brick_bar.png"
 })
