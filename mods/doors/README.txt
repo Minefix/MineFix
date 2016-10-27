@@ -6,7 +6,7 @@ Authors of source code
 ----------------------
 Originally by PilzAdam (MIT)
 
-Modified by BlockMen (MIT): Added sounds, glass doors (glass, obsidian glass) and trapdoor.
+Modified by BlockMen (MIT): Added sounds, and trapdoor.
 
 Modified by sofar (sofar@foo-projects.org) (MIT):
 Added Iron trapdoor.
@@ -28,26 +28,11 @@ Following textures created by Fernando Zapata (CC BY-SA 3.0):
 
 Following textures created by BlockMen (CC BY-SA 3.0):
   door_trapdoor.png
-  door_obsidian_glass_side.png
-
-Following textures created by celeron55 (CC BY-SA 3.0):
-  door_glass_a.png
-  door_glass_b.png
-
-Following textures created by PenguinDad (CC BY-SA 4.0):
-  door_glass.png
-  door_obsidian_glass.png
 
 Following textures created by sofar (CC-BY-SA-3.0):
   doors_trapdoor_iron.png
   doors_trapdoor_iron_side.png
   door_trapdoor_side.png
-
-Obsidian door textures by red-001 based on textures by Pilzadam and BlockMen (CC BY-SA 3.0):
-  door_obsidian_glass.png
-
-Glass door textures by red-001 based on textures by celeron55 (CC BY-SA 3.0):
-  door_glass.png
 
 All other textures (created by PilzAdam) (CC BY-SA 3.0):
 
@@ -80,5 +65,3 @@ Iron door sounds open & close (CC-BY-3.0) by HazMatt
   - http://www.freesound.org/people/HazMattt/sounds/187283/
   doors_iron_door_open.ogg
   doors_iron_door_close.ogg
-doors_glass_door_open.ogg, doors_glass_door_close.ogg:
-  https://www.freesound.org/people/SkeetMasterFunk69/sounds/235546/ (CC0 1.0)
