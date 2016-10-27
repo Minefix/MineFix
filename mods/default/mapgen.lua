@@ -715,7 +715,7 @@ function default.register_biomes()
 	minetest.register_biome({
 		name = "savanna",
 		--node_dust = "",
-		node_top = "default:dirt_with_dry_grass",
+		node_top = "default:dirt_with_grass",
 		depth_top = 1,
 		node_filler = "default:dirt",
 		depth_filler = 1,
@@ -974,26 +974,6 @@ local function register_grass_decoration(offset, scale, length)
 	})
 end
 
-local function register_dry_grass_decoration(offset, scale, length)
-	minetest.register_decoration({
-		deco_type = "simple",
-		place_on = {"default:dirt_with_dry_grass"},
-		sidelen = 16,
-		noise_params = {
-			offset = offset,
-			scale = scale,
-			spread = {x = 200, y = 200, z = 200},
-			seed = 329,
-			octaves = 3,
-			persist = 0.6
-		},
-		biomes = {"savanna"},
-		y_min = 1,
-		y_max = 31000,
-		decoration = "default:dry_grass_"..length,
-	})
-end
-
 function default.register_decorations()
 	minetest.clear_registered_decorations()
 
@@ -1150,7 +1130,7 @@ function default.register_decorations()
 
 	minetest.register_decoration({
 		deco_type = "schematic",
-		place_on = {"default:dirt_with_dry_grass"},
+		place_on = {"default:dirt_with_grass"},
 		sidelen = 16,
 		noise_params = {
 			offset = 0,
@@ -1170,7 +1150,7 @@ function default.register_decorations()
 
 	minetest.register_decoration({
 		deco_type = "schematic",
-		place_on = {"default:dirt_with_dry_grass"},
+		place_on = {"default:dirt_with_grass"},
 		sidelen = 16,
 		noise_params = {
 			offset = 0,
@@ -1322,14 +1302,6 @@ function default.register_decorations()
 	register_grass_decoration(0,      0.06,  3)
 	register_grass_decoration(0.015,  0.045, 2)
 	register_grass_decoration(0.03,   0.03,  1)
-
-	-- Dry grasses
-
-	register_dry_grass_decoration(0.01, 0.05,  5)
-	register_dry_grass_decoration(0.03, 0.03,  4)
-	register_dry_grass_decoration(0.05, 0.01,  3)
-	register_dry_grass_decoration(0.07, -0.01, 2)
-	register_dry_grass_decoration(0.09, -0.03, 1)
 
 	-- Junglegrass
 
