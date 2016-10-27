@@ -287,26 +287,6 @@ stairs.register_stair_and_slab(
 )
 
 stairs.register_stair_and_slab(
-	"aspen_wood",
-	"default:aspen_wood",
-	{choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
-	{"default_aspen_wood.png"},
-	"Aspen Wood Stair",
-	"Aspen Wood Slab",
-	default.node_sound_wood_defaults()
-)
-
-stairs.register_stair_and_slab(
-	"stone",
-	"default:stone",
-	{cracky = 3},
-	{"default_stone.png"},
-	"Stone Stair",
-	"Stone Slab",
-	default.node_sound_stone_defaults()
-)
-
-stairs.register_stair_and_slab(
 	"cobble",
 	"default:cobble",
 	{cracky = 3},
@@ -317,32 +297,12 @@ stairs.register_stair_and_slab(
 )
 
 stairs.register_stair_and_slab(
-	"mossycobble",
-	nil,
-	{cracky = 3},
-	{"default_mossycobble.png"},
-	"Mossy Cobblestone Stair",
-	"Mossy Cobblestone Slab",
-	default.node_sound_stone_defaults()
-)
-
-stairs.register_stair_and_slab(
 	"stonebrick",
 	"default:stonebrick",
 	{cracky = 2},
 	{"default_stone_brick.png"},
 	"Stone Brick Stair",
 	"Stone Brick Slab",
-	default.node_sound_stone_defaults()
-)
-
-stairs.register_stair_and_slab(
-	"stone_block",
-	"default:stone_block",
-	{cracky = 2},
-	{"default_stone_block.png"},
-	"Stone Block Stair",
-	"Stone Block Slab",
 	default.node_sound_stone_defaults()
 )
 
