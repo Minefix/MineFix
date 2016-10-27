@@ -89,9 +89,6 @@ paramat (CC BY-SA 3.0):
   default_stone_brick.png
   default_sandstone_block.png
   default_stone_block.png
-  default_dry_grass.png
-  default_dry_grass_side.png
-  default_dry_grass_*.png
   default_grass.png
   default_grass_side.png
   default_silver_sand.png

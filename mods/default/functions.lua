@@ -350,7 +350,6 @@ minetest.register_abm({
 	neighbors = {
 		"air",
 		"group:grass",
-		"group:dry_grass",
 		"default:snow",
 	},
 	interval = 6,
@@ -380,8 +379,6 @@ minetest.register_abm({
 		-- Most likely case first
 		elseif minetest.get_item_group(name, "grass") ~= 0 then
 			minetest.set_node(pos, {name = "default:dirt_with_grass"})
-		elseif minetest.get_item_group(name, "dry_grass") ~= 0 then
-			minetest.set_node(pos, {name = "default:dirt_with_dry_grass"})
 		end
 	end
 })
