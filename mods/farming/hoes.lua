@@ -19,6 +19,13 @@ farming.register_hoe(":farming:hoe_iron", {
 	material = "default:iron_ingot"
 })
 
+farming.register_hoe(":farming:hoe_gold", {
+	description = "Golden Hoe",
+	inventory_image = "farming_tool_goldhoe.png",
+	max_uses = 30,
+	material = "default:gold"
+})
+
 farming.register_hoe(":farming:hoe_diamond", {
 	description = "Diamond Hoe",
 	inventory_image = "farming_tool_diamondhoe.png",

@@ -1,6 +1,36 @@
 -- mods/default/crafting.lua
 
 minetest.register_craft({
+	type = "shapeless",
+	output = "default:andesite 2",
+	recipe = {"default:diorite", "default:cobble"}
+})
+
+minetest.register_craft({
+	output = "default:andesite_polished 4",
+	recipe = {
+		{"default:andesite", "default:andesite"},
+		{"default:andesite", "default:andesite"}
+	}
+})
+
+minetest.register_craft({
+	output = "default:diorite_polished 4",
+	recipe = {
+		{"default:diorite", "default:diorite"},
+		{"default:diorite", "default:diorite"}
+	}
+})
+
+minetest.register_craft({
+	output = "default:granite_polished 4",
+	recipe = {
+		{"default:granite", "default:granite"},
+		{"default:granite", "default:granite"}
+	}
+})
+
+minetest.register_craft({
 	output = 'default:wood 4',
 	recipe = {
 		{'default:tree'},
@@ -87,6 +117,15 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = "default:pick_gold",
+	recipe = {
+		{"default:gold_ingot", "default:gold_ingot", "default:gold_ingot"},
+		{"", "default:stick", ""},
+		{"", "default:stick", ""}
+	}
+})
+
+minetest.register_craft({
 	output = 'default:pick_diamond',
 	recipe = {
 		{'default:diamond', 'default:diamond', 'default:diamond'},
@@ -119,6 +158,15 @@ minetest.register_craft({
 		{'default:iron_ingot'},
 		{'group:stick'},
 		{'group:stick'},
+	}
+})
+
+minetest.register_craft({
+	output = "default:shovel_gold",
+	recipe = {
+		{"default:gold_ingot"},
+		{"default:stick"},
+		{"default:stick"}
 	}
 })
 
@@ -159,6 +207,15 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = "default:sword_gold",
+	recipe = {
+		{"default:gold_ingot"},
+		{"default:gold_ingot"},
+		{"default:stick"}
+	}
+})
+
+minetest.register_craft({
 	output = 'default:axe_diamond',
 	recipe = {
 		{'default:diamond', 'default:diamond'},
@@ -191,6 +248,24 @@ minetest.register_craft({
 		{'default:iron_ingot', 'default:iron_ingot'},
 		{'group:stick', 'default:iron_ingot'},
 		{'group:stick', ''},
+	}
+})
+
+minetest.register_craft({
+	output = "default:axe_gold",
+	recipe = {
+		{"default:gold_ingot", "default:gold_ingot"},
+		{"default:gold_ingot", "default:stick"},
+		{"", "default:stick"}
+	}
+})
+
+minetest.register_craft({
+	output = "default:axe_gold",
+	recipe = {
+		{"default:gold_ingot", "default:gold_ingot"},
+		{"default:stick", "default:gold_ingot"},
+		{"default:stick", ""}
 	}
 })
 
@@ -499,6 +574,13 @@ minetest.register_craft({
 	type = "cooking",
 	output = "default:clay_brick",
 	recipe = "default:clay_lump",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "default:gold_ingot",
+	recipe = "default:stone_with_gold",
+	cooktime = 10,
 })
 
 --

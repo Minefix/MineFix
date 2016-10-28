@@ -41,6 +41,22 @@ minetest.register_node("farming:soil_wet", {
 	}
 })
 
+minetest.register_node("farming:haybale", {
+	description = "Haybale",
+	tiles = {
+		"farming_haybale_top.png",
+		"farming_haybale_top.png",
+		"farming_haybale_side.png",
+		"farming_haybale_side.png",
+		"farming_haybale_side.png",
+		"farming_haybale_side.png"
+	},
+	is_ground_content = false,
+	groups = {snappy=3, flammable=4, fall_damage_add_percent=-30},
+	sounds = default.node_sound_leaves_defaults(),
+	category = "building"
+})
+
 minetest.register_abm({
 	label = "Farming soil",
 	nodenames = {"group:field"},

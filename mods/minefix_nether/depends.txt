@@ -1,4 +1,0 @@
-stairs
-default
-minefix_nodes
-fire

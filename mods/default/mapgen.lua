@@ -34,7 +34,6 @@ minetest.register_alias("mapgen_mossycobble", "default:mossycobble")
 minetest.register_alias("mapgen_sandstonebrick", "default:sandstonebrick")
 minetest.register_alias("mapgen_stair_sandstonebrick", "stairs:stair_sandstonebrick")
 
-
 --
 -- Register ores
 --
@@ -269,6 +268,36 @@ function default.register_ores()
 		y_min          = -31000,
 		y_max          = -256,
 	})
+
+	minetest.register_ore({
+		ore_type = "blob",
+		ore = "default:andesite",
+		wherein = {"default:stone"},
+		clust_scarcity= 16 * 16 * 16,
+		clust_size = 5,
+		y_min = -31000,
+		y_max = 31000,
+	});
+
+	minetest.register_ore({
+		ore_type = "blob",
+		ore = "default:diorite",
+		wherein = {"default:stone"},
+		clust_scarcity= 16 * 16 * 16,
+		clust_size = 5,
+		y_min = -31000,
+		y_max = 31000,
+	});
+
+	minetest.register_ore({
+		ore_type = "blob",
+		ore = "default:granite",
+		wherein = {"default:stone"},
+		clust_scarcity= 16 * 16 * 16,
+		clust_size = 5,
+		y_min = -31000,
+		y_max = 31000,
+	});
 end
 
 

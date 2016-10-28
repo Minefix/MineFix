@@ -60,6 +60,19 @@ minetest.register_tool("default:pick_iron", {
 		damage_groups = {fleshy=4},
 	},
 })
+minetest.register_tool("default:pick_gold", {
+	description = "Golden pickaxe",
+	inventory_image = "default_tool_goldpick.png",
+	tool_capabilities = {
+		full_punch_interval = 0.9,
+		max_drop_level = 3,
+		groupcaps = {
+			cracky = {times = {[1] = 2.4, [2] = 1.2, [3] = 0.6}, uses = 20, maxlevel = 3},
+		},
+		damage_groups = {fleshy = 5},
+	},
+	category = "tools"
+})
 minetest.register_tool("default:pick_diamond", {
 	description = "Diamond Pickaxe",
 	category = "tools",
@@ -120,6 +133,19 @@ minetest.register_tool("default:shovel_iron", {
 		damage_groups = {fleshy=3},
 	},
 })
+minetest.register_tool("default:shovel_gold", {
+	description = "Golden shovel",
+	inventory_image = "default_tool_goldshovel.png",
+	tool_capabilities = {
+		full_punch_interval = 1.0,
+		max_drop_level = 3,
+		groupcaps = {
+			crumbly = {times = {[1] = 1.2, [2] = 0.6, [3] = 0.3}, uses = 20, maxlevel = 3},
+		},
+		damage_groups = {fleshy = 4},
+	},
+	category = "tools"
+})
 minetest.register_tool("default:shovel_diamond", {
 	description = "Diamond Shovel",
 	category = "tools",
@@ -178,6 +204,19 @@ minetest.register_tool("default:axe_iron", {
 		damage_groups = {fleshy=4},
 	},
 })
+minetest.register_tool("default:axe_gold", {
+	description = "Golden axe",
+	inventory_image = "default_tool_goldaxe.png",
+	tool_capabilities = {
+		full_punch_interval = 0.9,
+		max_drop_level = 3,
+		groupcaps = {
+			choppy = {times = {[1] = 2.2, [2] = 1.0, [3] = 0.6}, uses = 20, maxlevel = 3},
+		},
+		damage_groups = {fleshy = 6},
+	},
+	category = "tools"
+})
 minetest.register_tool("default:axe_diamond", {
 	description = "Diamond Axe",
 	category = "tools",
@@ -234,6 +273,19 @@ minetest.register_tool("default:sword_iron", {
 		},
 		damage_groups = {fleshy=6},
 	}
+})
+minetest.register_tool("default:sword_gold", {
+	description = "Golden sword",
+	inventory_image = "default_tool_goldsword.png",
+	tool_capabilities = {
+		full_punch_interval = 0.7,
+		max_drop_level = 1,
+		groupcaps = {
+			snappy = {times = {[1] = 2.0, [2] = 1.0, [3] = 0.35}, uses = 30, maxlevel = 3},
+		},
+		damage_groups = {fleshy = 7},
+	},
+	category = "tools"
 })
 minetest.register_tool("default:sword_diamond", {
 	description = "Diamond Sword",
