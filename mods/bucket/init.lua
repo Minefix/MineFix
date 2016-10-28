@@ -52,6 +52,7 @@ function bucket.register_liquid(source, flowing, itemname, inventory_image, name
 
 	if itemname ~= nil then
 		minetest.register_craftitem(itemname, {
+			category = "miscellaneous",
 			description = name,
 			inventory_image = inventory_image,
 			stack_max = 1,
@@ -111,6 +112,7 @@ end
 
 minetest.register_craftitem("bucket:bucket_empty", {
 	description = "Empty Bucket",
+	category = "miscellaneous",
 	inventory_image = "bucket.png",
 	stack_max = 16,
 	liquids_pointable = true,

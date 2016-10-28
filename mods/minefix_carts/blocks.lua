@@ -1,5 +1,6 @@
 minetest.register_node("minefix_carts:rail", {
 	description = "Rail",
+	category = "transportation",
 	drawtype = "raillike",
 	tiles = {"minefix_carts_rail.png", "minefix_carts_rail_curved.png", "minefix_carts_rail_t_junction.png", "minefix_carts_rail_crossing.png"},
 	inventory_image = "minefix_carts_rail.png",

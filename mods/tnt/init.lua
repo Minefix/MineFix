@@ -392,6 +392,7 @@ minetest.register_node("tnt:boom", {
 
 minetest.register_node("tnt:gunpowder", {
 	description = "Gun Powder",
+	category = "materials",
 	drawtype = "raillike",
 	paramtype = "light",
 	is_ground_content = false,
@@ -536,6 +537,7 @@ function tnt.register_tnt(def)
 	if enable_tnt then
 		minetest.register_node(":" .. name, {
 			description = def.description,
+			category = "redstone",
 			tiles = {tnt_top, tnt_bottom, tnt_side},
 			is_ground_content = false,
 			groups = {dig_immediate = 2, tnt = 1},

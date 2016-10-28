@@ -9,6 +9,7 @@ minetest.register_tool("minefix_nodes:pick_gold", {
 		},
 		damage_groups = {fleshy = 5},
 	},
+	category = "tools"
 })
 
 minetest.register_tool("minefix_nodes:shovel_gold", {
@@ -22,6 +23,7 @@ minetest.register_tool("minefix_nodes:shovel_gold", {
 		},
 		damage_groups = {fleshy = 4},
 	},
+	category = "tools"
 })
 
 minetest.register_tool("minefix_nodes:axe_gold", {
@@ -35,6 +37,7 @@ minetest.register_tool("minefix_nodes:axe_gold", {
 		},
 		damage_groups = {fleshy = 6},
 	},
+	category = "tools"
 })
 
 minetest.register_tool("minefix_nodes:sword_gold", {
@@ -48,6 +51,7 @@ minetest.register_tool("minefix_nodes:sword_gold", {
 		},
 		damage_groups = {fleshy = 7},
 	},
+	category = "tools"
 })
 
 minetest.register_tool("minefix_nodes:hoe_gold", {
@@ -61,4 +65,5 @@ minetest.register_tool("minefix_nodes:hoe_gold", {
 		},
 		damage_groups = {fleshy = 5},
 	},
+	category = "tools"
 })

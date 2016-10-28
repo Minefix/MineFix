@@ -89,6 +89,7 @@ farming.register_hoe = function(name, def)
 	-- Register the tool
 	minetest.register_tool(name, {
 		description = def.description,
+		category = "tools",
 		inventory_image = def.inventory_image,
 		on_use = function(itemstack, user, pointed_thing)
 			return farming.hoe_on_use(itemstack, user, pointed_thing, def.max_uses)
@@ -275,6 +276,7 @@ farming.register_plant = function(name, def)
 	end
 	minetest.register_node(":" .. mname .. ":seed_" .. pname, {
 		description = def.description,
+		category = "materials",
 		tiles = {def.inventory_image},
 		inventory_image = def.inventory_image,
 		wield_image = def.inventory_image,

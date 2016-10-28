@@ -4,6 +4,7 @@ walls.register = function(wall_name, wall_desc, wall_texture, wall_mat, wall_sou
 	-- inventory node, and pole-type wall start item
 	minetest.register_node(wall_name, {
 		description = wall_desc,
+		category = "building",
 		drawtype = "nodebox",
 		node_box = {
 			type = "connected",

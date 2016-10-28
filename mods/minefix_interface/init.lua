@@ -3,20 +3,20 @@ minefix_interface.creative_inventory_size = 0
 
 local creative_mode = minetest.setting_getbool("creative_mode")
 
-local buttonOffset = {}
-
-buttonOffset["building"] = "-0.29, -0.2"
-buttonOffset["decoration"] = "0.98, -0.2"
-buttonOffset["redstone"] = "2.23, -0.2"
-buttonOffset["transportation"] = "3.495, -0.2"
-buttonOffset["miscellaneous"] = "4.75, -0.2"
-buttonOffset["search"] = "8.99, -0.2"
-buttonOffset["foodstuff"] = "-0.29, 8.12"
-buttonOffset["tools"] = "0.98, 8.12"
-buttonOffset["combat"] = "2.23, 8.12"
-buttonOffset["brewing"] = "3.495, 8.12"
-buttonOffset["materials"] = "4.75, 8.12"
-buttonOffset["inventory"] = "8.99, 8.12"
+local buttonOffset = {
+	["building"] = "-0.29, -0.2",
+	["decoration"] = "0.98, -0.2",
+	["redstone"] = "2.23, -0.2",
+	["transportation"] = "3.495, -0.2",
+	["miscellaneous"] = "4.75, -0.2",
+	["search"] = "8.99, -0.2",
+	["foodstuff"] = "-0.29, 8.12",
+	["tools"] = "0.98, 8.12",
+	["combat"] = "2.23, 8.12",
+	["brewing"] = "3.495, 8.12",
+	["materials"] = "4.75, 8.12",
+	["inventory"] = "8.99, 8.12"
+}
 
 minetest.register_on_joinplayer(function(player)
 	if not creative_mode then
@@ -154,65 +154,44 @@ minefix_interface.fillCreativeInventory = function(player, tab)
 	local creative_list = {};
 	for name, def in pairs(minetest.registered_items) do
 		if not def.groups.not_in_creative_inventory or def.groups.not_in_creative_inventory ~= 0 then
-			if tab == "building" then --We put everything in here for now
-				table.insert(creative_list, name)
+			if tab == "building" then
+				if def.category == "building" then
+					table.insert(creative_list, name)
+				end
 			elseif tab == "decoration" then
-				if def.drawtype == "plantlike" or def.drawtype == "allfaces_optional" then
+				if def.category == "decoration" then
 					table.insert(creative_list, name)
 				end
 			elseif tab == "redstone" then
+				if def.category == "redstone" then
+					table.insert(creative_list, name)
+				end
 			elseif tab == "transportation" then
-				if string.find(string.lower(def.name), "rail")
-				or string.find(string.lower(def.description), "rail")
-				or string.find(string.lower(def.name), "cart")
-				or string.find(string.lower(def.description), "cart")
-				or string.find(string.lower(def.description), "boat") then
+				if def.category == "transportation" then
 					table.insert(creative_list, name)
 				end
 			elseif tab == "miscellaneous" then
-				if def.drawtype == nil and def.tool_capabilities == nil
-				and not string.find(string.lower(def.description), "ingot")
-				and not string.find(string.lower(def.description), "lump")
-				and not string.find(string.lower(def.description), "dye")
-				and not string.find(string.lower(def.name), "diamond")
-				and not string.find(string.lower(def.name), "mese")
-				and not string.find(string.lower(def.name), "obsidian")
-				and not string.find(string.lower(def.description), "clay") then
+				if def.category == "miscellaneous" then
 					table.insert(creative_list, name)
 				end
 			elseif tab == "foodstuff" then
-				if def.groups.food ~= nil
-				or string.find(string.lower(def.description), "apple")
-				or string.find(string.lower(def.description), "bread") then
+				if def.category == "foodstuff" then
 					table.insert(creative_list, name)
 				end
 			elseif tab == "tools" then
-				if def.tool_capabilities ~= nil
-				and not string.find(string.lower(def.description), "sword") then
+				if def.category == "tools" then
 					table.insert(creative_list, name)
 				end
 			elseif tab == "combat" then
-				if def.tool_capabilities ~= nil and (string.find(string.lower(def.description), "sword")
-				or string.find(string.lower(def.name), "armor")
-				or string.find(string.lower(def.description), "bow")
-				or string.find(string.lower(def.description), "arrow"))
-				or string.find(string.lower(def.name), "armor") then
+				if def.category == "combat" then
 					table.insert(creative_list, name)
 				end
 			elseif tab == "brewing" then
+				if def.category == "brewing" then
+					table.insert(creative_list, name)
+				end
 			elseif tab == "materials" then
-				if def.drawtype == nil
-				and def.tool_capabilities == nil
-				and (string.find(string.lower(def.description), "ingot")
-				or string.find(string.lower(def.description), "lump")
-				or string.find(string.lower(def.description), "dye")
-				or string.find(string.lower(def.name), "diamond")
-				or string.find(string.lower(def.name), "mese")
-				or string.find(string.lower(def.name), "obsidian")
-				or string.find(string.lower(def.description), "clay")
-				or string.find(string.lower(def.description), "stick")
-				or string.find(string.lower(def.description), "flint")
-				or string.find(string.lower(def.description), "seed")) then
+				if def.category == "materials" then
 					table.insert(creative_list, name)
 				end
 			end

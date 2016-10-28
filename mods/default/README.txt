@@ -90,7 +90,6 @@ paramat (CC BY-SA 3.0):
   default_sandstone_block.png
   default_grass.png
   default_grass_side.png
-  default_silver_sand.png
 
 BlockMen (CC BY-SA 3.0):
   default_wood.png

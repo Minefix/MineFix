@@ -25,6 +25,7 @@ for i = 1, #dyes do
 
 	minetest.register_node("wool:" .. name, {
 		description = desc .. " Wool",
+		category = "building",
 		tiles = {"wool_" .. name .. ".png"},
 		is_ground_content = false,
 		groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
@@ -38,10 +39,3 @@ for i = 1, #dyes do
 		recipe = {"group:dye," .. craft_color_group, "group:wool"},
 	}
 end
-
-
--- legacy
-
--- Backwards compatibility with jordach's 16-color wool mod
-minetest.register_alias("wool:dark_blue", "wool:blue")
-minetest.register_alias("wool:gold", "wool:yellow")

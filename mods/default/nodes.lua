@@ -33,11 +33,9 @@ Soft / Non-Stone
 
 default:dirt
 default:dirt_with_grass
-default:dirt_with_grass_footsteps
 default:dirt_with_snow
 
 default:sand
-default:silver_sand
 
 default:gravel
 
@@ -142,11 +140,6 @@ default:glass
 
 default:brick
 
-Misc
-----
-
-default:cloud
-
 --]]
 
 --
@@ -155,6 +148,7 @@ default:cloud
 
 minetest.register_node("default:stone", {
 	description = "Stone",
+	category = "building",
 	tiles = {"default_stone.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:cobble',
@@ -164,6 +158,7 @@ minetest.register_node("default:stone", {
 
 minetest.register_node("default:cobble", {
 	description = "Cobblestone",
+	category = "building",
 	tiles = {"default_cobble.png"},
 	is_ground_content = false,
 	groups = {cracky = 3, stone = 2},
@@ -172,6 +167,7 @@ minetest.register_node("default:cobble", {
 
 minetest.register_node("default:stonebrick", {
 	description = "Stone Brick",
+	category = "building",
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_stone_brick.png"},
@@ -182,15 +178,16 @@ minetest.register_node("default:stonebrick", {
 
 minetest.register_node("default:mossycobble", {
 	description = "Mossy Cobblestone",
+	category = "building",
 	tiles = {"default_mossycobble.png"},
 	is_ground_content = false,
 	groups = {cracky = 3, stone = 1},
 	sounds = default.node_sound_stone_defaults(),
 })
 
-
 minetest.register_node("default:sandstone", {
 	description = "Sandstone",
+	category = "building",
 	tiles = {"default_sandstone.png"},
 	groups = {crumbly = 1, cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
@@ -198,6 +195,7 @@ minetest.register_node("default:sandstone", {
 
 minetest.register_node("default:sandstonebrick", {
 	description = "Sandstone Brick",
+	category = "building",
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_sandstone_brick.png"},
@@ -208,15 +206,16 @@ minetest.register_node("default:sandstonebrick", {
 
 minetest.register_node("default:sandstone_block", {
 	description = "Sandstone Block",
+	category = "building",
 	tiles = {"default_sandstone_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 2},
 	sounds = default.node_sound_stone_defaults(),
 })
 
-
 minetest.register_node("default:obsidian", {
 	description = "Obsidian",
+	category = "building",
 	tiles = {"default_obsidian.png"},
 	sounds = default.node_sound_stone_defaults(),
 	groups = {cracky = 1, level = 2},
@@ -228,6 +227,7 @@ minetest.register_node("default:obsidian", {
 
 minetest.register_node("default:dirt", {
 	description = "Dirt",
+	category = "building",
 	tiles = {"default_dirt.png"},
 	groups = {crumbly = 3, soil = 1},
 	sounds = default.node_sound_dirt_defaults(),
@@ -235,6 +235,7 @@ minetest.register_node("default:dirt", {
 
 minetest.register_node("default:dirt_with_grass", {
 	description = "Dirt with Grass",
+	category = "building",
 	tiles = {"default_grass.png", "default_dirt.png",
 		{name = "default_dirt.png^default_grass_side.png",
 			tileable_vertical = false}},
@@ -245,20 +246,9 @@ minetest.register_node("default:dirt_with_grass", {
 	}),
 })
 
-minetest.register_node("default:dirt_with_grass_footsteps", {
-	description = "Dirt with Grass and Footsteps",
-	tiles = {"default_grass.png^default_footprint.png", "default_dirt.png",
-		{name = "default_dirt.png^default_grass_side.png",
-			tileable_vertical = false}},
-	groups = {crumbly = 3, soil = 1, not_in_creative_inventory = 1},
-	drop = 'default:dirt',
-	sounds = default.node_sound_dirt_defaults({
-		footstep = {name = "default_grass_footstep", gain = 0.25},
-	}),
-})
-
 minetest.register_node("default:dirt_with_snow", {
 	description = "Dirt with Snow",
+	category = "building",
 	tiles = {"default_snow.png", "default_dirt.png",
 		{name = "default_dirt.png^default_snow_side.png",
 			tileable_vertical = false}},
@@ -271,14 +261,8 @@ minetest.register_node("default:dirt_with_snow", {
 
 minetest.register_node("default:sand", {
 	description = "Sand",
+	category = "building",
 	tiles = {"default_sand.png"},
-	groups = {crumbly = 3, falling_node = 1, sand = 1},
-	sounds = default.node_sound_sand_defaults(),
-})
-
-minetest.register_node("default:silver_sand", {
-	description = "Silver Sand",
-	tiles = {"default_silver_sand.png"},
 	groups = {crumbly = 3, falling_node = 1, sand = 1},
 	sounds = default.node_sound_sand_defaults(),
 })
@@ -286,6 +270,7 @@ minetest.register_node("default:silver_sand", {
 
 minetest.register_node("default:gravel", {
 	description = "Gravel",
+	category = "building",
 	tiles = {"default_gravel.png"},
 	groups = {crumbly = 2, falling_node = 1},
 	sounds = default.node_sound_gravel_defaults(),
@@ -300,6 +285,7 @@ minetest.register_node("default:gravel", {
 
 minetest.register_node("default:clay", {
 	description = "Clay",
+	category = "building",
 	tiles = {"default_clay.png"},
 	groups = {crumbly = 3},
 	drop = 'default:clay_lump 4',
@@ -309,6 +295,7 @@ minetest.register_node("default:clay", {
 
 minetest.register_node("default:snow", {
 	description = "Snow",
+	category = "building",
 	tiles = {"default_snow.png"},
 	inventory_image = "default_snowball.png",
 	wield_image = "default_snowball.png",
@@ -340,6 +327,7 @@ minetest.register_node("default:snow", {
 
 minetest.register_node("default:snowblock", {
 	description = "Snow Block",
+	category = "building",
 	tiles = {"default_snow.png"},
 	groups = {crumbly = 3, puts_out_fire = 1},
 	sounds = default.node_sound_dirt_defaults({
@@ -351,6 +339,7 @@ minetest.register_node("default:snowblock", {
 
 minetest.register_node("default:ice", {
 	description = "Ice",
+	category = "building",
 	tiles = {"default_ice.png"},
 	is_ground_content = false,
 	paramtype = "light",
@@ -364,6 +353,7 @@ minetest.register_node("default:ice", {
 
 minetest.register_node("default:tree", {
 	description = "Tree",
+	category = "building",
 	tiles = {"default_tree_top.png", "default_tree_top.png", "default_tree.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
@@ -375,6 +365,7 @@ minetest.register_node("default:tree", {
 
 minetest.register_node("default:wood", {
 	description = "Wooden Planks",
+	category = "building",
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_wood.png"},
@@ -385,6 +376,7 @@ minetest.register_node("default:wood", {
 
 minetest.register_node("default:sapling", {
 	description = "Sapling",
+	category = "decoration",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
 	tiles = {"default_sapling.png"},
@@ -422,6 +414,7 @@ minetest.register_node("default:sapling", {
 
 minetest.register_node("default:leaves", {
 	description = "Leaves",
+	category = "decoration",
 	drawtype = "allfaces_optional",
 	waving = 1,
 	visual_scale = 1.3,
@@ -452,6 +445,7 @@ minetest.register_node("default:leaves", {
 
 minetest.register_node("default:apple", {
 	description = "Apple",
+	category = "foodstuff",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
 	tiles = {"default_apple.png"},
@@ -479,6 +473,7 @@ minetest.register_node("default:apple", {
 
 minetest.register_node("default:jungletree", {
 	description = "Jungle Tree",
+	category = "building",
 	tiles = {"default_jungletree_top.png", "default_jungletree_top.png",
 		"default_jungletree.png"},
 	paramtype2 = "facedir",
@@ -491,6 +486,7 @@ minetest.register_node("default:jungletree", {
 
 minetest.register_node("default:junglewood", {
 	description = "Junglewood Planks",
+	category = "building",
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_junglewood.png"},
@@ -501,6 +497,7 @@ minetest.register_node("default:junglewood", {
 
 minetest.register_node("default:jungleleaves", {
 	description = "Jungle Leaves",
+	category = "decoration",
 	drawtype = "allfaces_optional",
 	waving = 1,
 	visual_scale = 1.3,
@@ -523,6 +520,7 @@ minetest.register_node("default:jungleleaves", {
 
 minetest.register_node("default:junglesapling", {
 	description = "Jungle Sapling",
+	category = "decoration",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
 	tiles = {"default_junglesapling.png"},
@@ -561,6 +559,7 @@ minetest.register_node("default:junglesapling", {
 
 minetest.register_node("default:pine_tree", {
 	description = "Pine Tree",
+	category = "building",
 	tiles = {"default_pine_tree_top.png", "default_pine_tree_top.png",
 		"default_pine_tree.png"},
 	paramtype2 = "facedir",
@@ -573,6 +572,7 @@ minetest.register_node("default:pine_tree", {
 
 minetest.register_node("default:pine_wood", {
 	description = "Pine Wood Planks",
+	category = "building",
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_pine_wood.png"},
@@ -583,6 +583,7 @@ minetest.register_node("default:pine_wood", {
 
 minetest.register_node("default:pine_needles",{
 	description = "Pine Needles",
+	category = "decoration",
 	drawtype = "allfaces_optional",
 	visual_scale = 1.3,
 	tiles = {"default_pine_needles.png"},
@@ -604,6 +605,7 @@ minetest.register_node("default:pine_needles",{
 
 minetest.register_node("default:pine_sapling", {
 	description = "Pine Sapling",
+	category = "decoration",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
 	tiles = {"default_pine_sapling.png"},
@@ -642,6 +644,7 @@ minetest.register_node("default:pine_sapling", {
 
 minetest.register_node("default:acacia_tree", {
 	description = "Acacia Tree",
+	category = "building",
 	tiles = {"default_acacia_tree_top.png", "default_acacia_tree_top.png",
 		"default_acacia_tree.png"},
 	paramtype2 = "facedir",
@@ -654,6 +657,7 @@ minetest.register_node("default:acacia_tree", {
 
 minetest.register_node("default:acacia_wood", {
 	description = "Acacia Wood Planks",
+	category = "building",
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_acacia_wood.png"},
@@ -664,6 +668,7 @@ minetest.register_node("default:acacia_wood", {
 
 minetest.register_node("default:acacia_leaves", {
 	description = "Acacia Leaves",
+	category = "decoration",
 	drawtype = "allfaces_optional",
 	visual_scale = 1.3,
 	tiles = {"default_acacia_leaves.png"},
@@ -685,6 +690,7 @@ minetest.register_node("default:acacia_leaves", {
 
 minetest.register_node("default:acacia_sapling", {
 	description = "Acacia Tree Sapling",
+	category = "decoration",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
 	tiles = {"default_acacia_sapling.png"},
@@ -722,6 +728,7 @@ minetest.register_node("default:acacia_sapling", {
 
 minetest.register_node("default:aspen_tree", {
 	description = "Aspen Tree",
+	category = "building",
 	tiles = {"default_aspen_tree_top.png", "default_aspen_tree_top.png",
 		"default_aspen_tree.png"},
 	paramtype2 = "facedir",
@@ -734,6 +741,7 @@ minetest.register_node("default:aspen_tree", {
 
 minetest.register_node("default:aspen_wood", {
 	description = "Aspen Wood Planks",
+	category = "building",
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_aspen_wood.png"},
@@ -744,6 +752,7 @@ minetest.register_node("default:aspen_wood", {
 
 minetest.register_node("default:aspen_leaves", {
 	description = "Aspen Leaves",
+	category = "decoration",
 	drawtype = "allfaces_optional",
 	visual_scale = 1.3,
 	tiles = {"default_aspen_leaves.png"},
@@ -765,6 +774,7 @@ minetest.register_node("default:aspen_leaves", {
 
 minetest.register_node("default:aspen_sapling", {
 	description = "Aspen Tree Sapling",
+	category = "decoration",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
 	tiles = {"default_aspen_sapling.png"},
@@ -806,6 +816,7 @@ minetest.register_node("default:aspen_sapling", {
 
 minetest.register_node("default:stone_with_coal", {
 	description = "Coal Ore",
+	category = "building",
 	tiles = {"default_stone.png^default_mineral_coal.png"},
 	groups = {cracky = 3},
 	drop = 'default:coal_lump',
@@ -814,6 +825,7 @@ minetest.register_node("default:stone_with_coal", {
 
 minetest.register_node("default:coalblock", {
 	description = "Coal Block",
+	category = "building",
 	tiles = {"default_coal_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 3},
@@ -823,6 +835,7 @@ minetest.register_node("default:coalblock", {
 
 minetest.register_node("default:stone_with_iron", {
 	description = "Iron Ore",
+	category = "building",
 	tiles = {"default_stone.png^default_mineral_iron.png"},
 	groups = {cracky = 2},
 	drop = 'default:iron_ingot',
@@ -831,6 +844,7 @@ minetest.register_node("default:stone_with_iron", {
 
 minetest.register_node("default:ironblock", {
 	description = "Iron Block",
+	category = "building",
 	tiles = {"default_iron_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 1, level = 2},
@@ -840,6 +854,7 @@ minetest.register_node("default:ironblock", {
 
 minetest.register_node("default:stone_with_gold", {
 	description = "Gold Ore",
+	category = "building",
 	tiles = {"default_stone.png^default_mineral_gold.png"},
 	groups = {cracky = 2},
 	drop = "default:stone_with_gold",
@@ -848,6 +863,7 @@ minetest.register_node("default:stone_with_gold", {
 
 minetest.register_node("default:goldblock", {
 	description = "Gold Block",
+	category = "building",
 	tiles = {"default_gold_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 1},
@@ -857,6 +873,7 @@ minetest.register_node("default:goldblock", {
 
 minetest.register_node("default:stone_with_diamond", {
 	description = "Diamond Ore",
+	category = "building",
 	tiles = {"default_stone.png^default_mineral_diamond.png"},
 	groups = {cracky = 1},
 	drop = "default:diamond",
@@ -865,6 +882,7 @@ minetest.register_node("default:stone_with_diamond", {
 
 minetest.register_node("default:diamondblock", {
 	description = "Diamond Block",
+	category = "building",
 	tiles = {"default_diamond_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 1, level = 3},
@@ -877,6 +895,7 @@ minetest.register_node("default:diamondblock", {
 
 minetest.register_node("default:cactus", {
 	description = "Cactus",
+	category = "decoration",
 	tiles = {"default_cactus_top.png", "default_cactus_top.png",
 		"default_cactus_side.png"},
 	paramtype2 = "facedir",
@@ -887,6 +906,7 @@ minetest.register_node("default:cactus", {
 
 minetest.register_node("default:papyrus", {
 	description = "Papyrus",
+	category = "materials",
 	drawtype = "plantlike",
 	tiles = {"default_papyrus.png"},
 	inventory_image = "default_papyrus.png",
@@ -908,6 +928,7 @@ minetest.register_node("default:papyrus", {
 
 minetest.register_node("default:dry_shrub", {
 	description = "Dry Shrub",
+	category = "decoration",
 	drawtype = "plantlike",
 	waving = 1,
 	visual_scale = 1.0,
@@ -928,6 +949,7 @@ minetest.register_node("default:dry_shrub", {
 
 minetest.register_node("default:junglegrass", {
 	description = "Jungle Grass",
+	category = "decoration",
 	drawtype = "plantlike",
 	waving = 1,
 	visual_scale = 1.3,
@@ -949,6 +971,7 @@ minetest.register_node("default:junglegrass", {
 
 minetest.register_node("default:grass_1", {
 	description = "Grass",
+	category = "decoration",
 	drawtype = "plantlike",
 	waving = 1,
 	tiles = {"default_grass_1.png"},
@@ -1192,6 +1215,7 @@ minetest.register_node("default:lava_flowing", {
 
 minetest.register_node("default:torch", {
 	description = "Torch",
+	category = "decoration",
 	drawtype = "torchlike",
 	tiles = {
 		{
@@ -1286,6 +1310,7 @@ end
 
 minetest.register_node("default:chest", {
 	description = "Chest",
+	category = "decoration",
 	tiles = {"default_chest_top.png", "default_chest_top.png", "default_chest_side.png",
 		"default_chest_side.png", "default_chest_side.png", "default_chest_front.png"},
 	paramtype2 = "facedir",
@@ -1331,6 +1356,7 @@ minetest.register_node("default:chest", {
 
 minetest.register_node("default:chest_locked", {
 	description = "Locked Chest",
+	category = "redstone",
 	tiles = {"default_chest_top.png", "default_chest_top.png", "default_chest_side.png",
 		"default_chest_side.png", "default_chest_side.png", "default_chest_lock.png"},
 	paramtype2 = "facedir",
@@ -1417,6 +1443,7 @@ local bookshelf_formspec =
 
 minetest.register_node("default:bookshelf", {
 	description = "Bookshelf",
+	category = "building",
 	tiles = {"default_wood.png", "default_wood.png", "default_wood.png",
 		"default_wood.png", "default_bookshelf.png", "default_bookshelf.png"},
 	paramtype2 = "facedir",
@@ -1464,6 +1491,7 @@ minetest.register_node("default:bookshelf", {
 local function register_sign(material, desc, def)
 	minetest.register_node("default:sign_wall_" .. material, {
 		description = desc .. " Sign",
+		category = "decoration",
 		drawtype = "nodebox",
 		tiles = {"default_sign_wall_" .. material .. ".png"},
 		inventory_image = "default_sign_" .. material .. ".png",
@@ -1512,6 +1540,7 @@ register_sign("wood", "Wooden", {
 
 minetest.register_node("default:ladder_wood", {
 	description = "Wooden Ladder",
+	category = "decoration",
 	drawtype = "signlike",
 	tiles = {"default_ladder_wood.png"},
 	inventory_image = "default_ladder_wood.png",
@@ -1585,6 +1614,7 @@ default.register_fence("default:fence_aspen_wood", {
 
 minetest.register_node("default:glass", {
 	description = "Glass",
+	category = "building",
 	drawtype = "glasslike_framed_optional",
 	tiles = {"default_glass.png", "default_glass_detail.png"},
 	paramtype = "light",
@@ -1597,23 +1627,11 @@ minetest.register_node("default:glass", {
 
 minetest.register_node("default:brick", {
 	description = "Brick Block",
+	category = "building",
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_brick.png"},
 	is_ground_content = false,
 	groups = {cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
-})
-
-
---
--- Misc
---
-
-minetest.register_node("default:cloud", {
-	description = "Cloud",
-	tiles = {"default_cloud.png"},
-	is_ground_content = false,
-	sounds = default.node_sound_defaults(),
-	groups = {not_in_creative_inventory = 1},
 })

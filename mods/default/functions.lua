@@ -244,6 +244,7 @@ function default.register_fence(name, def)
 			"^default_fence_overlay.png^[makealpha:255,126,126"
 	-- Allow almost everything to be overridden
 	local default_fields = {
+		category = "decoration",
 		paramtype = "light",
 		drawtype = "nodebox",
 		node_box = {

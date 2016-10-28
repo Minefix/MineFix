@@ -49,6 +49,7 @@ minetest.register_node("minefix_nether:portal", {
 
 minetest.register_node(":default:obsidian", {
 	description = "Obsidian",
+	category = "building",
 	tiles = {"default_obsidian.png"},
 	is_ground_content = false,
 	sounds = default.node_sound_stone_defaults(),
@@ -111,6 +112,7 @@ minetest.register_node(":default:obsidian", {
 
 minetest.register_node("minefix_nether:rack", {
 	description = "Netherrack",
+	category = "building",
 	tiles = {"minefix_nether_rack.png"},
 	is_ground_content = true,
 	groups = {cracky = 3, level = 2},
@@ -119,6 +121,7 @@ minetest.register_node("minefix_nether:rack", {
 
 minetest.register_node("minefix_nether:sand_soul", {
 	description = "Soul sand",
+	category = "building",
 	tiles = {"minefix_nether_sand_soul.png"},
 	is_ground_content = true,
 	groups = {crumbly = 3, level = 2, falling_node = 1},
@@ -129,6 +132,7 @@ minetest.register_node("minefix_nether:sand_soul", {
 
 minetest.register_node("minefix_nether:glowstone", {
 	description = "Glowstone",
+	category = "building",
 	tiles = {"minefix_nether_glowstone.png"},
 	is_ground_content = true,
 	light_source = 14,
@@ -139,6 +143,7 @@ minetest.register_node("minefix_nether:glowstone", {
 
 minetest.register_node("minefix_nether:brick", {
 	description = "Nether Brick",
+	category = "building",
 	tiles = {"minefix_nether_brick.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, level = 2},
@@ -150,6 +155,7 @@ local fence_texture =
 
 minetest.register_node("minefix_nether:fence_nether_brick", {
 	description = "Nether Brick Fence",
+	category = "decoration",
 	drawtype = "fencelike",
 	tiles = {"minefix_nether_brick.png"},
 	inventory_image = fence_texture,

@@ -4,7 +4,7 @@
 --
 
 local function active_formspec(fuel_percent, item_percent)
-	local formspec = 
+	local formspec =
 		"size[8,8.5]"..
 		default.gui_bg..
 		default.gui_bg_img..
@@ -230,6 +230,7 @@ end
 
 minetest.register_node("default:furnace", {
 	description = "Furnace",
+	category = "decoration",
 	tiles = {
 		"default_furnace_top.png", "default_furnace_bottom.png",
 		"default_furnace_side.png", "default_furnace_side.png",
@@ -310,4 +311,3 @@ minetest.register_node("default:furnace_active", {
 	allow_metadata_inventory_move = allow_metadata_inventory_move,
 	allow_metadata_inventory_take = allow_metadata_inventory_take,
 })
-

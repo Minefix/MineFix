@@ -56,6 +56,7 @@ for _, row in ipairs(dyes) do
 	minetest.register_craftitem(item_name, {
 		inventory_image = item_image,
 		description = description,
+		category = "materials",
 		groups = groups
 	})
 	minetest.register_craft({
