@@ -85,6 +85,7 @@ minetest.register_node("fire:permanent_flame", {
 
 minetest.register_tool("fire:flint_and_steel", {
 	description = "Flint and Steel",
+	category = "tools",
 	inventory_image = "fire_flint_steel.png",
 	on_use = function(itemstack, user, pointed_thing)
 		itemstack:add_wear(1000)

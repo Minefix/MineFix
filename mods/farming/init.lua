@@ -18,11 +18,13 @@ farming.register_plant("farming:wheat", {
 })
 minetest.register_craftitem("farming:flour", {
 	description = "Flour",
+	category = "foodstuff",
 	inventory_image = "farming_flour.png",
 })
 
 minetest.register_craftitem("farming:bread", {
 	description = "Bread",
+	category = "foodstuff",
 	inventory_image = "farming_bread.png",
 	on_use = minetest.item_eat(5),
 })

@@ -1,5 +1,6 @@
 minetest.register_craftitem(":fire:flint_and_steel", {
 	description = "Flint and Steel",
+	category = "tools",
 	inventory_image = "fire_flint_steel.png",
 	on_place = function(stack, _, pt)
 		if pt.under and minetest.get_node(pt.under).name == "default:obsidian" then
@@ -15,5 +16,6 @@ minetest.register_craftitem(":fire:flint_and_steel", {
 
 minetest.register_craftitem("minefix_nether:brick_bar", {
 	description = "Nether Brick",
+	category = "materials",
 	inventory_image = "minefix_nether_brick_bar.png"
 })

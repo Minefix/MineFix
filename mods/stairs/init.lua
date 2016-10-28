@@ -25,6 +25,7 @@ function stairs.register_stair(subname, recipeitem, groups, images, description,
 	groups.stair = 1
 	minetest.register_node(":stairs:stair_" .. subname, {
 		description = description,
+		category = "building",
 		drawtype = "mesh",
 		mesh = "stairs_stair.obj",
 		tiles = images,

@@ -16,6 +16,7 @@ minetest.override_item("default:dirt_with_grass", {
 
 minetest.register_node("farming:soil", {
 	description = "Soil",
+	category = "building",
 	tiles = {"default_dirt.png^farming_soil.png", "default_dirt.png"},
 	drop = "default:dirt",
 	groups = {crumbly=3, not_in_creative_inventory=1, soil=2, grassland = 1, field = 1},

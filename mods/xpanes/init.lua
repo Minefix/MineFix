@@ -93,6 +93,7 @@ function xpanes.register_pane(name, def)
 	flatgroups.pane = 1
 	minetest.register_node(":xpanes:" .. name .. "_flat", {
 		description = def.description,
+		category = "decoration",
 		drawtype = "nodebox",
 		paramtype = "light",
 		is_ground_content = false,

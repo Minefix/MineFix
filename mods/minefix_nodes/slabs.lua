@@ -39,6 +39,7 @@ function minefix_nodes.register_slab(type, material, description, images, groups
 			type = "fixed",
 			fixed = {-0.5, -0.5, -0.5, 0.5, 0, 0.5},
 		},
+		category = "building",
 		on_place = function(itemstack, player, targetblock)
 			local under = minetest.get_node(targetblock.under)
 			local wield_item = itemstack:get_name()

@@ -2,12 +2,14 @@
 
 minetest.register_craftitem("default:stick", {
 	description = "Stick",
+	category = "materials",
 	inventory_image = "default_stick.png",
 	groups = {stick = 1},
 })
 
 minetest.register_craftitem("default:paper", {
 	description = "Paper",
+	category = "miscellaneous",
 	inventory_image = "default_paper.png",
 })
 
@@ -131,6 +133,7 @@ end)
 
 minetest.register_craftitem("default:book", {
 	description = "Book",
+	category = "miscellaneous",
 	inventory_image = "default_book.png",
 	groups = {book = 1},
 	on_use = book_on_use,
@@ -138,6 +141,7 @@ minetest.register_craftitem("default:book", {
 
 minetest.register_craftitem("default:book_written", {
 	description = "Book With Text",
+	category = "miscellaneous",
 	inventory_image = "default_book_written.png",
 	groups = {book = 1, not_in_creative_inventory = 1},
 	stack_max = 1,
@@ -175,30 +179,37 @@ end)
 
 minetest.register_craftitem("default:coal_lump", {
 	description = "Coal Lump",
+	category = "materials",
 	inventory_image = "default_coal_lump.png",
 	groups = {coal = 1}
 })
 
 minetest.register_craftitem("default:diamond", {
 	description = "Diamond",
+	category = "materials",
 	inventory_image = "default_diamond.png",
 })
 
 minetest.register_craftitem("default:clay_lump", {
 	description = "Clay Lump",
+	category = "materials",
 	inventory_image = "default_clay_lump.png",
 })
 
 minetest.register_craftitem("default:gold_ingot", {
 	description = "Gold Ingot",
+	category = "materials",
 	inventory_image = "default_gold_ingot.png"
 })
+
 minetest.register_craftitem("default:clay_brick", {
 	description = "Clay Brick",
+	category = "materials",
 	inventory_image = "default_clay_brick.png",
 })
 
 minetest.register_craftitem("default:flint", {
 	description = "Flint",
+	category = "materials",
 	inventory_image = "default_flint.png"
 })

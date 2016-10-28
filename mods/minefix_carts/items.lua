@@ -1,6 +1,7 @@
 minetest.register_entity("minefix_carts:cart", cart)
 minetest.register_craftitem("minefix_carts:cart", {
 	description = "Minecart",
+	category = "transportation",
 	inventory_image = minetest.inventorycube("minefix_cart_top.png", "minefix_cart_side.png", "minefix_cart_side.png"),
 	wield_image = "minefix_cart_side.png",
 

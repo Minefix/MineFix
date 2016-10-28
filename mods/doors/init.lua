@@ -246,6 +246,7 @@ function doors.register(name, def)
 
 	minetest.register_craftitem(":" .. name, {
 		description = def.description,
+		category = "redstone",
 		inventory_image = def.inventory_image,
 
 		on_place = function(itemstack, placer, pointed_thing)
