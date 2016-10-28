@@ -433,21 +433,6 @@ doors.register("door_iron", {
 		}
 })
 
-doors.register("door_glass", {
-		tiles = {"doors_door_glass.png"},
-		description = "Glass Door",
-		inventory_image = "doors_item_glass.png",
-		groups = {cracky=3, oddly_breakable_by_hand=3},
-		sounds = default.node_sound_glass_defaults(),
-		sound_open = "doors_glass_door_open",
-		sound_close = "doors_glass_door_close",
-		recipe = {
-			{"default:glass", "default:glass"},
-			{"default:glass", "default:glass"},
-			{"default:glass", "default:glass"},
-		}
-})
-
 -- Capture mods using the old API as best as possible.
 function doors.register_door(name, def)
 	if def.only_placer_can_open then
