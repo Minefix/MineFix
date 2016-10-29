@@ -1003,6 +1003,34 @@ minetest.register_node("default:diamondblock", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
+
+minetest.register_node("default:stone_with_lapis", {
+	description = "Lapis Lazuli Ore",
+	category = "building",
+	tiles = {"default_stone.png^default_mineral_lapis.png"},
+	groups = {cracky = 2},
+	drop = {
+		max_items = 8,
+		items = {
+			{items = {'default:dye_blue 4'}}, --Make sure it will always drop something
+			{items = {'default:dye_blue 5'}, rarity = 5},
+			{items = {'default:dye_blue 6'}, rarity = 6},
+			{items = {'default:dye_blue 7'}, rarity = 7},
+			{items = {'default:dye_blue 8'}, rarity = 8},
+		}
+	},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("default:lapisblock", {
+	description = "Lapis Lazuli Block",
+	category = "building",
+	tiles = {"default_lapis_block.png"},
+	is_ground_content = false,
+	groups = {cracky = 1, level = 3},
+	sounds = default.node_sound_stone_defaults(),
+})
+
 --
 -- Plantlife (non-cubic)
 --

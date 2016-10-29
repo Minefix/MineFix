@@ -430,6 +430,22 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = 'default:lapisblock',
+	recipe = {
+		{'default:dye_blue', 'default:dye_blue', 'default:dye_blue'},
+		{'default:dye_blue', 'default:dye_blue', 'default:dye_blue'},
+		{'default:dye_blue', 'default:dye_blue', 'default:dye_blue'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:lapis 9',
+	recipe = {
+		{'default:lapisblock'},
+	}
+})
+
+minetest.register_craft({
 	output = 'default:sandstone',
 	recipe = {
 		{'group:sand', 'group:sand'},
@@ -555,6 +571,47 @@ minetest.register_craft({
 	}
 })
 
+
+-- Dyes
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'default:dye_light_blue 2',
+	recipe = {'default:dye_blue', 'default:dye_white'},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'default:dye_purple 2',
+	recipe = {'default:dye_blue', 'default:dye_red'},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'default:dye_magenta 3',
+	recipe = {'default:dye_blue', 'default:dye_pink', 'default:dye_red'},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'default:dye_magenta 4',
+	recipe = {'default:dye_blue', 'default:dye_green', 'default:dye_red', 'default:dye_red'},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'default:dye_cyan 2',
+	recipe = {'default:dye_blue', 'default:dye_green'},
+})
+
+-- Wool
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'default:wool_blue',
+	recipe = {'default:wool_white', 'default:dye_blue'},
+})
+
 --
 -- Crafting (tool repair)
 --
@@ -606,6 +663,13 @@ minetest.register_craft({
 	type = "cooking",
 	output = "default:gold_ingot",
 	recipe = "default:stone_with_gold",
+	cooktime = 10,
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "default:lapis",
+	recipe = "default:stone_with_lapis",
 	cooktime = 10,
 })
 

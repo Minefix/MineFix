@@ -268,6 +268,41 @@ function default.register_ores()
 		y_max          = -256,
 	})
 
+	-- Lapis
+
+	minetest.register_ore({
+		ore_type       = "scatter",
+		ore            = "default:stone_with_lapis",
+		wherein        = "default:stone",
+		clust_scarcity = 15 * 15 * 15,
+		clust_num_ores = 5,
+		clust_size     = 3,
+		y_min          = 1025,
+		y_max          = 31000,
+	})
+
+	minetest.register_ore({
+		ore_type       = "scatter",
+		ore            = "default:stone_with_lapis",
+		wherein        = "default:stone",
+		clust_scarcity = 17 * 17 * 17,
+		clust_num_ores = 5,
+		clust_size     = 3,
+		y_min          = -31,
+		y_max          = -255,
+	})
+
+	minetest.register_ore({
+		ore_type       = "scatter",
+		ore            = "default:stone_with_lapis",
+		wherein        = "default:stone",
+		clust_scarcity = 16 * 16 * 16,
+		clust_num_ores = 5,
+		clust_size     = 3,
+		y_min          = -31000,
+		y_max          = -256,
+	})
+
 	minetest.register_ore({
 		ore_type = "blob",
 		ore = "default:andesite",
