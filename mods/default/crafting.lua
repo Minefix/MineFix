@@ -73,6 +73,15 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = 'default:apple_gold 1',
+	recipe = {
+		{'default:gold_ingot', 'default:gold_ingot', 'default:gold_ingot'},
+		{'default:gold_ingot', 'default:apple', 'default:gold_ingot'},
+		{'default:gold_ingot', 'default:gold_ingot', 'default:gold_ingot'}
+	}
+})
+
+minetest.register_craft({
 	output = 'default:sign_wall_wood 3',
 	recipe = {
 		{'group:wood', 'group:wood', 'group:wood'},

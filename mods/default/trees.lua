@@ -102,7 +102,6 @@ local function add_trunk_and_leaves(data, a, pos, tree_cid, leaves_cid,
 	local x, y, z = pos.x, pos.y, pos.z
 	local c_air = minetest.get_content_id("air")
 	local c_ignore = minetest.get_content_id("ignore")
-	local c_apple = minetest.get_content_id("default:apple")
 
 	-- Trunk
 	data[a:index(x, y, z)] = tree_cid -- Force-place lowest trunk node to replace sapling

@@ -19,7 +19,6 @@ minetest.register_alias("mapgen_sandstone", "default:sandstone")
 
 minetest.register_alias("mapgen_tree", "default:wood_oak")
 minetest.register_alias("mapgen_leaves", "default:leaves_oak")
---minetest.register_alias("mapgen_apple", "default:apple")
 minetest.register_alias("mapgen_jungletree", "default:wood_jungle")
 minetest.register_alias("mapgen_jungleleaves", "default:leaves_jungle")
 minetest.register_alias("mapgen_junglegrass", "default:junglegrass")

@@ -26,6 +26,7 @@ The following is a list of required textures and their file names:
 * default_leaves_darkoak.png
 * default_leaves_darkoak_simple.png
 * default_sapling_darkoak.png
+* default_apple_gold.png
 
 ## Authors of source code
 
