@@ -1,0 +1,2 @@
+A mod that adds a jukebox with nine different discs. There is also an API to register new discs.
+
