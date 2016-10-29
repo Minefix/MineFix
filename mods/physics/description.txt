@@ -1,0 +1,1 @@
+Tweaks gravity while jumping to be more like minecraft.
