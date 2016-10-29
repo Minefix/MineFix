@@ -7,7 +7,7 @@ beds.register_bed("beds:bed", {
 	tiles = {
 		bottom = {
 			"beds_bed_top_bottom.png^[transformR90",
-			"default_wood.png",
+			"default_planks_oak.png",
 			"beds_bed_side_bottom_r.png",
 			"beds_bed_side_bottom_r.png^[transformfx",
 			"beds_transparent.png",
@@ -15,7 +15,7 @@ beds.register_bed("beds:bed", {
 		},
 		top = {
 			"beds_bed_top_top.png^[transformR90",
-			"default_wood.png",
+			"default_planks_oak.png",
 			"beds_bed_side_top_r.png",
 			"beds_bed_side_top_r.png^[transformfx",
 			"beds_bed_side_top.png",
@@ -23,12 +23,22 @@ beds.register_bed("beds:bed", {
 		}
 	},
 	nodebox = {
-		bottom = {-0.5, -0.5, -0.5, 0.5, 0.06, 0.5},
-		top = {-0.5, -0.5, -0.5, 0.5, 0.06, 0.5},
+		bottom = {
+			{0.3125, -0.5, -0.5, 0.5, -0.3125, -0.3125}, -- FeetRightBottom
+			{-0.5, -0.3125, -0.5, 0.5, -0.1875, 0.5}, -- Bottom
+			{-0.5, -0.1875, -0.5, 0.5, 0.0625, 0.5}, -- Top
+			{-0.5, -0.5, -0.5, -0.3125, -0.3125, -0.3125}, -- FeetLeftBottom
+		},
+		top = {
+			{0.3125, -0.5, 0.3125, 0.5, -0.3125, 0.5}, -- FeetRightTop
+			{-0.5, -0.3125, -0.5, 0.5, -0.1875, 0.5}, -- Bottom
+			{-0.5, -0.1875, -0.5, 0.5, 0.0625, 0.5}, -- Top
+			{-0.5, -0.5, 0.3125, -0.3125, -0.3125, 0.5}, -- FeetLeftTop
+		},
 	},
 	selectionbox = {-0.5, -0.5, -0.5, 0.5, 0.06, 1.5},
 	recipe = {
-		{"wool:red", "wool:red", "wool:white"},
+		{"default:wool_red", "default:wool_red", "default:wool_white"},
 		{"group:wood", "group:wood", "group:wood"}
 	},
 })

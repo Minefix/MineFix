@@ -50,31 +50,31 @@ Trees
 -----
 (1. Trunk 2. Fabricated trunk 3. Leaves 4. Sapling 5. Fruits)
 
-default:tree
-default:wood
-default:leaves
-default:sapling
+default:wood_oak
+default:planks_oak
+default:leaves_oak
+default:sapling_oak
 default:apple
 
-default:jungletree
-default:junglewood
-default:jungleleaves
-default:junglesapling
+default:wood_birch
+default:planks_birch
+default:leaves_birch
+default:sapling_birch
 
-default:pine_tree
-default:pine_wood
-default:pine_needles
-default:pine_sapling
+default:wood_jungle
+default:planks_jungle
+default:leaves_jungle
+default:sapling_jungle
 
-default:acacia_tree
-default:acacia_wood
-default:acacia_leaves
-default:acacia_sapling
+default:wood_spruce
+default:planks_spruce
+default:leaves_spruce
+default:sapling_spruce
 
-default:aspen_tree
-default:aspen_wood
-default:aspen_leaves
-default:aspen_sapling
+default:wood_acacia
+default:planks_acacia
+default:leaves_acacia
+default:sapling_acacia
 
 Ores
 ----
@@ -401,10 +401,10 @@ minetest.register_node("default:ice", {
 -- Trees
 --
 
-minetest.register_node("default:tree", {
-	description = "Tree",
+minetest.register_node("default:wood_oak", {
+	description = "Oak Wood",
 	category = "building",
-	tiles = {"default_tree_top.png", "default_tree_top.png", "default_tree.png"},
+	tiles = {"default_wood_oak_top.png", "default_wood_oak_top.png", "default_wood_oak.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
 	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
@@ -413,25 +413,25 @@ minetest.register_node("default:tree", {
 	on_place = minetest.rotate_node
 })
 
-minetest.register_node("default:wood", {
-	description = "Wooden Planks",
+minetest.register_node("default:planks_oak", {
+	description = "Oak Wood Planks",
 	category = "building",
 	paramtype2 = "facedir",
 	place_param2 = 0,
-	tiles = {"default_wood.png"},
+	tiles = {"default_planks_oak.png"},
 	is_ground_content = false,
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("default:sapling", {
-	description = "Sapling",
+minetest.register_node("default:sapling_oak", {
+	description = "Oak Sapling",
 	category = "decoration",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
-	tiles = {"default_sapling.png"},
-	inventory_image = "default_sapling.png",
-	wield_image = "default_sapling.png",
+	tiles = {"default_sapling_oak.png"},
+	inventory_image = "default_sapling_oak.png",
+	wield_image = "default_sapling_oak.png",
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
@@ -450,7 +450,7 @@ minetest.register_node("default:sapling", {
 
 	on_place = function(itemstack, placer, pointed_thing)
 		itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
-			"default:sapling",
+			"default:sapling_oak",
 			-- minp, maxp to be checked, relative to sapling pos
 			-- minp_relative.y = 1 because sapling pos has been checked
 			{x = -2, y = 1, z = -2},
@@ -462,14 +462,14 @@ minetest.register_node("default:sapling", {
 	end,
 })
 
-minetest.register_node("default:leaves", {
-	description = "Leaves",
+minetest.register_node("default:leaves_oak", {
+	description = "Oak Leaves",
 	category = "decoration",
 	drawtype = "allfaces_optional",
 	waving = 1,
 	visual_scale = 1.3,
-	tiles = {"default_leaves.png"},
-	special_tiles = {"default_leaves_simple.png"},
+	tiles = {"default_leaves_oak.png"},
+	special_tiles = {"default_leaves_oak_simple.png"},
 	paramtype = "light",
 	is_ground_content = false,
 	groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
@@ -477,14 +477,9 @@ minetest.register_node("default:leaves", {
 		max_items = 1,
 		items = {
 			{
-				-- player will get sapling with 1/20 chance
-				items = {'default:sapling'},
+				-- player will get sapling with 1/20 (5%) chance
+				items = {'default:sapling_oak'},
 				rarity = 20,
-			},
-			{
-				-- player will get leaves only if he get no saplings,
-				-- this is because max_items is 1
-				items = {'default:leaves'},
 			}
 		}
 	},
@@ -492,6 +487,94 @@ minetest.register_node("default:leaves", {
 
 	after_place_node = default.after_place_leaves,
 })
+
+minetest.register_node("default:wood_darkoak", {
+	description = "Dark Oak Wood",
+	category = "building",
+	tiles = {"default_wood_darkoak_top.png", "default_wood_darkoak_top.png", "default_wood_darkoak.png"},
+	paramtype2 = "facedir",
+	is_ground_content = false,
+	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+	sounds = default.node_sound_wood_defaults(),
+
+	on_place = minetest.rotate_node
+})
+
+minetest.register_node("default:planks_darkoak", {
+	description = "Dark Oak Wood Planks",
+	category = "building",
+	paramtype2 = "facedir",
+	place_param2 = 0,
+	tiles = {"default_planks_darkoak.png"},
+	is_ground_content = false,
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+minetest.register_node("default:sapling_darkoak", {
+	description = "Dark Oak Sapling",
+	category = "decoration",
+	drawtype = "plantlike",
+	visual_scale = 1.0,
+	tiles = {"default_sapling_darkoak.png"},
+	inventory_image = "default_sapling_darkoak.png",
+	wield_image = "default_sapling_darkoak.png",
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	on_timer = default.grow_sapling,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
+	},
+	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
+		attached_node = 1, sapling = 1},
+	sounds = default.node_sound_leaves_defaults(),
+
+	on_construct = function(pos)
+		minetest.get_node_timer(pos):start(math.random(2400,4800))
+	end,
+
+	on_place = function(itemstack, placer, pointed_thing)
+		itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
+			"default:sapling_darkoak",
+			-- minp, maxp to be checked, relative to sapling pos
+			-- minp_relative.y = 1 because sapling pos has been checked
+			{x = -2, y = 1, z = -2},
+			{x = 2, y = 6, z = 2},
+			-- maximum interval of interior volume check
+			4)
+
+		return itemstack
+	end,
+})
+
+minetest.register_node("default:leaves_darkoak", {
+	description = "Dark Oak Leaves",
+	category = "decoration",
+	drawtype = "allfaces_optional",
+	waving = 1,
+	visual_scale = 1.3,
+	tiles = {"default_leaves_darkoak.png"},
+	special_tiles = {"default_leaves_darkoak_simple.png"},
+	paramtype = "light",
+	is_ground_content = false,
+	groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+	drop = {
+		max_items = 1,
+		items = {
+			{
+				-- player will get sapling with 1/20 (5%) chance
+				items = {'default:sapling_darkoak'},
+				rarity = 20,
+			}
+		}
+	},
+	sounds = default.node_sound_leaves_defaults(),
+
+	after_place_node = default.after_place_leaves,
+})
+
 
 minetest.register_node("default:apple", {
 	description = "Apple",
@@ -521,11 +604,10 @@ minetest.register_node("default:apple", {
 })
 
 
-minetest.register_node("default:jungletree", {
-	description = "Jungle Tree",
+minetest.register_node("default:wood_jungle", {
+	description = "Jungle Wood",
 	category = "building",
-	tiles = {"default_jungletree_top.png", "default_jungletree_top.png",
-		"default_jungletree.png"},
+	tiles = {"default_wood_jungle_top.png", "default_wood_jungle_top.png", "default_wood_jungle.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
 	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
@@ -534,33 +616,36 @@ minetest.register_node("default:jungletree", {
 	on_place = minetest.rotate_node
 })
 
-minetest.register_node("default:junglewood", {
-	description = "Junglewood Planks",
+minetest.register_node("default:planks_jungle", {
+	description = "Jungle Wood Planks",
 	category = "building",
 	paramtype2 = "facedir",
 	place_param2 = 0,
-	tiles = {"default_junglewood.png"},
+	tiles = {"default_planks_jungle.png"},
 	is_ground_content = false,
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("default:jungleleaves", {
+minetest.register_node("default:leaves_jungle", {
 	description = "Jungle Leaves",
 	category = "decoration",
 	drawtype = "allfaces_optional",
 	waving = 1,
 	visual_scale = 1.3,
-	tiles = {"default_jungleleaves.png"},
-	special_tiles = {"default_jungleleaves_simple.png"},
+	tiles = {"default_leaves_jungle.png"},
+	special_tiles = {"default_leaves_jungle_simple.png"},
 	paramtype = "light",
 	is_ground_content = false,
 	groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
 	drop = {
 		max_items = 1,
 		items = {
-			{items = {'default:junglesapling'}, rarity = 20},
-			{items = {'default:jungleleaves'}}
+			{
+				-- player will get sapling with 1/40 (2.5%) chance
+				items = {'default:sapling_jungle'},
+				rarity = 40
+			}
 		}
 	},
 	sounds = default.node_sound_leaves_defaults(),
@@ -568,14 +653,14 @@ minetest.register_node("default:jungleleaves", {
 	after_place_node = default.after_place_leaves,
 })
 
-minetest.register_node("default:junglesapling", {
+minetest.register_node("default:sapling_jungle", {
 	description = "Jungle Sapling",
 	category = "decoration",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
-	tiles = {"default_junglesapling.png"},
-	inventory_image = "default_junglesapling.png",
-	wield_image = "default_junglesapling.png",
+	tiles = {"default_sapling_jungle.png"},
+	inventory_image = "default_sapling_jungle.png",
+	wield_image = "default_sapling_jungle.png",
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
@@ -594,7 +679,7 @@ minetest.register_node("default:junglesapling", {
 
 	on_place = function(itemstack, placer, pointed_thing)
 		itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
-			"default:junglesapling",
+			"default:sapling_jungle",
 			-- minp, maxp to be checked, relative to sapling pos
 			-- minp_relative.y = 1 because sapling pos has been checked
 			{x = -2, y = 1, z = -2},
@@ -607,11 +692,10 @@ minetest.register_node("default:junglesapling", {
 })
 
 
-minetest.register_node("default:pine_tree", {
-	description = "Pine Tree",
+minetest.register_node("default:wood_spruce", {
+	description = "Spruce Wood",
 	category = "building",
-	tiles = {"default_pine_tree_top.png", "default_pine_tree_top.png",
-		"default_pine_tree.png"},
+	tiles = {"default_wood_spruce_top.png", "default_wood_spruce_top.png", "default_wood_spruce.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
 	groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 3},
@@ -620,23 +704,23 @@ minetest.register_node("default:pine_tree", {
 	on_place = minetest.rotate_node
 })
 
-minetest.register_node("default:pine_wood", {
-	description = "Pine Wood Planks",
+minetest.register_node("default:planks_spruce", {
+	description = "Spruce Wood Planks",
 	category = "building",
 	paramtype2 = "facedir",
 	place_param2 = 0,
-	tiles = {"default_pine_wood.png"},
+	tiles = {"default_planks_spruce.png"},
 	is_ground_content = false,
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("default:pine_needles",{
-	description = "Pine Needles",
+minetest.register_node("default:leaves_spruce",{
+	description = "Spruce Leaves",
 	category = "decoration",
 	drawtype = "allfaces_optional",
 	visual_scale = 1.3,
-	tiles = {"default_pine_needles.png"},
+	tiles = {"default_leaves_spruce.png"},
 	waving = 1,
 	paramtype = "light",
 	is_ground_content = false,
@@ -644,8 +728,7 @@ minetest.register_node("default:pine_needles",{
 	drop = {
 		max_items = 1,
 		items = {
-			{items = {"default:pine_sapling"}, rarity = 20},
-			{items = {"default:pine_needles"}}
+			{items = {"default:sapling_spruce"}, rarity = 20},
 		}
 	},
 	sounds = default.node_sound_leaves_defaults(),
@@ -653,14 +736,14 @@ minetest.register_node("default:pine_needles",{
 	after_place_node = default.after_place_leaves,
 })
 
-minetest.register_node("default:pine_sapling", {
-	description = "Pine Sapling",
+minetest.register_node("default:sapling_spruce", {
+	description = "Spruce Sapling",
 	category = "decoration",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
-	tiles = {"default_pine_sapling.png"},
-	inventory_image = "default_pine_sapling.png",
-	wield_image = "default_pine_sapling.png",
+	tiles = {"default_sapling_spruce.png"},
+	inventory_image = "default_sapling_spruce.png",
+	wield_image = "default_sapling_spruce.png",
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
@@ -679,7 +762,7 @@ minetest.register_node("default:pine_sapling", {
 
 	on_place = function(itemstack, placer, pointed_thing)
 		itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
-			"default:pine_sapling",
+			"default:sapling_spruce",
 			-- minp, maxp to be checked, relative to sapling pos
 			-- minp_relative.y = 1 because sapling pos has been checked
 			{x = -2, y = 1, z = -2},
@@ -692,11 +775,10 @@ minetest.register_node("default:pine_sapling", {
 })
 
 
-minetest.register_node("default:acacia_tree", {
-	description = "Acacia Tree",
+minetest.register_node("default:wood_acacia", {
+	description = "Acacia Wood",
 	category = "building",
-	tiles = {"default_acacia_tree_top.png", "default_acacia_tree_top.png",
-		"default_acacia_tree.png"},
+	tiles = {"default_wood_acacia_top.png", "default_wood_acacia_top.png", "default_wood_acacia.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
 	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
@@ -705,23 +787,23 @@ minetest.register_node("default:acacia_tree", {
 	on_place = minetest.rotate_node
 })
 
-minetest.register_node("default:acacia_wood", {
+minetest.register_node("default:planks_acacia", {
 	description = "Acacia Wood Planks",
 	category = "building",
 	paramtype2 = "facedir",
 	place_param2 = 0,
-	tiles = {"default_acacia_wood.png"},
+	tiles = {"default_planks_acacia.png"},
 	is_ground_content = false,
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("default:acacia_leaves", {
+minetest.register_node("default:leaves_acacia", {
 	description = "Acacia Leaves",
 	category = "decoration",
 	drawtype = "allfaces_optional",
 	visual_scale = 1.3,
-	tiles = {"default_acacia_leaves.png"},
+	tiles = {"default_leaves_acacia.png"},
 	waving = 1,
 	paramtype = "light",
 	is_ground_content = false,
@@ -729,8 +811,10 @@ minetest.register_node("default:acacia_leaves", {
 	drop = {
 		max_items = 1,
 		items = {
-			{items = {"default:acacia_sapling"}, rarity = 20},
-			{items = {"default:acacia_leaves"}}
+			{
+				items = {"default:sapling_acacia"},
+				rarity = 20
+			}
 		}
 	},
 	sounds = default.node_sound_leaves_defaults(),
@@ -738,14 +822,14 @@ minetest.register_node("default:acacia_leaves", {
 	after_place_node = default.after_place_leaves,
 })
 
-minetest.register_node("default:acacia_sapling", {
-	description = "Acacia Tree Sapling",
+minetest.register_node("default:sapling_acacia", {
+	description = "Acacia Sapling",
 	category = "decoration",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
-	tiles = {"default_acacia_sapling.png"},
-	inventory_image = "default_acacia_sapling.png",
-	wield_image = "default_acacia_sapling.png",
+	tiles = {"default_sapling_acacia.png"},
+	inventory_image = "default_sapling_acacia.png",
+	wield_image = "default_sapling_acacia.png",
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
@@ -764,7 +848,7 @@ minetest.register_node("default:acacia_sapling", {
 
 	on_place = function(itemstack, placer, pointed_thing)
 		itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
-			"default:acacia_sapling",
+			"default:sapling_acacia",
 			-- minp, maxp to be checked, relative to sapling pos
 			-- minp_relative.y = 1 because sapling pos has been checked
 			{x = -4, y = 1, z = -4},
@@ -776,11 +860,10 @@ minetest.register_node("default:acacia_sapling", {
 	end,
 })
 
-minetest.register_node("default:aspen_tree", {
-	description = "Aspen Tree",
+minetest.register_node("default:wood_birch", {
+	description = "Birch Tree",
 	category = "building",
-	tiles = {"default_aspen_tree_top.png", "default_aspen_tree_top.png",
-		"default_aspen_tree.png"},
+	tiles = {"default_wood_birch_top.png", "default_wood_birch_top.png", "default_wood_birch.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
 	groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 3},
@@ -789,23 +872,23 @@ minetest.register_node("default:aspen_tree", {
 	on_place = minetest.rotate_node
 })
 
-minetest.register_node("default:aspen_wood", {
-	description = "Aspen Wood Planks",
+minetest.register_node("default:planks_birch", {
+	description = "Birch Wood Planks",
 	category = "building",
 	paramtype2 = "facedir",
 	place_param2 = 0,
-	tiles = {"default_aspen_wood.png"},
+	tiles = {"default_planks_birch.png"},
 	is_ground_content = false,
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("default:aspen_leaves", {
-	description = "Aspen Leaves",
+minetest.register_node("default:leaves_birch", {
+	description = "Birch Leaves",
 	category = "decoration",
 	drawtype = "allfaces_optional",
 	visual_scale = 1.3,
-	tiles = {"default_aspen_leaves.png"},
+	tiles = {"default_leaves_birch.png"},
 	waving = 1,
 	paramtype = "light",
 	is_ground_content = false,
@@ -813,8 +896,10 @@ minetest.register_node("default:aspen_leaves", {
 	drop = {
 		max_items = 1,
 		items = {
-			{items = {"default:aspen_sapling"}, rarity = 20},
-			{items = {"default:aspen_leaves"}}
+			{
+				items = {"default:sapling_birch"},
+				rarity = 20
+			}
 		}
 	},
 	sounds = default.node_sound_leaves_defaults(),
@@ -822,14 +907,14 @@ minetest.register_node("default:aspen_leaves", {
 	after_place_node = default.after_place_leaves,
 })
 
-minetest.register_node("default:aspen_sapling", {
-	description = "Aspen Tree Sapling",
+minetest.register_node("default:sapling_birch", {
+	description = "Birch Sapling",
 	category = "decoration",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
-	tiles = {"default_aspen_sapling.png"},
-	inventory_image = "default_aspen_sapling.png",
-	wield_image = "default_aspen_sapling.png",
+	tiles = {"default_sapling_birch.png"},
+	inventory_image = "default_sapling_birch.png",
+	wield_image = "default_sapling_birch.png",
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
@@ -848,7 +933,7 @@ minetest.register_node("default:aspen_sapling", {
 
 	on_place = function(itemstack, placer, pointed_thing)
 		itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
-			"default:aspen_sapling",
+			"default:sapling_birch",
 			-- minp, maxp to be checked, relative to sapling pos
 			-- minp_relative.y = 1 because sapling pos has been checked
 			{x = -2, y = 1, z = -2},
@@ -888,7 +973,7 @@ minetest.register_node("default:stone_with_iron", {
 	category = "building",
 	tiles = {"default_stone.png^default_mineral_iron.png"},
 	groups = {cracky = 2},
-	drop = 'default:iron_ingot',
+	drop = 'default:stone_with_iron',
 	sounds = default.node_sound_stone_defaults(),
 })
 
@@ -1494,8 +1579,8 @@ local bookshelf_formspec =
 minetest.register_node("default:bookshelf", {
 	description = "Bookshelf",
 	category = "building",
-	tiles = {"default_wood.png", "default_wood.png", "default_wood.png",
-		"default_wood.png", "default_bookshelf.png", "default_bookshelf.png"},
+	tiles = {"default_planks_oak.png", "default_planks_oak.png", "default_bookshelf.png",
+		"default_bookshelf.png", "default_bookshelf.png", "default_bookshelf.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
@@ -1612,52 +1697,52 @@ minetest.register_node("default:ladder_wood", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-default.register_fence("default:fence_wood", {
+default.register_fence("default:fence_wood_oak", {
 	description = "Wooden Fence",
-	texture = "default_fence_wood.png",
-	inventory_image = "default_fence_overlay.png^default_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_overlay.png^default_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
-	material = "default:wood",
+	texture = "default_fence_wood_oak.png",
+	inventory_image = "default_fence_overlay.png^default_wood_oak.png^default_fence_overlay.png^[makealpha:255,126,126",
+	wield_image = "default_fence_overlay.png^default_wood_oak.png^default_fence_overlay.png^[makealpha:255,126,126",
+	material = "default:wood_oak",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	sounds = default.node_sound_wood_defaults()
 })
 
-default.register_fence("default:fence_acacia_wood", {
+default.register_fence("default:fence_wood_acacia", {
 	description = "Acacia Fence",
-	texture = "default_fence_acacia_wood.png",
-	inventory_image = "default_fence_overlay.png^default_acacia_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_overlay.png^default_acacia_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
-	material = "default:acacia_wood",
+	texture = "default_fence_wood_acacia.png",
+	inventory_image = "default_fence_overlay.png^default_wood_acacia.png^default_fence_overlay.png^[makealpha:255,126,126",
+	wield_image = "default_fence_overlay.png^default_wood_acacia.png^default_fence_overlay.png^[makealpha:255,126,126",
+	material = "default:wood_acacia",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	sounds = default.node_sound_wood_defaults()
 })
 
-default.register_fence("default:fence_junglewood", {
-	description = "Junglewood Fence",
-	texture = "default_fence_junglewood.png",
-	inventory_image = "default_fence_overlay.png^default_junglewood.png^default_fence_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_overlay.png^default_junglewood.png^default_fence_overlay.png^[makealpha:255,126,126",
-	material = "default:junglewood",
+default.register_fence("default:fence_wood_jungle", {
+	description = "Jungle Fence",
+	texture = "default_fence_wood_jungle.png",
+	inventory_image = "default_fence_overlay.png^default_wood_jungle.png^default_fence_overlay.png^[makealpha:255,126,126",
+	wield_image = "default_fence_overlay.png^default_wood_jungle.png^default_fence_overlay.png^[makealpha:255,126,126",
+	material = "default:wood_jungle",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	sounds = default.node_sound_wood_defaults()
 })
 
-default.register_fence("default:fence_pine_wood", {
-	description = "Pine Fence",
-	texture = "default_fence_pine_wood.png",
-	inventory_image = "default_fence_overlay.png^default_pine_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_overlay.png^default_pine_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
-	material = "default:pine_wood",
+default.register_fence("default:fence_wood_spruce", {
+	description = "Spruce Fence",
+	texture = "default_fence_wood_spruce.png",
+	inventory_image = "default_fence_overlay.png^default_wood_spruce.png^default_fence_overlay.png^[makealpha:255,126,126",
+	wield_image = "default_fence_overlay.png^default_wood_spruce.png^default_fence_overlay.png^[makealpha:255,126,126",
+	material = "default:wood_spruce",
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
 	sounds = default.node_sound_wood_defaults()
 })
 
-default.register_fence("default:fence_aspen_wood", {
-	description = "Aspen Fence",
-	texture = "default_fence_aspen_wood.png",
-	inventory_image = "default_fence_overlay.png^default_aspen_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_overlay.png^default_aspen_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
-	material = "default:aspen_wood",
+default.register_fence("default:fence_wood_birch", {
+	description = "Birch Fence",
+	texture = "default_fence_wood_birch.png",
+	inventory_image = "default_fence_overlay.png^default_wood_birch.png^default_fence_overlay.png^[makealpha:255,126,126",
+	wield_image = "default_fence_overlay.png^default_wood_birch.png^default_fence_overlay.png^[makealpha:255,126,126",
+	material = "default:wood_birch",
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
 	sounds = default.node_sound_wood_defaults()
 })
@@ -1684,4 +1769,166 @@ minetest.register_node("default:brick", {
 	is_ground_content = false,
 	groups = {cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
+})
+
+
+-- Wool
+minetest.register_node("default:wool_black", {
+	description = "Black Wool",
+	category = "building",
+	tiles = {"default_wool_black.png"},
+	is_ground_content = false,
+	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
+			flammable = 3, wool = 1},
+	sounds = default.node_sound_defaults(),
+})
+
+minetest.register_node("default:wool_blue", {
+	description = "Blue Wool",
+	category = "building",
+	tiles = {"default_wool_blue.png"},
+	is_ground_content = false,
+	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
+			flammable = 3, wool = 1},
+	sounds = default.node_sound_defaults(),
+})
+
+minetest.register_node("default:wool_brown", {
+	description = "Brown Wool",
+	category = "building",
+	tiles = {"default_wool_brown.png"},
+	is_ground_content = false,
+	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
+			flammable = 3, wool = 1},
+	sounds = default.node_sound_defaults(),
+})
+
+minetest.register_node("default:wool_cyan", {
+	description = "Cyan Wool",
+	category = "building",
+	tiles = {"default_wool_cyan.png"},
+	is_ground_content = false,
+	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
+			flammable = 3, wool = 1},
+	sounds = default.node_sound_defaults(),
+})
+
+minetest.register_node("default:wool_gray", {
+	description = "Gray Wool",
+	category = "building",
+	tiles = {"default_wool_gray.png"},
+	is_ground_content = false,
+	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
+			flammable = 3, wool = 1},
+	sounds = default.node_sound_defaults(),
+})
+
+minetest.register_node("default:wool_green", {
+	description = "White Wool",
+	category = "building",
+	tiles = {"default_wool_green.png"},
+	is_ground_content = false,
+	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
+			flammable = 3, wool = 1},
+	sounds = default.node_sound_defaults(),
+})
+
+minetest.register_node("default:wool_light_blue", {
+	description = "Light Blue Wool",
+	category = "building",
+	tiles = {"default_wool_light_blue.png"},
+	is_ground_content = false,
+	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
+			flammable = 3, wool = 1},
+	sounds = default.node_sound_defaults(),
+})
+
+minetest.register_node("default:wool_light_gray", {
+	description = "Light Gray Wool",
+	category = "building",
+	tiles = {"default_wool_light_gray.png"},
+	is_ground_content = false,
+	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
+			flammable = 3, wool = 1},
+	sounds = default.node_sound_defaults(),
+})
+
+minetest.register_node("default:wool_lime_green", {
+	description = "Lime Green Wool",
+	category = "building",
+	tiles = {"default_wool_lime_green.png"},
+	is_ground_content = false,
+	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
+			flammable = 3, wool = 1},
+	sounds = default.node_sound_defaults(),
+})
+
+minetest.register_node("default:wool_magenta", {
+	description = "Magenta Wool",
+	category = "building",
+	tiles = {"default_wool_magenta.png"},
+	is_ground_content = false,
+	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
+			flammable = 3, wool = 1},
+	sounds = default.node_sound_defaults(),
+})
+
+minetest.register_node("default:wool_orange", {
+	description = "Orange Wool",
+	category = "building",
+	tiles = {"default_wool_orange.png"},
+	is_ground_content = false,
+	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
+			flammable = 3, wool = 1},
+	sounds = default.node_sound_defaults(),
+})
+
+minetest.register_node("default:wool_pink", {
+	description = "Pink Wool",
+	category = "building",
+	tiles = {"default_wool_pink.png"},
+	is_ground_content = false,
+	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
+			flammable = 3, wool = 1},
+	sounds = default.node_sound_defaults(),
+})
+
+minetest.register_node("default:wool_purple", {
+	description = "Purple Wool",
+	category = "building",
+	tiles = {"default_wool_purple.png"},
+	is_ground_content = false,
+	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
+			flammable = 3, wool = 1},
+	sounds = default.node_sound_defaults(),
+})
+
+minetest.register_node("default:wool_red", {
+	description = "Red Wool",
+	category = "building",
+	tiles = {"default_wool_red.png"},
+	is_ground_content = false,
+	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
+			flammable = 3, wool = 1},
+	sounds = default.node_sound_defaults(),
+})
+
+minetest.register_node("default:wool_white", {
+	description = "White Wool",
+	category = "building",
+	tiles = {"default_wool_white.png"},
+	is_ground_content = false,
+	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
+			flammable = 3, wool = 1},
+	sounds = default.node_sound_defaults(),
+})
+
+minetest.register_node("default:wool_yellow", {
+	description = "Yellow Wool",
+	category = "building",
+	tiles = {"default_wool_yellow.png"},
+	is_ground_content = false,
+	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
+			flammable = 3, wool = 1},
+	sounds = default.node_sound_defaults(),
 })

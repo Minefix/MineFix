@@ -1,4 +1,3 @@
-minetest.log('hey!')
 if minetest.setting_getbool("creative_mode") then
 	local digtime = 5;
 	local caps = {times = {digtime, digtime, digtime}, uses = 0, maxlevel = 256}

@@ -38,7 +38,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "cooking",
-	cooktime = 15,
+	cooktime = 10,
 	output = "farming:bread",
 	recipe = "farming:flour"
 })
@@ -56,7 +56,7 @@ farming.register_plant("farming:cotton", {
 minetest.register_alias("farming:string", "farming:cotton")
 
 minetest.register_craft({
-	output = "wool:white",
+	output = "default:wool_white",
 	recipe = {
 		{"farming:cotton", "farming:cotton"},
 		{"farming:cotton", "farming:cotton"},

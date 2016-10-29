@@ -20,6 +20,12 @@ The following is a list of required textures and their file names:
 * default_diorite_polished.png
 * default_granite.png
 * default_granite_polished.png
+* default_wood_darkoak.png
+* default_wood_darkoak_top.png
+* default_planks_darkoak.top.png
+* default_leaves_darkoak.png
+* default_leaves_darkoak_simple.png
+* default_sapling_darkoak.png
 
 ## Authors of source code
 
@@ -33,17 +39,17 @@ Everything not listed in here:
 celeron55, Perttu Ahola <celeron55@gmail.com> (CC BY-SA 3.0)
 
 Cisoun's texture pack (CC BY-SA 3.0):
-  default_jungletree.png
+  default_wood_jungle.png
   default_lava.png
-  default_leaves.png
-  default_sapling.png
+  default_leaves_oak.png
+  default_sapling_oak.png
   default_stone.png
-  default_tree.png
-  default_tree_top.png
+  default_wood_oak.png
+  default_wood_oak_top.png
   default_water.png
 
 Cisoun's conifers mod (CC BY-SA 3.0):
-  default_pine_needles.png
+  default_leaves_spruce.png
 
 Originating from G4JC's Almost MC Texture Pack (CC BY-SA 3.0):
   default_torch.png
@@ -75,8 +81,8 @@ Jordach (CC BY-SA 3.0):
   character.png
 
 PilzAdam (CC BY-SA 3.0):
-  default_jungleleaves.png
-  default_junglesapling.png
+  default_leaves_jungle.png
+  default_sapling_jungle.png
   default_mineral_gold.png
 
 jojoa1997 (CC BY-SA 3.0):
@@ -86,7 +92,7 @@ InfinityProject (CC BY-SA 3.0):
   default_mineral_diamond.png
 
 Splizard (CC BY-SA 3.0):
-  default_pine_sapling.png
+  default_sapling_spruce.png
 
 Zeg9 (CC BY-SA 3.0):
   default_coal_block.png
@@ -95,16 +101,16 @@ Zeg9 (CC BY-SA 3.0):
 
 paramat (CC BY-SA 3.0):
   wieldhand.png -- Copied from character.png by Jordach (CC BY-SA 3.0)
-  default_pinetree.png
-  default_pinetree_top.png
-  default_pinewood.png
-  default_acacia_leaves.png
-  default_acacia_sapling.png
-  default_acacia_tree.png
-  default_acacia_tree_top.png
-  default_acacia_wood.png
-  default_junglewood.png
-  default_jungletree_top.png
+  default_wood_spruce.png
+  default_wood_spruce_top.png
+  default_planks_spruce.png
+  default_leaves_acacia.png
+  default_sapling_acacia.png
+  default_wood_acacia.png
+  default_wood_acacia_top.png
+  default_planks_acacia.png
+  default_planks_jungle.png
+  default_planks_jungle_top.png
   default_sandstone_brick.png
   default_stone_brick.png
   default_sandstone_block.png
@@ -112,7 +118,7 @@ paramat (CC BY-SA 3.0):
   default_grass_side.png
 
 BlockMen (CC BY-SA 3.0):
-  default_wood.png
+  default_planks_oak.png
   default_clay_brick.png
   default_iron_ingot.png
   default_gold_ingot.png
@@ -132,11 +138,11 @@ BlockMen (CC BY-SA 3.0):
 
 sofar (CC BY-SA 3.0):
   default_book_written.png, based on default_book.png
-  default_aspen_sapling
-  default_aspen_leaves
-  default_aspen_tree
-  default_aspen_tree_top, derived from default_pine_tree_top (by paramat)
-  default_aspen_wood, derived from default_pine_wood (by paramat)
+  default_sapling_birch
+  default_leaves_birch
+  default_wood_birch
+  default_wood_birch_top, derived from default_pine_tree_top (by paramat)
+  default_wood_birch, derived from default_pine_wood (by paramat)
   default_gravel.png -- Derived from Gambit's PixelBOX texture pack light gravel
 
 Neuromancer (CC BY-SA 2.0):

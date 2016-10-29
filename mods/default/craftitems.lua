@@ -1,18 +1,5 @@
 -- mods/default/craftitems.lua
 
-minetest.register_craftitem("default:stick", {
-	description = "Stick",
-	category = "materials",
-	inventory_image = "default_stick.png",
-	groups = {stick = 1},
-})
-
-minetest.register_craftitem("default:paper", {
-	description = "Paper",
-	category = "miscellaneous",
-	inventory_image = "default_paper.png",
-})
-
 local lpp = 14 -- Lines per book's page
 local function book_on_use(itemstack, user)
 	local player_name = user:get_player_name()
@@ -67,7 +54,10 @@ local function book_on_use(itemstack, user)
 end
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)
-	if formname ~= "default:book" then return end
+	if formname ~= "default:book" then
+		return
+	end
+
 	local inv = player:get_inventory()
 	local stack = player:get_wielded_item()
 
@@ -131,29 +121,6 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 	player:set_wielded_item(stack)
 end)
 
-minetest.register_craftitem("default:book", {
-	description = "Book",
-	category = "miscellaneous",
-	inventory_image = "default_book.png",
-	groups = {book = 1},
-	on_use = book_on_use,
-})
-
-minetest.register_craftitem("default:book_written", {
-	description = "Book With Text",
-	category = "miscellaneous",
-	inventory_image = "default_book_written.png",
-	groups = {book = 1, not_in_creative_inventory = 1},
-	stack_max = 1,
-	on_use = book_on_use,
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "default:book_written",
-	recipe = {"default:book", "default:book_written"}
-})
-
 minetest.register_on_craft(function(itemstack, player, old_craft_grid, craft_inv)
 	if itemstack:get_name() ~= "default:book_written" then
 		return
@@ -176,6 +143,36 @@ minetest.register_on_craft(function(itemstack, player, old_craft_grid, craft_inv
 	-- put the book with metadata back in the craft grid
 	craft_inv:set_stack("craft", index, original)
 end)
+
+minetest.register_craftitem("default:stick", {
+	description = "Stick",
+	category = "materials",
+	inventory_image = "default_stick.png",
+	groups = {stick = 1},
+})
+
+minetest.register_craftitem("default:paper", {
+	description = "Paper",
+	category = "miscellaneous",
+	inventory_image = "default_paper.png",
+})
+
+minetest.register_craftitem("default:book", {
+	description = "Book",
+	category = "miscellaneous",
+	inventory_image = "default_book.png",
+	groups = {book = 1},
+	on_use = book_on_use,
+})
+
+minetest.register_craftitem("default:book_written", {
+	description = "Book With Text",
+	category = "miscellaneous",
+	inventory_image = "default_book_written.png",
+	groups = {book = 1, not_in_creative_inventory = 1},
+	stack_max = 1,
+	on_use = book_on_use,
+})
 
 minetest.register_craftitem("default:coal_lump", {
 	description = "Coal Lump",
@@ -202,6 +199,12 @@ minetest.register_craftitem("default:gold_ingot", {
 	inventory_image = "default_gold_ingot.png"
 })
 
+minetest.register_craftitem("default:iron_ingot", {
+	description = "Iron Ingot",
+	category = "materials",
+	inventory_image = "default_iron_ingot.png"
+})
+
 minetest.register_craftitem("default:clay_brick", {
 	description = "Clay Brick",
 	category = "materials",
@@ -212,4 +215,101 @@ minetest.register_craftitem("default:flint", {
 	description = "Flint",
 	category = "materials",
 	inventory_image = "default_flint.png"
+})
+
+-- Dyes, colors, etc
+minetest.register_craftitem("default:dye_black", {
+	description = "Ink Sac",
+	category = "materials",
+	inventory_image = "default_dye_black.png"
+})
+
+minetest.register_craftitem("default:dye_blue", {
+	description = "Lapis Lazuli",
+	category = "materials",
+	inventory_image = "default_dye_blue.png"
+})
+
+minetest.register_craftitem("default:dye_brown", {
+	description = "Cocoa Beans",
+	category = "materials",
+	inventory_image = "default_dye_brown.png"
+})
+
+minetest.register_craftitem("default:dye_cyan", {
+	description = "Cyan Dye",
+	category = "materials",
+	inventory_image = "default_dye_cyan.png"
+})
+
+minetest.register_craftitem("default:dye_gray", {
+	description = "Gray Dye",
+	category = "materials",
+	inventory_image = "default_dye_gray.png"
+})
+
+minetest.register_craftitem("default:dye_green", {
+	description = "Cactus Green",
+	category = "materials",
+	inventory_image = "default_dye_green.png"
+})
+
+minetest.register_craftitem("default:dye_light_blue", {
+	description = "Light Blue Dye",
+	category = "materials",
+	inventory_image = "default_dye_light_blue.png"
+})
+
+minetest.register_craftitem("default:dye_light_gray", {
+	description = "Light Gray Dye",
+	category = "materials",
+	inventory_image = "default_dye_light_gray.png"
+})
+
+minetest.register_craftitem("default:dye_lime_green", {
+	description = "Lime Dye",
+	category = "materials",
+	inventory_image = "default_dye_lime_green.png"
+})
+
+minetest.register_craftitem("default:dye_magenta", {
+	description = "Magenta Dye",
+	category = "materials",
+	inventory_image = "default_dye_magenta.png"
+})
+
+minetest.register_craftitem("default:dye_orange", {
+	description = "Orange Dye",
+	category = "materials",
+	inventory_image = "default_dye_orange.png"
+})
+
+minetest.register_craftitem("default:dye_pink", {
+	description = "Pink Dye",
+	category = "materials",
+	inventory_image = "default_dye_pink.png"
+})
+
+minetest.register_craftitem("default:dye_purple", {
+	description = "Purple Dye",
+	category = "materials",
+	inventory_image = "default_dye_purple.png"
+})
+
+minetest.register_craftitem("default:dye_red", {
+	description = "Rose red",
+	category = "materials",
+	inventory_image = "default_dye_red.png"
+})
+
+minetest.register_craftitem("default:dye_white", {
+	description = "Bone Meal",
+	category = "materials",
+	inventory_image = "default_dye_white.png"
+})
+
+minetest.register_craftitem("default:dye_yellow", {
+	description = "Dandelion Yellow",
+	category = "materials",
+	inventory_image = "default_dye_yellow.png"
 })

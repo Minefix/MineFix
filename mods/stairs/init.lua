@@ -7,12 +7,6 @@
 stairs = {}
 
 
--- Register aliases for new pine node names
-
-minetest.register_alias("stairs:stair_pinewood", "stairs:stair_pine_wood")
-minetest.register_alias("stairs:slab_pinewood", "stairs:slab_pine_wood")
-
-
 -- Get setting for replace ABM
 
 local replace = minetest.setting_getbool("enable_stairs_replace_abm")
@@ -224,37 +218,55 @@ end
 -- Register default stairs and slabs
 
 stairs.register_stair(
-	"wood",
-	"default:wood",
+	"wood_oak",
+	"default:planks_oak",
 	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
-	{"default_wood.png"},
-	"Wooden Stair",
+	{"default_planks_oak.png"},
+	"Oak Wood Stairs",
 	default.node_sound_wood_defaults()
 )
 
 stairs.register_stair(
-	"junglewood",
-	"default:junglewood",
+	"wood_darkoak",
+	"default:planks_darkoak",
 	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
-	{"default_junglewood.png"},
+	{"default_planks_darkoak.png"},
+	"Dark Oak Wood Stairs",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair(
+	"wood_birch",
+	"default:planks_birch",
+	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	{"default_planks_birch.png"},
+	"Birch Wood Stairs",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair(
+	"wood_jungle",
+	"default:planks_jungle",
+	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	{"default_planks_jungle.png"},
 	"Jungle Wood Stair",
 	default.node_sound_wood_defaults()
 )
 
 stairs.register_stair(
-	"pine_wood",
-	"default:pine_wood",
+	"wood_spruce",
+	"default:planks_spruce",
 	{choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
-	{"default_pine_wood.png"},
-	"Pine Wood Stair",
+	{"default_planks_spruce.png"},
+	"Spruce Wood Stair",
 	default.node_sound_wood_defaults()
 )
 
 stairs.register_stair(
-	"acacia_wood",
-	"default:acacia_wood",
+	"wood_acacia",
+	"default:planks_acacia",
 	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
-	{"default_acacia_wood.png"},
+	{"default_planks_acacia.png"},
 	"Acacia Wood Stair",
 	default.node_sound_wood_defaults()
 )
@@ -295,7 +307,7 @@ stairs.register_stair(
 	default.node_sound_stone_defaults()
 )
 
--- Slabs and stairs
+-- Slabs
 
 stairs.register_slab(
 	"stone",
@@ -316,19 +328,55 @@ stairs.register_slab(
 )
 
 stairs.register_slab(
-	"wood",
-	"default:wood",
+	"wood_oak",
+	"default:planks_oak",
 	"Oak Wood Slab",
-	{"default_wood.png"},
+	{"default_planks_oak.png"},
 	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	default.node_sound_wood_defaults()
 )
 
 stairs.register_slab(
-	"junglewood",
-	"default:junglewood",
+	"wood_darkoak",
+	"default:planks_darkoak",
+	"Dark Oak Wood Slab",
+	{"default_planks_darkoak.png"},
+	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_slab(
+	"wood_birch",
+	"default:planks_birch",
+	"Birch Wood Slab",
+	{"default_planks_birch.png"},
+	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_slab(
+	"wood_jungle",
+	"default:planks_jungle",
 	"Jungle Wood Slab",
-	{"default_junglewood.png"},
+	{"default_planks_jungle.png"},
+	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_slab(
+	"wood_acacia",
+	"default:planks_acacia",
+	"Acacia Wood Slab",
+	{"default_planks_acacia.png"},
+	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_slab(
+	"wood_spruce",
+	"default:planks_spruce",
+	"Spruce Wood Slab",
+	{"default_planks_spruce.png"},
 	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	default.node_sound_wood_defaults()
 )

@@ -1,9 +1,7 @@
 interface = {}
 interface.creative_inventory_size = 0
 
-local creative_mode = minetest.setting_getbool("creative_mode")
-
-local tabs = {
+interface.tabs = {
 	["building"] = {
 		["position"] = "top",
 		["label"] = "Building Blocks",
@@ -56,10 +54,21 @@ local tabs = {
 	}
 }
 
+local startIndex = 0
+
+dofile(minetest.get_modpath("interface") .. "/creative.lua")
+
+local creative_mode = minetest.setting_getbool("creative_mode")
+
 minetest.register_on_joinplayer(function(player)
 	if not creative_mode then
 		return
 	end
+
+	player.hud_set_hotbar_itemcount(player, 9)
+	player:hud_set_hotbar_image("interface_hotbar.png")
+	player:hud_set_hotbar_selected_image("interface_hotbar_selected.png")
+	player:get_inventory():set_size("main", 9*4)
 
 	interface.initializeCreativeInventory(player)
 	interface.fillCreativeInventory(player, "building")
@@ -73,7 +82,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 		local tab = nil;
 
 		for key, value in pairs(fields) do
-			if tabs[key] then
+			if interface.tabs[key] then
 				tab = key
 				interface.fillCreativeInventory(player, tab)
 			end
@@ -81,6 +90,14 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 
 		if fields.creative_prev or fields.creative_next then
 			tab = nil
+		elseif fields.inventory then
+			tab = "inventory"
+		elseif fields.search then
+			tab = "search"
+			interface.fillCreativeInventory(player, tab)
+			startIndex = 0; --The player clicked on a new tab, so make sure to set the startindex to 0
+		else
+			startIndex = 0;
 		end
 
 		local current_page = 0
@@ -110,136 +127,3 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 		interface.createCreativeInventory(player, tab, startIndex, startIndex / (9*5) + 1)
 	end
 end)
-
---[[
-Registers a new creative inventory tab, useful for external mods. They will have to require this mod
-@tablocation = can be top or bottom of the creative inventory
-@tabimage = the item to show on the tab
-]]
-interface.registerCategory = function(categoryname, label, tablocation, tabimage)
-	--Example: interface.registerCategory("test", "test category", "top", "default:brick");
-	minetest.log(tabimage)
-	tabs[categoryname] = {
-		["position"] = tablocation,
-		["label"] = label,
-		["image"] = tabimage
-	}
-end
-
-interface.initializeCreativeInventory = function(owner)
-	local owner_name = owner:get_player_name()
-
-	minetest.create_detached_inventory("creative", {
-		allow_move = function(inv, from_list, from_index, to_list, to_index, count, player)
-			return 0
-		end,
-		allow_put = function(inv, listname, index, stack, player)
-			return -1
-		end,
-		allow_take = function(inv, listname, index, stack, player)
-			--[[if player:get_player_control().sneak then
-				return stack:get_stack_max()
-			else]] -- Not used yet, we can't set an item yet the moment it is picked up from the inventory
-				return -1
-			--end
-		end,
-		on_move = function(inv, from_list, from_index, to_list, to_index, count, player)
-			return -1
-		end,
-		on_put = function(inv, listname, index, stack, player)
-			return
-		end,
-		on_take = function(inv, listname, index, stack, player)
-			local player_name, stack_name = player:get_player_name(), stack:get_name()
-			if stack then
-				minetest.log("Action", player_name .. " takes " .. stack_name .. " from creative inventory")
-			end
-		end,
-	})
-end
-
-interface.fillCreativeInventory = function(player, tab)
-	local inventory = minetest.get_inventory({type="detached", name="creative"})
-	inventory:set_size("main", 0)
-
-	local creative_list = {};
-	for name, def in pairs(minetest.registered_items) do
-		if def.category ~= nil and tab == def.category then
-			table.insert(creative_list, name)
-		end
-	end
-
-	table.sort(creative_list)
-
-	if #creative_list ~= 0 then
-		inventory:set_size("main", #creative_list)
-	else
-		inventory:set_size("main", 1) --Set it to 1 big so the game won't complain that the 'main' list doesn't exist
-	end
-
-	for key, itemstring in ipairs(creative_list) do
-		inventory:add_item("main", ItemStack(itemstring))
-	end
-
-	interface.creative_inventory_size = #creative_list
-end
-
-interface.createCreativeInventory = function(player, tab, startIndex, pageNumber)
-	if startIndex < 0 then
-		startIndex = 0
-	end
-
-	if tab ~= nil then
-		name = tab
-	end
-
-	pageNumber = math.floor(pageNumber) or 1
-	local pagemax = math.floor((interface.creative_inventory_size - 1) / (9 * 5) + 1)
-	local slider_height = 4 / pagemax
-	local slider_pos = slider_height * (pageNumber - 1) + 2.25
-
-	local activeTab, tabsTop, tabsBottom = "", "", ""
-	local tabsTopButtonX, tabsBottomButtonX = -0.1, -0.1
-	for key, value in pairs(tabs) do
-		if value.position == "top" then
-			if key == name then
-				activeTab = "image[" .. tabsTopButtonX - 0.18 ..",-0.25;1.5,1.44;interface_creative_tab_active.png]"
-			else
-				tabsTop = tabsTop .. "image[" .. tabsTopButtonX - 0.15 .. ",-0.2;1.27,1.27;interface_creative_tab_inactive.png]"
-			end
-			tabsTop = tabsTop .. "item_image_button[" .. tabsTopButtonX .. ",0;1,1;" .. value.image .. ";" .. key .. ";]"
-			tabsTopButtonX = tabsTopButtonX + 1.28
-		else
-			if key == name then
-				activeTab = "image[" .. tabsBottomButtonX - 0.18 ..",8.07;1.5,1.44;interface_creative_tab_active.png^[transformfy]]"
-			else
-				tabsTop = tabsTop .. "image[" .. tabsBottomButtonX - 0.15 .. ",8.15;1.27,1.27;interface_creative_tab_inactive.png^[transformfy]]"
-			end
-			tabsBottom = tabsBottom .. "item_image_button[" .. tabsBottomButtonX .. ",8.3;1,1;" .. value.image .. ";" .. key .. ";]"
-			tabsBottomButtonX = tabsBottomButtonX + 1.28
-		end
-	end
-
-	local formspec = "size[10,9.3]" ..
-		"background[-0.2,1;10.4524,7.25;interface_inventory_creative.png]" ..
-		"bgcolor[#080808BB;true]" ..
-		"listcolors[#9990;#FFF7;#FFF0;#160816;#D4D2FF]" ..
-		"label[-5,-5;Building Blocks]" ..
-		activeTab ..
-		tabsTop ..
-		"image[9.1,-0.2;1.27,1.27;interface_creative_tab_inactive.png]" ..
-		"image_button[9.23,0;1,1;interface_creative_search.png;search;]" ..
-		"list[detached:creative;main;0,1.74;9,5;" .. tostring(startIndex) .. "]" ..
-		"image_button[8.98,1.76;0.85,0.6;interface_creative_up.png;creative_prev;]" ..
-		"image[9," .. tostring(slider_pos) .. ";0.75," .. tostring(slider_height) .. ";interface_creative_slider.png]" ..
-		"image_button[8.98,6.13;0.85,0.6;interface_creative_down.png;creative_next;]" ..
-		"list[current_player;main;0,7;9,1;]" ..
-		tabsBottom ..
-		"image[9.1,8.15;1.27,1.27;interface_creative_tab_inactive.png^[transformfy]]" ..
-		"image_button[9.23,8.3;1,1;interface_creative_inventory.png;inventory;]"
-
-		if pageNumber ~= nil then
-			formspec = formspec .. "p" .. tostring(pageNumber)
-		end
-	player:set_inventory_formspec(formspec)
-end

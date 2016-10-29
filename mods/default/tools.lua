@@ -285,7 +285,7 @@ minetest.register_tool("default:sword_gold", {
 		},
 		damage_groups = {fleshy = 7},
 	},
-	category = "tools"
+	category = "combat"
 })
 minetest.register_tool("default:sword_diamond", {
 	description = "Diamond Sword",

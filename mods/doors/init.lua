@@ -434,30 +434,6 @@ doors.register("door_iron", {
 		}
 })
 
--- Capture mods using the old API as best as possible.
-function doors.register_door(name, def)
-	if def.only_placer_can_open then
-		def.protected = true
-	end
-	def.only_placer_can_open = nil
-
-	local i = name:find(":")
-	local modname = name:sub(1, i - 1)
-	if not def.tiles then
-		if def.protected then
-			def.tiles = {{name = "doors_door_iron.png", backface_culling = true}}
-		else
-			def.tiles = {{name = "doors_door_wood.png", backface_culling = true}}
-		end
-		minetest.log("warning", modname .. " registered door \"" .. name .. "\" " ..
-				"using deprecated API method \"doors.register_door()\" but " ..
-				"did not provide the \"tiles\" parameter. A fallback tiledef " ..
-				"will be used instead.")
-	end
-
-	doors.register(name, def)
-end
-
 ----trapdoor----
 
 function _doors.trapdoor_toggle(pos, node, clicker)
@@ -539,6 +515,8 @@ function doors.register_trapdoor(name, def)
 
 	local def_opened = table.copy(def)
 	local def_closed = table.copy(def)
+
+	def_closed.category = "redstone"
 
 	def_closed.node_box = {
 		type = "fixed",
@@ -655,6 +633,7 @@ function doors.register_fencegate(name, def)
 	fence_closed.mesh = "doors_fencegate_closed.obj"
 	fence_closed.gate = name .. "_open"
 	fence_closed.sound = "doors_fencegate_open"
+	fence_closed.category = "redstone"
 	fence_closed.collision_box = {
 		type = "fixed",
 		fixed = {-1/2, -1/2, -1/4, 1/2, 1/2, 1/4},
@@ -683,37 +662,37 @@ function doors.register_fencegate(name, def)
 	})
 end
 
-doors.register_fencegate("doors:gate_wood", {
-	description = "Wooden Fence Gate",
-	texture = "default_wood.png",
-	material = "default:wood",
+doors.register_fencegate("doors:gate_wood_oak", {
+	description = "Oak Fence Gate",
+	texture = "default_wood_oak.png",
+	material = "default:wood_oak",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })
 
-doors.register_fencegate("doors:gate_acacia_wood", {
+doors.register_fencegate("doors:gate_wood_acacia", {
 	description = "Acacia Fence Gate",
-	texture = "default_acacia_wood.png",
-	material = "default:acacia_wood",
+	texture = "default_wood_acacia.png",
+	material = "default:wood_acacia",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })
 
-doors.register_fencegate("doors:gate_junglewood", {
-	description = "Junglewood Fence Gate",
-	texture = "default_junglewood.png",
-	material = "default:junglewood",
+doors.register_fencegate("doors:gate_wood_jungle", {
+	description = "Jungle Fence Gate",
+	texture = "default_wood_jungle.png",
+	material = "default:wood_jungle",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })
 
-doors.register_fencegate("doors:gate_pine_wood", {
-	description = "Pine Fence Gate",
-	texture = "default_pine_wood.png",
-	material = "default:pine_wood",
+doors.register_fencegate("doors:gate_wood_spruce", {
+	description = "Spruce Fence Gate",
+	texture = "default_wood_spruce.png",
+	material = "default:wood_spruce",
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3}
 })
 
-doors.register_fencegate("doors:gate_aspen_wood", {
-	description = "Aspen Fence Gate",
-	texture = "default_aspen_wood.png",
-	material = "default:aspen_wood",
+doors.register_fencegate("doors:gate_wood_birch", {
+	description = "Birch Fence Gate",
+	texture = "default_wood_birch.png",
+	material = "default:wood_birch",
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3}
 })
