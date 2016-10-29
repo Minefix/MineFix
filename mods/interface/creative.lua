@@ -17,7 +17,6 @@ interface.initializeCreativeInventory = function(owner)
 
 	minetest.create_detached_inventory("creative", {
 		allow_move = function(inv, from_list, from_index, to_list, to_index, count, player)
-			minetest.log("From: " .. from_list .. ". To: " .. to_list)
 			return 0
 		end,
 		allow_put = function(inv, listname, index, stack, player)
@@ -107,32 +106,32 @@ interface.createCreativeInventory = function(player, tab, startIndex, pageNumber
 
 	local background, itemlist, slider
 	if tab == "inventory" then
-		background = "background[-0.2,1;10.4524,7.25;interface_creative_inventory.png]"
-		itemlist = "list[current_player;main;0,3.58;9,3;9]"
+		background = "background[-0.2,1;11.5,7.25;interface_creative_inventory.png]"
+		itemlist = "list[current_player;main;0,3.75;10,3;9]"
 		slider = ""
 	else
-		background = "background[-0.2,1;10.4524,7.25;interface_creative_list.png]"
-		itemlist = "list[detached:creative;main;0,1.74;9,5;" .. tostring(startIndex) .. "]"
-		slider = "image_button[8.98,1.76;0.85,0.6;interface_creative_up.png;creative_prev;]" ..
-		"image[9," .. tostring(slider_pos) .. ";0.75," .. tostring(slider_height) .. ";interface_creative_slider.png]" ..
-		"image_button[8.98,6.13;0.85,0.6;interface_creative_down.png;creative_next;]"
+		background = "background[-0.2,1;11.5,7.25;interface_creative_list.png]"
+		itemlist = "list[detached:creative;main;0,1.74;10,5;" .. tostring(startIndex) .. "]"
+		slider = "image_button[10,1.76;0.85,0.6;interface_creative_up.png;creative_prev;]" ..
+		"image[10," .. tostring(slider_pos) .. ";0.75," .. tostring(slider_height) .. ";interface_creative_slider.png]" ..
+		"image_button[10,6.13;0.85,0.6;interface_creative_down.png;creative_next;]"
 	end
 
-	local formspec = "size[10,9.3]" ..
+	local formspec = "size[12,9.3]" ..
 		background ..
 		"bgcolor[#080808BB;true]" ..
 		"listcolors[#9990;#FFF7;#FFF0;#160816;#D4D2FF]" ..
 		"label[-5,-5;Building Blocks]" ..
 		activeTab ..
 		tabsTop ..
-		"image[9.1,-0.2;1.27,1.27;interface_creative_tab_inactive.png]" ..
-		"item_image_button[9.23,0;1,1;default:wood_oak;search;]" .. -- Use a temporary item for the search tab for now
+		"image[10.2,-0.2;1.25,1.27;interface_creative_tab_inactive.png]" ..
+		"item_image_button[10.3,0;1,1;default:wood_oak;search;]" .. -- Use a temporary item for the search tab for now
 		itemlist ..
 		slider ..
 		"list[current_player;main;0,7;9,1;]" ..
 		tabsBottom ..
-		"image[9.1,8.15;1.27,1.27;interface_creative_tab_inactive.png^[transformfy]]" ..
-		"item_image_button[9.23,8.3;1,1;default:chest;inventory;]"
+		"image[10.2,8.15;1.25,1.27;interface_creative_tab_inactive.png^[transformfy]]" ..
+		"item_image_button[10.3,8.3;1,1;default:chest;inventory;]"
 
 		if pageNumber ~= nil then
 			formspec = formspec .. "p" .. tostring(pageNumber)
