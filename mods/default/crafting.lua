@@ -594,8 +594,92 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "shapeless",
+	output = 'default:wool_black',
+	recipe = {'default:wool_white', 'default:dye_black'},
+})
+
+minetest.register_craft({
+	type = "shapeless",
 	output = 'default:wool_blue',
 	recipe = {'default:wool_white', 'default:dye_blue'},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'default:wool_brown',
+	recipe = {'default:wool_white', 'default:dye_brown'},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'default:wool_cyan',
+	recipe = {'default:wool_white', 'default:dye_cyan'},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'default:wool_gray',
+	recipe = {'default:wool_white', 'default:dye_gray'},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'default:wool_green',
+	recipe = {'default:wool_white', 'default:dye_green'},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'default:wool_light_blue',
+	recipe = {'default:wool_white', 'default:dye_light_blue'},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'default:wool_light_gray',
+	recipe = {'default:wool_white', 'default:dye_light_gray'},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'default:wool_lime_green',
+	recipe = {'default:wool_white', 'default:dye_lime_green'},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'default:wool_magenta',
+	recipe = {'default:wool_white', 'default:dye_magenta'},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'default:wool_orange',
+	recipe = {'default:wool_white', 'default:dye_orange'},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'default:wool_pink',
+	recipe = {'default:wool_white', 'default:dye_pink'},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'default:wool_purple',
+	recipe = {'default:wool_white', 'default:dye_purple'},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'default:wool_red',
+	recipe = {'default:wool_white', 'default:dye_red'},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'default:wool_yellow',
+	recipe = {'default:wool_white', 'default:dye_red'},
 })
 
 --
@@ -656,6 +740,13 @@ minetest.register_craft({
 	type = "cooking",
 	output = "default:lapis",
 	recipe = "default:stone_with_lapis",
+	cooktime = 10,
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "default:dye_green",
+	recipe = "default:cactus",
 	cooktime = 10,
 })
 
