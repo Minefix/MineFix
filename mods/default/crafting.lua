@@ -93,7 +93,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:torch 4',
 	recipe = {
-		{'default:coal_lump'},
+		{'default:coal'},
 		{'group:stick'},
 	}
 })
@@ -368,14 +368,14 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:coalblock',
 	recipe = {
-		{'default:coal_lump', 'default:coal_lump', 'default:coal_lump'},
-		{'default:coal_lump', 'default:coal_lump', 'default:coal_lump'},
-		{'default:coal_lump', 'default:coal_lump', 'default:coal_lump'},
+		{'default:coal', 'default:coal', 'default:coal'},
+		{'default:coal', 'default:coal', 'default:coal'},
+		{'default:coal', 'default:coal', 'default:coal'},
 	}
 })
 
 minetest.register_craft({
-	output = 'default:coal_lump 9',
+	output = 'default:coal 9',
 	recipe = {
 		{'default:coalblock'},
 	}
@@ -430,6 +430,14 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = 'default:brickblock',
+	recipe = {
+		{'default:brick', 'default:brick'},
+		{'default:brick', 'default:brick'},
+	}
+})
+
+minetest.register_craft({
 	output = 'default:lapisblock',
 	recipe = {
 		{'default:dye_blue', 'default:dye_blue', 'default:dye_blue'},
@@ -478,32 +486,10 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = 'default:clay',
+	output = 'default:clayblock',
 	recipe = {
-		{'default:clay_lump', 'default:clay_lump'},
-		{'default:clay_lump', 'default:clay_lump'},
-	}
-})
-
-minetest.register_craft({
-	output = 'default:clay_lump 4',
-	recipe = {
-		{'default:clay'},
-	}
-})
-
-minetest.register_craft({
-	output = 'default:brick',
-	recipe = {
-		{'default:clay_brick', 'default:clay_brick'},
-		{'default:clay_brick', 'default:clay_brick'},
-	}
-})
-
-minetest.register_craft({
-	output = 'default:clay_brick 4',
-	recipe = {
-		{'default:brick'},
+		{'default:clay', 'default:clay'},
+		{'default:clay', 'default:clay'},
 	}
 })
 
@@ -647,8 +633,8 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "cooking",
-	output = "default:clay_brick",
-	recipe = "default:clay_lump",
+	output = "default:brick",
+	recipe = "default:clay",
 	cooktime = 10,
 })
 
@@ -728,7 +714,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "fuel",
-	recipe = "default:coal_lump",
+	recipe = "default:coal",
 	burntime = 80,
 })
 

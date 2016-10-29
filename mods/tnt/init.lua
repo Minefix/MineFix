@@ -494,7 +494,7 @@ minetest.register_node("tnt:gunpowder_burning", {
 minetest.register_craft({
 	output = "tnt:gunpowder",
 	type = "shapeless",
-	recipe = {"default:coal_lump", "default:gravel"}
+	recipe = {"default:coal", "default:gravel"}
 })
 
 if enable_tnt then

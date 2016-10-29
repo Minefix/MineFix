@@ -188,10 +188,10 @@ minetest.register_craftitem("default:book_written", {
 	on_use = book_on_use,
 })
 
-minetest.register_craftitem("default:coal_lump", {
-	description = "Coal Lump",
+minetest.register_craftitem("default:coal", {
+	description = "Coal",
 	category = "materials",
-	inventory_image = "default_coal_lump.png",
+	inventory_image = "default_coal.png",
 	groups = {coal = 1}
 })
 
@@ -201,10 +201,16 @@ minetest.register_craftitem("default:diamond", {
 	inventory_image = "default_diamond.png",
 })
 
-minetest.register_craftitem("default:clay_lump", {
-	description = "Clay Lump",
+minetest.register_craftitem("default:clay", {
+	description = "Clay",
 	category = "materials",
-	inventory_image = "default_clay_lump.png",
+	inventory_image = "default_clay.png",
+})
+
+minetest.register_craftitem("default:brick", {
+	description = "Brick",
+	category = "materials",
+	inventory_image = "default_brick.png",
 })
 
 minetest.register_craftitem("default:gold_ingot", {
@@ -217,12 +223,6 @@ minetest.register_craftitem("default:iron_ingot", {
 	description = "Iron Ingot",
 	category = "materials",
 	inventory_image = "default_iron_ingot.png"
-})
-
-minetest.register_craftitem("default:clay_brick", {
-	description = "Clay Brick",
-	category = "materials",
-	inventory_image = "default_clay_brick.png",
 })
 
 minetest.register_craftitem("default:flint", {

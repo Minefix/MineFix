@@ -46,7 +46,7 @@ function default.register_ores()
 
 	minetest.register_ore({
 		ore_type        = "blob",
-		ore             = "default:clay",
+		ore             = "default:clayblock",
 		wherein         = {"default:sand"},
 		clust_scarcity  = 16 * 16 * 16,
 		clust_size      = 5,

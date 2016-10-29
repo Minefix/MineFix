@@ -300,9 +300,9 @@ stairs.register_stair(
 
 stairs.register_stair(
 	"brick",
-	"default:brick",
+	"default:brickblock",
 	{cracky = 3},
-	{"default_brick.png"},
+	{"default_brick_block.png"},
 	"Brick Stair",
 	default.node_sound_stone_defaults()
 )
@@ -392,9 +392,9 @@ stairs.register_slab(
 
 stairs.register_slab(
 	"brick",
-	"default:brick",
+	"default:brickblock",
 	"Brick Slab",
-	{"default_brick.png"},
+	{"default_brick_block.png"},
 	{cracky = 3},
 	default.node_sound_stone_defaults()
 )

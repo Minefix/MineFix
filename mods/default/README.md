@@ -120,7 +120,6 @@ paramat (CC BY-SA 3.0):
 
 BlockMen (CC BY-SA 3.0):
   default_planks_oak.png
-  default_clay_brick.png
   default_iron_ingot.png
   default_gold_ingot.png
   default_tool_ironsword.png
@@ -156,7 +155,7 @@ Neuromancer (CC BY-SA 3.0):
 
 Gambit (CC BY-SA 3.0):
   default_gold_lump.png
-  default_clay_lump.png
+  default_clay.png
   default_coal.png
   default_grass_*.png
   default_paper.png

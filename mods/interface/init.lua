@@ -5,7 +5,7 @@ interface.tabs = {
 	["building"] = {
 		["position"] = "top",
 		["label"] = "Building Blocks",
-		["image"] = "default:brick",
+		["image"] = "default:brickblock",
 	},
 	["decoration"] = {
 		["position"] = "top",

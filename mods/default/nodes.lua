@@ -39,7 +39,7 @@ default:sand
 
 default:gravel
 
-default:clay
+default:clayblock
 
 default:snow
 default:snowblock
@@ -138,7 +138,7 @@ default:fence_aspen_wood
 
 default:glass
 
-default:brick
+default:brickblock
 
 --]]
 
@@ -333,12 +333,12 @@ minetest.register_node("default:gravel", {
 	}
 })
 
-minetest.register_node("default:clay", {
+minetest.register_node("default:clayblock", {
 	description = "Clay",
 	category = "building",
-	tiles = {"default_clay.png"},
+	tiles = {"default_clay_block.png"},
 	groups = {crumbly = 3},
-	drop = 'default:clay_lump 4',
+	drop = 'default:clay 4',
 	sounds = default.node_sound_dirt_defaults(),
 })
 
@@ -933,7 +933,7 @@ minetest.register_node("default:stone_with_coal", {
 	category = "building",
 	tiles = {"default_stone.png^default_mineral_coal.png"},
 	groups = {cracky = 3},
-	drop = 'default:coal_lump',
+	drop = 'default:coal',
 	sounds = default.node_sound_stone_defaults(),
 })
 
@@ -1767,12 +1767,12 @@ minetest.register_node("default:glass", {
 })
 
 
-minetest.register_node("default:brick", {
-	description = "Brick Block",
+minetest.register_node("default:brickblock", {
+	description = "Bricks",
 	category = "building",
 	paramtype2 = "facedir",
 	place_param2 = 0,
-	tiles = {"default_brick.png"},
+	tiles = {"default_brick_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
