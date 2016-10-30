@@ -28,6 +28,24 @@ The following is a list of required textures and their file names:
 * default_sapling_darkoak.png
 * default_apple_gold.png
 
+* default_clayblock_hardened
+* default_clayblock_hardened_black
+* default_clayblock_hardened_blue
+* default_clayblock_hardened_brown
+* default_clayblock_hardened_cyan
+* default_clayblock_hardened_gray
+* default_clayblock_hardened_green
+* default_clayblock_hardened_light_blue
+* default_clayblock_hardened_light_gray
+* default_clayblock_hardened_lime_green
+* default_clayblock_hardened_magenta
+* default_clayblock_hardened_orange
+* default_clayblock_hardened_pink
+* default_clayblock_hardened_purple
+* default_clayblock_hardened_red
+* default_clayblock_hardened_white
+* default_clayblock_hardened_yellow
+
 ## Authors of source code
 
 Originally by celeron55, Perttu Ahola <celeron55@gmail.com> (LGPL 2.1)

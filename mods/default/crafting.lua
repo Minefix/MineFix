@@ -485,6 +485,9 @@ minetest.register_craft({
 	}
 })
 
+
+-- Clay
+
 minetest.register_craft({
 	output = 'default:clayblock',
 	recipe = {
@@ -492,6 +495,152 @@ minetest.register_craft({
 		{'default:clay', 'default:clay'},
 	}
 })
+
+minetest.register_craft({
+	output = 'default:clayblock_hardened_black 8',
+	recipe = {
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'},
+		{'default:clayblock', 'default:dye_black', 'default:clayblock'},
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'}
+	}
+})
+
+minetest.register_craft({
+	output = 'default:clayblock_hardened_blue 8',
+	recipe = {
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'},
+		{'default:clayblock', 'default:dye_blue', 'default:clayblock'},
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'}
+	}
+})
+
+minetest.register_craft({
+	output = 'default:clayblock_hardened_brown 8',
+	recipe = {
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'},
+		{'default:clayblock', 'default:dye_brown', 'default:clayblock'},
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'}
+	}
+})
+
+minetest.register_craft({
+	output = 'default:clayblock_hardened_cyan 8',
+	recipe = {
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'},
+		{'default:clayblock', 'default:dye_cyan', 'default:clayblock'},
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'}
+	}
+})
+
+minetest.register_craft({
+	output = 'default:clayblock_hardened_gray 8',
+	recipe = {
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'},
+		{'default:clayblock', 'default:dye_gray', 'default:clayblock'},
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'}
+	}
+})
+
+minetest.register_craft({
+	output = 'default:clayblock_hardened_green 8',
+	recipe = {
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'},
+		{'default:clayblock', 'default:dye_green', 'default:clayblock'},
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'}
+	}
+})
+
+minetest.register_craft({
+	output = 'default:clayblock_hardened_light_blue 8',
+	recipe = {
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'},
+		{'default:clayblock', 'default:dye_light_blue', 'default:clayblock'},
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'}
+	}
+})
+
+minetest.register_craft({
+	output = 'default:clayblock_hardened_light_gray 8',
+	recipe = {
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'},
+		{'default:clayblock', 'default:dye_light_gray', 'default:clayblock'},
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'}
+	}
+})
+
+minetest.register_craft({
+	output = 'default:clayblock_hardened_lime_green 8',
+	recipe = {
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'},
+		{'default:clayblock', 'default:dye_lime_green', 'default:clayblock'},
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'}
+	}
+})
+
+minetest.register_craft({
+	output = 'default:clayblock_hardened_magenta 8',
+	recipe = {
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'},
+		{'default:clayblock', 'default:dye_magenta', 'default:clayblock'},
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'}
+	}
+})
+
+minetest.register_craft({
+	output = 'default:clayblock_hardened_orange 8',
+	recipe = {
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'},
+		{'default:clayblock', 'default:dye_orange', 'default:clayblock'},
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'}
+	}
+})
+
+minetest.register_craft({
+	output = 'default:clayblock_hardened_pink 8',
+	recipe = {
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'},
+		{'default:clayblock', 'default:dye_pink', 'default:clayblock'},
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'}
+	}
+})
+
+minetest.register_craft({
+	output = 'default:clayblock_hardened_purple 8',
+	recipe = {
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'},
+		{'default:clayblock', 'default:dye_purple', 'default:clayblock'},
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'}
+	}
+})
+
+minetest.register_craft({
+	output = 'default:clayblock_hardened_red 8',
+	recipe = {
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'},
+		{'default:clayblock', 'default:dye_red', 'default:clayblock'},
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'}
+	}
+})
+
+minetest.register_craft({
+	output = 'default:clayblock_hardened_white 8',
+	recipe = {
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'},
+		{'default:clayblock', 'default:dye_white', 'default:clayblock'},
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'}
+	}
+})
+
+minetest.register_craft({
+	output = 'default:clayblock_hardened_yellow 8',
+	recipe = {
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'},
+		{'default:clayblock', 'default:dye_yellow', 'default:clayblock'},
+		{'default:clayblock', 'default:clayblock', 'default:clayblock'}
+	}
+})
+
+
 
 minetest.register_craft({
 	output = 'default:paper',
@@ -719,6 +868,13 @@ minetest.register_craft({
 	type = "cooking",
 	output = "default:brick",
 	recipe = "default:clay",
+	cooktime = 10,
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "default:clayblock_hardened",
+	recipe = "default:clayblock",
 	cooktime = 10,
 })
 
