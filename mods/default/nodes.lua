@@ -1918,6 +1918,9 @@ default.register_fence("default:fence_wood_birch", {
 	sounds = default.node_sound_wood_defaults()
 })
 
+
+-- Glass
+
 minetest.register_node("default:glass", {
 	description = "Glass",
 	category = "building",
@@ -1926,9 +1929,220 @@ minetest.register_node("default:glass", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,
-	groups = {cracky = 3, oddly_breakable_by_hand = 3},
+	drop = {}, -- Make sure it never drops anything
+	groups = {cracky = 3, oddly_breakable_by_hand = 4},
 	sounds = default.node_sound_glass_defaults(),
 })
+
+minetest.register_node("default:glass_black", {
+	description = "Black Stained Glass",
+	category = "building",
+	drawtype = "glasslike_framed_optional",
+	tiles = {"default_glass_black.png", "default_glass_black_detail.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	is_ground_content = false,
+	drop = {}, -- Make sure it never drops anything
+	groups = {cracky = 3, oddly_breakable_by_hand = 4},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_node("default:glass_blue", {
+	description = "Blue Stained Glass",
+	category = "building",
+	drawtype = "glasslike_framed_optional",
+	tiles = {"default_glass_blue.png", "default_glass_blue_detail.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	is_ground_content = false,
+	drop = {}, -- Make sure it never drops anything
+	groups = {cracky = 3, oddly_breakable_by_hand = 4},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_node("default:glass_brown", {
+	description = "Brown Stained Glass",
+	category = "building",
+	drawtype = "glasslike_framed_optional",
+	tiles = {"default_glass_brown.png", "default_glass_brown_detail.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	is_ground_content = false,
+	drop = {}, -- Make sure it never drops anything
+	groups = {cracky = 3, oddly_breakable_by_hand = 4},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_node("default:glass_cyan", {
+	description = "Cyan Stained Glass",
+	category = "building",
+	drawtype = "glasslike_framed_optional",
+	tiles = {"default_glass_cyan.png", "default_glass_cyan_detail.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	is_ground_content = false,
+	drop = {}, -- Make sure it never drops anything
+	groups = {cracky = 3, oddly_breakable_by_hand = 4},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_node("default:glass_gray", {
+	description = "Gray Stained Glass",
+	category = "building",
+	drawtype = "glasslike_framed_optional",
+	tiles = {"default_glass_gray.png", "default_glass_gray_detail.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	is_ground_content = false,
+	drop = {}, -- Make sure it never drops anything
+	groups = {cracky = 3, oddly_breakable_by_hand = 4},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_node("default:glass_green", {
+	description = "Green Stained Glass",
+	category = "building",
+	drawtype = "glasslike_framed_optional",
+	tiles = {"default_glass_green.png", "default_glass_green_detail.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	is_ground_content = false,
+	drop = {}, -- Make sure it never drops anything
+	groups = {cracky = 3, oddly_breakable_by_hand = 4},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_node("default:glass_light_blue", {
+	description = "Light Blue Stained Glass",
+	category = "building",
+	drawtype = "glasslike_framed_optional",
+	tiles = {"default_glass_light_blue.png", "default_glass_light_blue_detail.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	is_ground_content = false,
+	drop = {}, -- Make sure it never drops anything
+	groups = {cracky = 3, oddly_breakable_by_hand = 4},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_node("default:glass_light_gray", {
+	description = "Light Gray Stained Glass",
+	category = "building",
+	drawtype = "glasslike_framed_optional",
+	tiles = {"default_glass_light_gray.png", "default_glass_light_gray_detail.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	is_ground_content = false,
+	drop = {}, -- Make sure it never drops anything
+	groups = {cracky = 3, oddly_breakable_by_hand = 4},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_node("default:glass_lime_green", {
+	description = "Lime Green Stained Glass",
+	category = "building",
+	drawtype = "glasslike_framed_optional",
+	tiles = {"default_glass_lime_green.png", "default_glass_lime_green_detail.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	is_ground_content = false,
+	drop = {}, -- Make sure it never drops anything
+	groups = {cracky = 3, oddly_breakable_by_hand = 4},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_node("default:glass_magenta", {
+	description = "Magenta Stained Glass",
+	category = "building",
+	drawtype = "glasslike_framed_optional",
+	tiles = {"default_glass_magenta.png", "default_glass_magenta_detail.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	is_ground_content = false,
+	drop = {}, -- Make sure it never drops anything
+	groups = {cracky = 3, oddly_breakable_by_hand = 4},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_node("default:glass_orange", {
+	description = "Orange Stained Glass",
+	category = "building",
+	drawtype = "glasslike_framed_optional",
+	tiles = {"default_glass_orange.png", "default_glass_orange_detail.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	is_ground_content = false,
+	drop = {}, -- Make sure it never drops anything
+	groups = {cracky = 3, oddly_breakable_by_hand = 4},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_node("default:glass_pink", {
+	description = "Pink Stained Glass",
+	category = "building",
+	drawtype = "glasslike_framed_optional",
+	tiles = {"default_glass_pink.png", "default_glass_pink_detail.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	is_ground_content = false,
+	drop = {}, -- Make sure it never drops anything
+	groups = {cracky = 3, oddly_breakable_by_hand = 4},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_node("default:glass_purple", {
+	description = "Purple Stained Glass",
+	category = "building",
+	drawtype = "glasslike_framed_optional",
+	tiles = {"default_glass_purple.png", "default_glass_purple_detail.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	is_ground_content = false,
+	drop = {}, -- Make sure it never drops anything
+	groups = {cracky = 3, oddly_breakable_by_hand = 4},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_node("default:glass_red", {
+	description = "Red Stained Glass",
+	category = "building",
+	drawtype = "glasslike_framed_optional",
+	tiles = {"default_glass_red.png", "default_glass_red_detail.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	is_ground_content = false,
+	drop = {}, -- Make sure it never drops anything
+	groups = {cracky = 3, oddly_breakable_by_hand = 4},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_node("default:glass_white", {
+	description = "White Stained Glass",
+	category = "building",
+	drawtype = "glasslike_framed_optional",
+	tiles = {"default_glass_white.png", "default_glass_white_detail.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	is_ground_content = false,
+	drop = {}, -- Make sure it never drops anything
+	groups = {cracky = 3, oddly_breakable_by_hand = 4},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_node("default:glass_yellow", {
+	description = "Yellow Stained Glass",
+	category = "building",
+	drawtype = "glasslike_framed_optional",
+	tiles = {"default_glass_yellow.png", "default_glass_yellow_detail.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	is_ground_content = false,
+	drop = {}, -- Make sure it never drops anything
+	groups = {cracky = 3, oddly_breakable_by_hand = 4},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+
 
 
 minetest.register_node("default:brickblock", {

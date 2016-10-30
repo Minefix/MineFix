@@ -496,6 +496,154 @@ minetest.register_craft({
 	}
 })
 
+-- COlored Glass
+
+minetest.register_craft({
+	output = 'default:glass_black',
+	recipe = {
+		{'default:glass', 'default:glass', 'default:glass'},
+		{'default:glass', 'default:dye_black', 'default:glass'},
+		{'default:glass', 'default:glass', 'default:glass'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:glass_blue',
+	recipe = {
+		{'default:glass', 'default:glass', 'default:glass'},
+		{'default:glass', 'default:dye_blue', 'default:glass'},
+		{'default:glass', 'default:glass', 'default:glass'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:glass_brown',
+	recipe = {
+		{'default:glass', 'default:glass', 'default:glass'},
+		{'default:glass', 'default:dye_brown', 'default:glass'},
+		{'default:glass', 'default:glass', 'default:glass'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:glass_cyan',
+	recipe = {
+		{'default:glass', 'default:glass', 'default:glass'},
+		{'default:glass', 'default:dye_cyan', 'default:glass'},
+		{'default:glass', 'default:glass', 'default:glass'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:glass_gray',
+	recipe = {
+		{'default:glass', 'default:glass', 'default:glass'},
+		{'default:glass', 'default:dye_gray', 'default:glass'},
+		{'default:glass', 'default:glass', 'default:glass'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:glass_green',
+	recipe = {
+		{'default:glass', 'default:glass', 'default:glass'},
+		{'default:glass', 'default:dye_green', 'default:glass'},
+		{'default:glass', 'default:glass', 'default:glass'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:glass_light_blue',
+	recipe = {
+		{'default:glass', 'default:glass', 'default:glass'},
+		{'default:glass', 'default:dye_light_blue', 'default:glass'},
+		{'default:glass', 'default:glass', 'default:glass'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:glass_light_gray',
+	recipe = {
+		{'default:glass', 'default:glass', 'default:glass'},
+		{'default:glass', 'default:dye_light_gray', 'default:glass'},
+		{'default:glass', 'default:glass', 'default:glass'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:glass_lime_green',
+	recipe = {
+		{'default:glass', 'default:glass', 'default:glass'},
+		{'default:glass', 'default:dye_lime_green', 'default:glass'},
+		{'default:glass', 'default:glass', 'default:glass'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:glass_magenta',
+	recipe = {
+		{'default:glass', 'default:glass', 'default:glass'},
+		{'default:glass', 'default:dye_magenta', 'default:glass'},
+		{'default:glass', 'default:glass', 'default:glass'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:glass_orange',
+	recipe = {
+		{'default:glass', 'default:glass', 'default:glass'},
+		{'default:glass', 'default:dye_orange', 'default:glass'},
+		{'default:glass', 'default:glass', 'default:glass'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:glass_pink',
+	recipe = {
+		{'default:glass', 'default:glass', 'default:glass'},
+		{'default:glass', 'default:dye_pink', 'default:glass'},
+		{'default:glass', 'default:glass', 'default:glass'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:glass_purple',
+	recipe = {
+		{'default:glass', 'default:glass', 'default:glass'},
+		{'default:glass', 'default:dye_purple', 'default:glass'},
+		{'default:glass', 'default:glass', 'default:glass'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:glass_red',
+	recipe = {
+		{'default:glass', 'default:glass', 'default:glass'},
+		{'default:glass', 'default:dye_red', 'default:glass'},
+		{'default:glass', 'default:glass', 'default:glass'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:glass_white',
+	recipe = {
+		{'default:glass', 'default:glass', 'default:glass'},
+		{'default:glass', 'default:dye_white', 'default:glass'},
+		{'default:glass', 'default:glass', 'default:glass'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:glass_yellow',
+	recipe = {
+		{'default:glass', 'default:glass', 'default:glass'},
+		{'default:glass', 'default:dye_yellow', 'default:glass'},
+		{'default:glass', 'default:glass', 'default:glass'},
+	}
+})
+
+
+
 minetest.register_craft({
 	output = 'default:clayblock_hardened_black 8',
 	recipe = {

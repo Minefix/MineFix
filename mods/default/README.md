@@ -47,6 +47,39 @@ The following is a list of required textures and their file names:
 * default_clayblock_hardened_white
 * default_clayblock_hardened_yellow
 
+* default_glass_black.png
+* default_glass_black_detail.png
+* default_glass_blue.png
+* default_glass_blue_detail.png
+* default_glass_brown.png
+* default_glass_brown_detail.png
+* default_glass_cyan.png
+* default_glass_cyan_detail.png
+* default_glass_gray.png
+* default_glass_gray_detail.png
+* default_glass_green.png
+* default_glass_green_detail.png
+* default_glass_light_blue.png
+* default_glass_light_blue_detail.png
+* default_glass_light_gray.png
+* default_glass_light_gray_detail.png
+* default_glass_lime_green.png
+* default_glass_lime_green_detail.png
+* default_glass_magenta.png
+* default_glass_magenta_detail.png
+* default_glass_orange.png
+* default_glass_orange_detail.png
+* default_glass_pink.png
+* default_glass_pink_detail.png
+* default_glass_purple.png
+* default_glass_purple_detail.png
+* default_glass_red.png
+* default_glass_red_detail.png
+* default_glass_white.png
+* default_glass_white_detail.png
+* default_glass_yellow.png
+* default_glass_yellow_detail.png
+
 ## Authors of source code
 
 Originally by celeron55, Perttu Ahola <celeron55@gmail.com> (LGPL 2.1)
