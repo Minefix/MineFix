@@ -28,6 +28,8 @@ The following is a list of required textures and their file names:
 * default_sapling_darkoak.png
 * default_apple_gold.png
 * default_charcoal.png
+* default_anvil_base.png
+* default_anvil_top_0.png
 
 * default_clayblock_hardened
 * default_clayblock_hardened_black

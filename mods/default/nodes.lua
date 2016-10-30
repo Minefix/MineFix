@@ -2149,11 +2149,32 @@ minetest.register_node("default:brickblock", {
 	description = "Bricks",
 	category = "building",
 	paramtype2 = "facedir",
-	place_param2 = 0,
 	tiles = {"default_brick_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("default:anvil", {
+	description = "Anvil",
+	category = "decoration",
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	tiles = {"default_anvil_top_0.png", "default_anvil_base.png", "default_anvil_base.png",
+"default_anvil_base.png", "default_anvil_base.png", "default_anvil_base.png"},
+	is_ground_content = false,
+	groups = {cracky = 1},
+	sounds = default.node_sound_stone_defaults(),
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.375, -0.5, -0.375, 0.375, -0.25, 0.375}, -- Base
+			{-0.3125, -0.5, -0.25, 0.3125, -0.1875, 0.25}, -- PoleBase
+			{-0.25, -0.1875, -0.125, 0.25, 0.125, 0.125}, -- Pole
+			{-0.5, 0.125, -0.3125, 0.5, 0.5, 0.3125}, -- Block
+		}
+	},
 })
 
 
