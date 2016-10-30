@@ -318,7 +318,7 @@ minetest.register_abm({
 		local rad = minetest.registered_nodes[node.name].groups.leafdecay
 		-- Assume ignore is a trunk, to make this
 		-- work at the border of a loaded area
-		if minetest.find_node_near(pos, rad, {"ignore", "group:tree"}) then
+		if minetest.find_node_near(pos, rad, {"ignore", "group:wood"}) then
 			return
 		end
 		-- Drop stuff
