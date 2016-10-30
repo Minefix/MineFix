@@ -189,50 +189,56 @@ minetest.register_node("default:mossycobble", {
 
 minetest.register_node("default:andesite", {
 	description = "Andesite",
+	category = "building",
 	tiles = {"default_andesite.png"},
 	is_ground_content = true,
 	groups = {cracky = 3},
-	category = "building"
+	sounds = default.node_sound_stone_defaults(),
 })
 
 minetest.register_node("default:andesite_polished", {
 	description = "Polished Andesite",
+	category = "building",
 	tiles = {"default_andesite_polished.png"},
 	is_ground_content = false,
 	groups = {cracky = 3},
-	category = "building"
+	sounds = default.node_sound_stone_defaults(),
 })
 
 minetest.register_node("default:diorite", {
 	description = "Diorite",
+	category = "building",
 	tiles = {"default_diorite.png"},
 	is_ground_content = true,
 	groups = {cracky = 3},
-	category = "building"
+	sounds = default.node_sound_stone_defaults(),
 })
 
 minetest.register_node("default:diorite_polished", {
 	description = "Polished Diorite",
+	category = "building",
 	tiles = {"default_diorite_polished.png"},
 	is_ground_content = false,
 	groups = {cracky = 3},
-	category = "building"
+	sounds = default.node_sound_stone_defaults(),
 })
 
 minetest.register_node("default:granite", {
 	description = "Granite",
+	category = "building",
 	tiles = {"default_granite.png"},
 	is_ground_content = true,
 	groups = {cracky = 3},
-	category = "building"
+	sounds = default.node_sound_stone_defaults(),
 })
 
 minetest.register_node("default:granite_polished", {
 	description = "Polished Granite",
+	category = "building",
 	tiles = {"default_granite_polished.png"},
 	is_ground_content = false,
 	groups = {cracky = 3},
-	category = "building"
+	sounds = default.node_sound_stone_defaults(),
 })
 
 minetest.register_node("default:sandstone", {
