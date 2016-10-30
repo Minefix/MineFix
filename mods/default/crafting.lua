@@ -93,7 +93,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:torch 4',
 	recipe = {
-		{'default:coal'},
+		{'group:coal'},
 		{'group:stick'},
 	}
 })
@@ -845,6 +845,13 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "cooking",
+	output = "default:charcoal",
+	recipe = "group:wood",
+	cooktime = 10,
+})
+
+minetest.register_craft({
+	type = "cooking",
 	output = "default:glass",
 	recipe = "group:sand",
 	cooktime = 10,
@@ -873,8 +880,8 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "cooking",
-	output = "default:clayblock_hardened",
-	recipe = "default:clayblock",
+	output = "default:coal",
+	recipe = "default:stone_with_coal",
 	cooktime = 10,
 })
 
@@ -961,7 +968,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "fuel",
-	recipe = "default:coal",
+	recipe = "group:coal",
 	burntime = 80,
 })
 

@@ -571,7 +571,7 @@ minetest.register_node("default:wood_oak", {
 	tiles = {"default_wood_oak_top.png", "default_wood_oak_top.png", "default_wood_oak.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+	groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
 	sounds = default.node_sound_wood_defaults(),
 
 	on_place = minetest.rotate_node
@@ -584,7 +584,7 @@ minetest.register_node("default:planks_oak", {
 	place_param2 = 0,
 	tiles = {"default_planks_oak.png"},
 	is_ground_content = false,
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, planks = 1},
 	sounds = default.node_sound_wood_defaults(),
 })
 
@@ -662,7 +662,7 @@ minetest.register_node("default:wood_darkoak", {
 	tiles = {"default_wood_darkoak_top.png", "default_wood_darkoak_top.png", "default_wood_darkoak.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+	groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
 	sounds = default.node_sound_wood_defaults(),
 
 	on_place = minetest.rotate_node
@@ -675,7 +675,7 @@ minetest.register_node("default:planks_darkoak", {
 	place_param2 = 0,
 	tiles = {"default_planks_darkoak.png"},
 	is_ground_content = false,
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, planks = 1},
 	sounds = default.node_sound_wood_defaults(),
 })
 
@@ -753,7 +753,7 @@ minetest.register_node("default:wood_jungle", {
 	tiles = {"default_wood_jungle_top.png", "default_wood_jungle_top.png", "default_wood_jungle.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+	groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
 	sounds = default.node_sound_wood_defaults(),
 
 	on_place = minetest.rotate_node
@@ -766,7 +766,7 @@ minetest.register_node("default:planks_jungle", {
 	place_param2 = 0,
 	tiles = {"default_planks_jungle.png"},
 	is_ground_content = false,
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, planks = 1},
 	sounds = default.node_sound_wood_defaults(),
 })
 
@@ -841,7 +841,7 @@ minetest.register_node("default:wood_spruce", {
 	tiles = {"default_wood_spruce_top.png", "default_wood_spruce_top.png", "default_wood_spruce.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 3},
+	groups = {wood = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 3},
 	sounds = default.node_sound_wood_defaults(),
 
 	on_place = minetest.rotate_node
@@ -854,7 +854,7 @@ minetest.register_node("default:planks_spruce", {
 	place_param2 = 0,
 	tiles = {"default_planks_spruce.png"},
 	is_ground_content = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
+	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, planks = 1},
 	sounds = default.node_sound_wood_defaults(),
 })
 
@@ -924,7 +924,7 @@ minetest.register_node("default:wood_acacia", {
 	tiles = {"default_wood_acacia_top.png", "default_wood_acacia_top.png", "default_wood_acacia.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+	groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
 	sounds = default.node_sound_wood_defaults(),
 
 	on_place = minetest.rotate_node
@@ -937,7 +937,7 @@ minetest.register_node("default:planks_acacia", {
 	place_param2 = 0,
 	tiles = {"default_planks_acacia.png"},
 	is_ground_content = false,
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, planks = 1},
 	sounds = default.node_sound_wood_defaults(),
 })
 
@@ -1009,7 +1009,7 @@ minetest.register_node("default:wood_birch", {
 	tiles = {"default_wood_birch_top.png", "default_wood_birch_top.png", "default_wood_birch.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 3},
+	groups = {wood = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 3},
 	sounds = default.node_sound_wood_defaults(),
 
 	on_place = minetest.rotate_node
@@ -1022,7 +1022,7 @@ minetest.register_node("default:planks_birch", {
 	place_param2 = 0,
 	tiles = {"default_planks_birch.png"},
 	is_ground_content = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
+	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, planks = 1},
 	sounds = default.node_sound_wood_defaults(),
 })
 

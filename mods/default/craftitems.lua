@@ -195,6 +195,13 @@ minetest.register_craftitem("default:coal", {
 	groups = {coal = 1}
 })
 
+minetest.register_craftitem("default:charcoal", {
+	description = "Charcoal",
+	category = "materials",
+	inventory_image = "default_charcoal.png",
+	groups = {coal = 1}
+})
+
 minetest.register_craftitem("default:diamond", {
 	description = "Diamond",
 	category = "materials",
