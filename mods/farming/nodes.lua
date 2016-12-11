@@ -46,10 +46,10 @@ minetest.register_node("farming:haybale", {
 	tiles = {
 		"farming_haybale_top.png",
 		"farming_haybale_top.png",
-		"farming_haybale_side.png",
-		"farming_haybale_side.png",
-		"farming_haybale_side.png",
-		"farming_haybale_side.png"
+		"farming_haybale.png",
+		"farming_haybale.png",
+		"farming_haybale.png",
+		"farming_haybale.png"
 	},
 	is_ground_content = false,
 	groups = {snappy=3, flammable=4, fall_damage_add_percent=-30},
