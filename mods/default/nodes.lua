@@ -1571,33 +1571,55 @@ minetest.register_node("default:torch", {
 	sounds = default.node_sound_defaults(),
 })
 
+-- Workbench
+minetest.register_node("default:crafting_table", {
+	description = "Crafting Table",
+	category = "decoration",
+	tiles = {
+		"default_craftingtable_top.png", "default_planks_oak.png",
+		"default_craftingtable_side.png", "default_craftingtable_side.png",
+		"default_craftingtable_side.png", "default_craftingtable_front.png"
+	},
+	paramtype2 = "facedir",
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
+	is_ground_content = false,
+	sounds = default.node_sound_wood_defaults(),
+	on_rightclick = function(pos, node, clicker, itemstack)
+		minetest.show_formspec(clicker:get_player_name(), "default:crafting_table",
+		"size[9,8.5;]" ..
+		"background[0,0;9,8.5;gui_formbg.png;true]" ..
+		"label[4,0;Crafting]" ..
+		"list[current_player;craft;2,0.5;3,3;]" ..
+		"image[5,1.5;1,1;gui_furnace_arrow_bg.png^[transformR270]" ..
+		"list[current_player;craftpreview;6,1.5;1,1;]" ..
+		"label[0,3.75;Inventory]" ..
+		"list[current_player;main;0,4.25;9,3;9]" ..
+		"list[current_player;main;0,7.50;9,1;]"
+		)
+	end,
+})
 
+-- Chest
 local chest_formspec =
-	"size[8,9]" ..
-	default.gui_bg ..
-	default.gui_bg_img ..
-	default.gui_slots ..
-	"list[current_name;main;0,0.3;8,4;]" ..
-	"list[current_player;main;0,4.85;8,1;]" ..
-	"list[current_player;main;0,6.08;8,3;8]" ..
-	"listring[current_name;main]" ..
-	"listring[current_player;main]" ..
-	default.get_hotbar_bg(0,4.85)
+	"size[9,8.5]" ..
+	"background[5,5;1,1;gui_formbg.png;true]" ..
+	"label[0,-0.1;Chest]" ..
+	"list[current_name;main;0,0.3;9,3;]" ..
+	"label[0,3.75;Inventory]" ..
+	"list[current_player;main;0,4.25;9,3;9]" ..
+	"list[current_player;main;0,7.50;9,1;]"
 
 local function get_locked_chest_formspec(pos)
 	local spos = pos.x .. "," .. pos.y .. "," .. pos.z
 	local formspec =
-		"size[8,9]" ..
-		default.gui_bg ..
-		default.gui_bg_img ..
-		default.gui_slots ..
-		"list[nodemeta:" .. spos .. ";main;0,0.3;8,4;]" ..
-		"list[current_player;main;0,4.85;8,1;]" ..
-		"list[current_player;main;0,6.08;8,3;8]" ..
-		"listring[nodemeta:" .. spos .. ";main]" ..
-		"listring[current_player;main]" ..
-		default.get_hotbar_bg(0,4.85)
- return formspec
+		"size[9,8.5]" ..
+		"background[5,5;1,1;gui_formbg.png;true]" ..
+		"label[0,-0.1;Chest]" ..
+		"list[nodemeta:" .. spos .. ";main;0,0.3;9,3;]" ..
+		"label[0,3.75;Inventory]" ..
+		"list[current_player;main;0,4.25;9,3;9]" ..
+		"list[current_player;main;0,7.50;9,1;]"
+	return formspec
 end
 
 local function has_locked_chest_privilege(meta, player)
@@ -1620,7 +1642,7 @@ minetest.register_node("default:chest", {
 	tiles = {"default_chest_top.png", "default_chest_top.png", "default_chest_side.png",
 		"default_chest_side.png", "default_chest_side.png", "default_chest_front.png"},
 	paramtype2 = "facedir",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 	legacy_facedir_simple = true,
 	is_ground_content = false,
 	sounds = default.node_sound_wood_defaults(),
@@ -1629,7 +1651,7 @@ minetest.register_node("default:chest", {
 		local meta = minetest.get_meta(pos)
 		meta:set_string("formspec", chest_formspec)
 		local inv = meta:get_inventory()
-		inv:set_size("main", 8*4)
+		inv:set_size("main", 9*3)
 	end,
 	can_dig = function(pos,player)
 		local meta = minetest.get_meta(pos);
@@ -1666,7 +1688,7 @@ minetest.register_node("default:chest_locked", {
 	tiles = {"default_chest_top.png", "default_chest_top.png", "default_chest_side.png",
 		"default_chest_side.png", "default_chest_side.png", "default_chest_lock.png"},
 	paramtype2 = "facedir",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 	legacy_facedir_simple = true,
 	is_ground_content = false,
 	sounds = default.node_sound_wood_defaults(),
@@ -1681,7 +1703,7 @@ minetest.register_node("default:chest_locked", {
 		local meta = minetest.get_meta(pos)
 		meta:set_string("owner", "")
 		local inv = meta:get_inventory()
-		inv:set_size("main", 8 * 4)
+		inv:set_size("main", 9 * 3)
 	end,
 	can_dig = function(pos,player)
 		local meta = minetest.get_meta(pos);
@@ -1737,15 +1759,14 @@ minetest.register_node("default:chest_locked", {
 
 local bookshelf_formspec =
 	"size[8,7;]" ..
-	default.gui_bg ..
-	default.gui_bg_img ..
-	default.gui_slots ..
+	"bgcolor[#080808BB;true]" ..
+	"background[5,5;1,1;gui_formbg.png;true]" ..
+	"listcolors[#00000069;#5A5A5A;#141318;#30434C;#FFF]" ..
 	"list[context;books;0,0.3;8,2;]" ..
 	"list[current_player;main;0,2.85;8,1;]" ..
 	"list[current_player;main;0,4.08;8,3;8]" ..
 	"listring[context;books]" ..
-	"listring[current_player;main]" ..
-	default.get_hotbar_bg(0,2.85)
+	"listring[current_player;main]"
 
 minetest.register_node("default:bookshelf", {
 	description = "Bookshelf",

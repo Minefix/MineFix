@@ -5,44 +5,42 @@
 
 local function active_formspec(fuel_percent, item_percent)
 	local formspec =
-		"size[8,8.5]"..
-		default.gui_bg..
-		default.gui_bg_img..
-		default.gui_slots..
-		"list[current_name;src;2.75,0.5;1,1;]"..
-		"list[current_name;fuel;2.75,2.5;1,1;]"..
-		"image[2.75,1.5;1,1;default_furnace_fire_bg.png^[lowpart:"..
+		"size[9,8.5]"..
+		"background[0,0;1,1;gui_formbg.png;true]" ..
+		"label[4,0;Furnace]" ..
+		"list[current_name;src;3.5,0.5;1,1;]"..
+		"list[current_name;fuel;3.5,2.5;1,1;]"..
+		"image[3.5,1.5;1,1;default_furnace_fire_bg.png^[lowpart:"..
 		(100-fuel_percent)..":default_furnace_fire_fg.png]"..
-		"image[3.75,1.5;1,1;gui_furnace_arrow_bg.png^[lowpart:"..
+		"image[4.5,1.5;1,1;gui_furnace_arrow_bg.png^[lowpart:"..
 		(item_percent)..":gui_furnace_arrow_fg.png^[transformR270]"..
-		"list[current_name;dst;4.75,0.96;2,2;]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
+		"list[current_name;dst;5.5,1.5;1,1;]"..
+		"label[0,3.75;Inventory]" ..
+		"list[current_player;main;0,4.25;9,3;9]"..
+		"list[current_player;main;0,7.50;9,1;]"..
 		"listring[current_name;dst]"..
 		"listring[current_player;main]"..
 		"listring[current_name;src]"..
-		"listring[current_player;main]"..
-		default.get_hotbar_bg(0, 4.25)
+		"listring[current_player;main]"
 	return formspec
 end
 
 local inactive_formspec =
-	"size[8,8.5]"..
-	default.gui_bg..
-	default.gui_bg_img..
-	default.gui_slots..
-	"list[current_name;src;2.75,0.5;1,1;]"..
-	"list[current_name;fuel;2.75,2.5;1,1;]"..
-	"image[2.75,1.5;1,1;default_furnace_fire_bg.png]"..
-	"image[3.75,1.5;1,1;gui_furnace_arrow_bg.png^[transformR270]"..
-	"list[current_name;dst;4.75,0.96;2,2;]"..
-	"list[current_player;main;0,4.25;8,1;]"..
-	"list[current_player;main;0,5.5;8,3;8]"..
+	"size[9,8.5]"..
+	"background[0,0;1,1;gui_formbg.png;true]" ..
+	"label[4,0;Furnace]" ..
+	"list[current_name;src;3.5,0.5;1,1;]"..
+	"list[current_name;fuel;3.5,2.5;1,1;]"..
+	"image[3.5,1.5;1,1;default_furnace_fire_bg.png]"..
+	"image[4.5,1.5;1,1;gui_furnace_arrow_bg.png^[transformR270]"..
+	"list[current_name;dst;5.5,1.5;1,1;]"..
+	"label[0,3.75;Inventory]" ..
+	"list[current_player;main;0,4.25;9,3;9]"..
+	"list[current_player;main;0,7.50;9,1;]"..
 	"listring[current_name;dst]"..
 	"listring[current_player;main]"..
 	"listring[current_name;src]"..
-	"listring[current_player;main]"..
-	default.get_hotbar_bg(0, 4.25)
+	"listring[current_player;main]"
 
 --
 -- Node callback functions that are the same for active and inactive furnace

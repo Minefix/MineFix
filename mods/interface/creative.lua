@@ -1,5 +1,7 @@
 --[[
 Registers a new creative inventory tab, useful for external mods. They will have to require this mod
+@categoryname = The name of the category, this name will have to be added to items
+@label = The name of the category when hovering your mouse over the tab
 @tablocation = can be top or bottom of the creative inventory
 @tabimage = the item to show on the tab
 ]]
@@ -107,7 +109,7 @@ interface.createCreativeInventory = function(player, tab, startIndex, pageNumber
 	local background, itemlist, slider
 	if tab == "inventory" then
 		background = "background[-0.2,1;11.5,7.25;interface_creative_inventory.png]"
-		itemlist = "list[current_player;main;0,3.75;10,3;9]"
+		itemlist = "list[current_player;main;0,3.75;9,3;9]"
 		slider = ""
 	else
 		background = "background[-0.2,1;11.5,7.25;interface_creative_list.png]"
