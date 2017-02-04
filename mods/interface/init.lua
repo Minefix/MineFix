@@ -58,8 +58,10 @@ local startIndex = 0
 
 dofile(minetest.get_modpath("interface") .. "/survival.lua")
 dofile(minetest.get_modpath("interface") .. "/creative.lua")
+dofile(minetest.get_modpath("interface") .. "/hud.lua")
 
 local creative_mode = minetest.setting_getbool("creative_mode")
+local damage_enabled = minetest.setting_getbool("enable_damage")
 
 minetest.register_on_joinplayer(function(player)
 	player.hud_set_hotbar_itemcount(player, 9)
@@ -69,11 +71,13 @@ minetest.register_on_joinplayer(function(player)
 	if not creative_mode then
 		interface.createSurvivalInventory(player)
 	else
-		player:get_inventory():set_size("main", 9*4)
+		player:get_inventory():set_size("main", 9 * 4)
 
 		interface.initializeCreativeInventory(player)
 		interface.fillCreativeInventory(player, "building")
 		interface.createCreativeInventory(player, "building", 0, 0)
+
+		interface.createHud(player)
 	end
 end)
 

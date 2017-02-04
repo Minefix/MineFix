@@ -6,6 +6,7 @@
 local function active_formspec(fuel_percent, item_percent)
 	local formspec =
 		"size[9,8.5]"..
+		"bgcolor[#080808BB;true]" ..
 		"background[0,0;1,1;gui_formbg.png;true]" ..
 		"label[4,0;Furnace]" ..
 		"list[current_name;src;3.5,0.5;1,1;]"..
@@ -27,6 +28,7 @@ end
 
 local inactive_formspec =
 	"size[9,8.5]"..
+	"bgcolor[#080808BB;true]" ..
 	"background[0,0;1,1;gui_formbg.png;true]" ..
 	"label[4,0;Furnace]" ..
 	"list[current_name;src;3.5,0.5;1,1;]"..

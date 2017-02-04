@@ -11,6 +11,12 @@ default.LIGHT_MAX = 14
 -- Load files
 local default_path = minetest.get_modpath("default")
 
+default.players = {}
+
+minetest.register_on_joinplayer(function(player)
+	default.players[player:get_player_name()] = player
+end)
+
 dofile(default_path.."/functions.lua")
 dofile(default_path.."/trees.lua")
 dofile(default_path.."/nodes.lua")

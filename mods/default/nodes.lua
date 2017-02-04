@@ -1587,6 +1587,7 @@ minetest.register_node("default:crafting_table", {
 	on_rightclick = function(pos, node, clicker, itemstack)
 		minetest.show_formspec(clicker:get_player_name(), "default:crafting_table",
 		"size[9,8.5;]" ..
+		"bgcolor[#080808BB;true]" ..
 		"background[0,0;9,8.5;gui_formbg.png;true]" ..
 		"label[4,0;Crafting]" ..
 		"list[current_player;craft;2,0.5;3,3;]" ..
@@ -1602,6 +1603,7 @@ minetest.register_node("default:crafting_table", {
 -- Chest
 local chest_formspec =
 	"size[9,8.5]" ..
+	"bgcolor[#080808BB;true]" ..
 	"background[5,5;1,1;gui_formbg.png;true]" ..
 	"label[0,-0.1;Chest]" ..
 	"list[current_name;main;0,0.3;9,3;]" ..
@@ -1613,6 +1615,7 @@ local function get_locked_chest_formspec(pos)
 	local spos = pos.x .. "," .. pos.y .. "," .. pos.z
 	local formspec =
 		"size[9,8.5]" ..
+		"bgcolor[#080808BB;true]" ..
 		"background[5,5;1,1;gui_formbg.png;true]" ..
 		"label[0,-0.1;Chest]" ..
 		"list[nodemeta:" .. spos .. ";main;0,0.3;9,3;]" ..
