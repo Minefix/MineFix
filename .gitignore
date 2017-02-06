@@ -10,7 +10,6 @@ luac.out
 *.o
 *.os
 *.ko
-*.obj
 *.elf
 
 # Precompiled Headers
@@ -38,4 +37,3 @@ luac.out
 *.i*86
 *.x86_64
 *.hex
-
