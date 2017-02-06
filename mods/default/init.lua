@@ -13,6 +13,18 @@ local default_path = minetest.get_modpath("default")
 
 default.players = {}
 
+for key, value in pairs(minetest.registered_entities) do
+	print(key)
+
+	for key, value2 in pairs(value) do
+		print("      " .. key)
+
+		for key, value3 in pairs(value) do
+			print("             " .. key)
+		end
+	end
+end
+
 minetest.register_on_joinplayer(function(player)
 	default.players[player:get_player_name()] = player
 end)
