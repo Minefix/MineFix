@@ -58,11 +58,12 @@ interface.fillCreativeInventory = function(player, tab)
 	end
 
 	table.sort(creative_list)
+	local creative_list_filledup = 50 - (#creative_list % 50) + #creative_list -- Fill up empty spots
 
 	if #creative_list ~= 0 then
-		inventory:set_size("main", #creative_list)
+		inventory:set_size("main", creative_list_filledup)
 	else
-		inventory:set_size("main", 1) --Set it to 1 big so the game won't complain that the 'main' list doesn't exist
+		inventory:set_size("main", creative_list_filledup) --Set it to 1 big so the game won't complain that the 'main' list doesn't exist
 	end
 
 	for key, itemstring in ipairs(creative_list) do
@@ -89,30 +90,46 @@ interface.createCreativeInventory = function(player, tab, startIndex, pageNumber
 	for key, value in pairs(interface.tabs) do
 		if value.position == "top" then
 			if key == tab then
-				activeTab = "image[" .. tabsTopButtonX - 0.17 ..",-0.25;1.5,1.44;interface_creative_tab_active.png]"
+				activeTab = "image[" .. tabsTopButtonX - 0.17 ..",-0.30;1.27,1.65;interface_creative_tab_active.png]"
 			else
-				tabsTop = tabsTop .. "image[" .. tabsTopButtonX - 0.15 .. ",-0.2;1.27,1.27;interface_creative_tab_inactive.png]"
+				tabsTop = tabsTop .. "image[" .. tabsTopButtonX - 0.15 .. ",-0.15;1.27,1.27;interface_creative_tab_inactive.png]"
 			end
-			tabsTop = tabsTop .. "item_image_button[" .. tabsTopButtonX .. ",0;1,1;" .. value.image .. ";" .. key .. ";]"
+			tabsTop = tabsTop .. "item_image_button[" .. tabsTopButtonX - 0.075 .. ",0;1,1;" .. value.image .. ";" .. key .. ";]"
 			tabsTopButtonX = tabsTopButtonX + 1.28
 		else
 			if key == tab then
-				activeTab = "image[" .. tabsBottomButtonX - 0.17 ..",8.07;1.5,1.44;interface_creative_tab_active.png^[transformfy]]"
+				activeTab = "image[" .. tabsBottomButtonX - 0.17 ..",8;1.27,1.65;interface_creative_tab_active.png^[transformfy]]"
 			else
-				tabsTop = tabsTop .. "image[" .. tabsBottomButtonX - 0.15 .. ",8.15;1.27,1.27;interface_creative_tab_inactive.png^[transformfy]]"
+				tabsTop = tabsTop .. "image[" .. tabsBottomButtonX - 0.15 .. ",8.175;1.27,1.27;interface_creative_tab_inactive.png^[transformfy]]"
 			end
-			tabsBottom = tabsBottom .. "item_image_button[" .. tabsBottomButtonX .. ",8.3;1,1;" .. value.image .. ";" .. key .. ";]"
+			tabsBottom = tabsBottom .. "item_image_button[" .. tabsBottomButtonX - 0.075 .. ",8.3;1,1;" .. value.image .. ";" .. key .. ";]"
 			tabsBottomButtonX = tabsBottomButtonX + 1.28
 		end
 	end
 
+	local searchTab, inventoryTab
+	if tab == "search" then
+		searchTab = "image[10.18,-0.30;1.27,1.65;interface_creative_tab_active.png]"
+	else
+		searchTab = "image[10.2,-0.15;1.25,1.27;interface_creative_tab_inactive.png]"
+	end
+	searchTab = searchTab .. "item_image_button[10.3,0;1,1;default:wood_oak;search;]" -- Use a temporary item for the search tab for now
+
+	if tab == "inventory" then
+		inventoryTab = "image[10.18,8;1.27,1.65;interface_creative_tab_active.png^[transformfy]]"
+	else
+		inventoryTab = "image[10.2,8.175;1.25,1.27;interface_creative_tab_inactive.png^[transformfy]]"
+	end
+	inventoryTab = inventoryTab .. "item_image_button[10.3,8.3;1,1;default:chest;inventory;]"
+	print(tab)
+
 	local background, itemlist, slider
 	if tab == "inventory" then
-		background = "background[-0.2,1;11.5,7.25;interface_creative_inventory.png]"
+		background = "background[-0.2,1;11.5,7.25;gui_formbg.png]"
 		itemlist = "list[current_player;main;0,3.75;9,3;9]"
 		slider = ""
 	else
-		background = "background[-0.2,1;11.5,7.25;interface_creative_list.png]"
+		background = "background[-0.2,1;11.5,7.25;gui_formbg.png]"
 		itemlist = "list[detached:creative;main;0,1.74;10,5;" .. tostring(startIndex) .. "]"
 		slider = "image_button[10,1.76;0.85,0.6;interface_creative_up.png;creative_prev;]" ..
 		"image[10," .. tostring(slider_pos) .. ";0.75," .. tostring(slider_height) .. ";interface_creative_slider.png]" ..
@@ -122,18 +139,15 @@ interface.createCreativeInventory = function(player, tab, startIndex, pageNumber
 	local formspec = "size[12,9.3]" ..
 		background ..
 		"bgcolor[#080808BB;true]" ..
-		"listcolors[#9990;#FFF7;#FFF0;#160816;#D4D2FF]" ..
 		"label[-5,-5;Building Blocks]" ..
 		activeTab ..
 		tabsTop ..
-		"image[10.2,-0.2;1.25,1.27;interface_creative_tab_inactive.png]" ..
-		"item_image_button[10.3,0;1,1;default:wood_oak;search;]" .. -- Use a temporary item for the search tab for now
+		searchTab ..
 		itemlist ..
 		slider ..
 		"list[current_player;main;0,7;9,1;]" ..
 		tabsBottom ..
-		"image[10.2,8.15;1.25,1.27;interface_creative_tab_inactive.png^[transformfy]]" ..
-		"item_image_button[10.3,8.3;1,1;default:chest;inventory;]"
+		inventoryTab
 
 		if pageNumber ~= nil then
 			formspec = formspec .. "p" .. tostring(pageNumber)
