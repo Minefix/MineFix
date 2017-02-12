@@ -17,9 +17,9 @@ Stone
 (1. Material 2. Cobble variant 3. Brick variant 4. Modified forms)
 
 default:stone
-default:cobble
+default:cobblestone
 default:stonebrick
-default:mossycobble
+default:cobblestone_mossy
 
 default:sandstone
 default:sandstonebrick
@@ -151,15 +151,15 @@ minetest.register_node("default:stone", {
 	category = "building",
 	tiles = {"default_stone.png"},
 	groups = {cracky = 3, stone = 1},
-	drop = 'default:cobble',
+	drop = 'default:cobblestone',
 	legacy_mineral = true,
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:cobble", {
+minetest.register_node("default:cobblestone", {
 	description = "Cobblestone",
 	category = "building",
-	tiles = {"default_cobble.png"},
+	tiles = {"default_cobblestone.png"},
 	is_ground_content = false,
 	groups = {cracky = 3, stone = 2},
 	sounds = default.node_sound_stone_defaults(),
@@ -176,10 +176,10 @@ minetest.register_node("default:stonebrick", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:mossycobble", {
+minetest.register_node("default:cobblestone_mossy", {
 	description = "Mossy Cobblestone",
 	category = "building",
-	tiles = {"default_mossycobble.png"},
+	tiles = {"default_cobblestone_mossy.png"},
 	is_ground_content = false,
 	groups = {cracky = 3, stone = 1},
 	sounds = default.node_sound_stone_defaults(),
@@ -241,29 +241,29 @@ minetest.register_node("default:granite_polished", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:sandstone", {
+minetest.register_node("default:sandstone_normal", {
 	description = "Sandstone",
 	category = "building",
-	tiles = {"default_sandstone.png"},
+	tiles = {"default_sandstone_top.png", "default_sandstone_bottom.png", "default_sandstone_normal.png"},
 	groups = {crumbly = 1, cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:sandstonebrick", {
-	description = "Sandstone Brick",
+minetest.register_node("default:sandstone_chiseled", {
+	description = "Chiseled Sandstone",
 	category = "building",
 	paramtype2 = "facedir",
 	place_param2 = 0,
-	tiles = {"default_sandstone_brick.png"},
+	tiles = {"default_sandstone_top.png", "default_sandstone_bottom.png", "default_sandstone_chiseled.png"},
 	is_ground_content = false,
 	groups = {cracky = 2},
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:sandstone_block", {
-	description = "Sandstone Block",
+minetest.register_node("default:sandstone_smooth", {
+	description = "Smooth Sandstone",
 	category = "building",
-	tiles = {"default_sandstone_block.png"},
+	tiles = {"default_sandstone_top.png", "default_sandstone_bottom.png", "default_sandstone_smooth.png"},
 	is_ground_content = false,
 	groups = {cracky = 2},
 	sounds = default.node_sound_stone_defaults(),
@@ -1095,7 +1095,7 @@ minetest.register_node("default:sapling_birch", {
 minetest.register_node("default:stone_with_coal", {
 	description = "Coal Ore",
 	category = "building",
-	tiles = {"default_stone.png^default_mineral_coal.png"},
+	tiles = {"default_coal_ore.png"},
 	groups = {cracky = 3},
 	drop = 'default:coal',
 	sounds = default.node_sound_stone_defaults(),
@@ -1114,7 +1114,7 @@ minetest.register_node("default:coalblock", {
 minetest.register_node("default:stone_with_iron", {
 	description = "Iron Ore",
 	category = "building",
-	tiles = {"default_stone.png^default_mineral_iron.png"},
+	tiles = {"default_iron_ore.png"},
 	groups = {cracky = 2},
 	drop = 'default:stone_with_iron',
 	sounds = default.node_sound_stone_defaults(),
@@ -1133,7 +1133,7 @@ minetest.register_node("default:ironblock", {
 minetest.register_node("default:stone_with_gold", {
 	description = "Gold Ore",
 	category = "building",
-	tiles = {"default_stone.png^default_mineral_gold.png"},
+	tiles = {"default_gold_ore.png"},
 	groups = {cracky = 2},
 	drop = "default:stone_with_gold",
 	sounds = default.node_sound_stone_defaults(),
@@ -1152,7 +1152,7 @@ minetest.register_node("default:goldblock", {
 minetest.register_node("default:stone_with_diamond", {
 	description = "Diamond Ore",
 	category = "building",
-	tiles = {"default_stone.png^default_mineral_diamond.png"},
+	tiles = {"default_diamond_ore.png"},
 	groups = {cracky = 1},
 	drop = "default:diamond",
 	sounds = default.node_sound_stone_defaults(),
@@ -1171,7 +1171,7 @@ minetest.register_node("default:diamondblock", {
 minetest.register_node("default:stone_with_lapis", {
 	description = "Lapis Lazuli Ore",
 	category = "building",
-	tiles = {"default_stone.png^default_mineral_lapis.png"},
+	tiles = {"default_lapis_ore.png"},
 	groups = {cracky = 2},
 	drop = {
 		max_items = 8,
@@ -1202,7 +1202,7 @@ minetest.register_node("default:lapisblock", {
 minetest.register_node("default:cactus", {
 	description = "Cactus",
 	category = "decoration",
-	tiles = {"default_cactus_top.png", "default_cactus_top.png",
+	tiles = {"default_cactus_top.png", "default_cactus_bottom.png",
 		"default_cactus_side.png"},
 	paramtype2 = "facedir",
 	groups = {snappy = 1, choppy = 3},
@@ -1962,7 +1962,7 @@ minetest.register_node("default:glass_black", {
 	description = "Black Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
-	tiles = {"default_glass_black.png", "default_glass_black_detail.png"},
+	tiles = {"default_glass_black.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,
@@ -1975,7 +1975,7 @@ minetest.register_node("default:glass_blue", {
 	description = "Blue Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
-	tiles = {"default_glass_blue.png", "default_glass_blue_detail.png"},
+	tiles = {"default_glass_blue.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,
@@ -1988,7 +1988,7 @@ minetest.register_node("default:glass_brown", {
 	description = "Brown Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
-	tiles = {"default_glass_brown.png", "default_glass_brown_detail.png"},
+	tiles = {"default_glass_brown.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,
@@ -2001,7 +2001,7 @@ minetest.register_node("default:glass_cyan", {
 	description = "Cyan Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
-	tiles = {"default_glass_cyan.png", "default_glass_cyan_detail.png"},
+	tiles = {"default_glass_cyan.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,
@@ -2014,7 +2014,7 @@ minetest.register_node("default:glass_gray", {
 	description = "Gray Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
-	tiles = {"default_glass_gray.png", "default_glass_gray_detail.png"},
+	tiles = {"default_glass_gray.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,
@@ -2027,7 +2027,7 @@ minetest.register_node("default:glass_green", {
 	description = "Green Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
-	tiles = {"default_glass_green.png", "default_glass_green_detail.png"},
+	tiles = {"default_glass_green.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,
@@ -2040,7 +2040,7 @@ minetest.register_node("default:glass_light_blue", {
 	description = "Light Blue Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
-	tiles = {"default_glass_light_blue.png", "default_glass_light_blue_detail.png"},
+	tiles = {"default_glass_light_blue.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,
@@ -2053,7 +2053,7 @@ minetest.register_node("default:glass_light_gray", {
 	description = "Light Gray Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
-	tiles = {"default_glass_light_gray.png", "default_glass_light_gray_detail.png"},
+	tiles = {"default_glass_light_gray.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,
@@ -2066,7 +2066,7 @@ minetest.register_node("default:glass_lime_green", {
 	description = "Lime Green Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
-	tiles = {"default_glass_lime_green.png", "default_glass_lime_green_detail.png"},
+	tiles = {"default_glass_lime_green.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,
@@ -2079,7 +2079,7 @@ minetest.register_node("default:glass_magenta", {
 	description = "Magenta Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
-	tiles = {"default_glass_magenta.png", "default_glass_magenta_detail.png"},
+	tiles = {"default_glass_magenta.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,
@@ -2092,7 +2092,7 @@ minetest.register_node("default:glass_orange", {
 	description = "Orange Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
-	tiles = {"default_glass_orange.png", "default_glass_orange_detail.png"},
+	tiles = {"default_glass_orange.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,
@@ -2105,7 +2105,7 @@ minetest.register_node("default:glass_pink", {
 	description = "Pink Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
-	tiles = {"default_glass_pink.png", "default_glass_pink_detail.png"},
+	tiles = {"default_glass_pink.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,
@@ -2118,7 +2118,7 @@ minetest.register_node("default:glass_purple", {
 	description = "Purple Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
-	tiles = {"default_glass_purple.png", "default_glass_purple_detail.png"},
+	tiles = {"default_glass_purple.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,
@@ -2131,7 +2131,7 @@ minetest.register_node("default:glass_red", {
 	description = "Red Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
-	tiles = {"default_glass_red.png", "default_glass_red_detail.png"},
+	tiles = {"default_glass_red.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,
@@ -2144,7 +2144,7 @@ minetest.register_node("default:glass_white", {
 	description = "White Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
-	tiles = {"default_glass_white.png", "default_glass_white_detail.png"},
+	tiles = {"default_glass_white.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,
@@ -2157,7 +2157,7 @@ minetest.register_node("default:glass_yellow", {
 	description = "Yellow Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
-	tiles = {"default_glass_yellow.png", "default_glass_yellow_detail.png"},
+	tiles = {"default_glass_yellow.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,

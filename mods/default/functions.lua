@@ -414,18 +414,18 @@ minetest.register_abm({
 
 minetest.register_abm({
 	label = "Moss growth",
-	nodenames = {"default:cobble", "stairs:slab_cobble", "stairs:stair_cobble"},
+	nodenames = {"default:cobblestone", "stairs:slab_cobblestone", "stairs:stair_cobblestone"},
 	neighbors = {"group:water"},
 	interval = 16,
 	chance = 200,
 	catch_up = false,
 	action = function(pos, node)
-		if node.name == "default:cobble" then
-			minetest.set_node(pos, {name = "default:mossycobble"})
-		elseif node.name == "stairs:slab_cobble" then
-			minetest.set_node(pos, {name = "stairs:slab_mossycobble", param2 = node.param2})
-		elseif node.name == "stairs:stair_cobble" then
-			minetest.set_node(pos, {name = "stairs:stair_mossycobble", param2 = node.param2})
+		if node.name == "default:cobblestone" then
+			minetest.set_node(pos, {name = "default:cobblestone_mossy"})
+		elseif node.name == "stairs:slab_cobblestone" then
+			minetest.set_node(pos, {name = "stairs:slab_cobblestone_mossy", param2 = node.param2})
+		elseif node.name == "stairs:stair_cobblestone" then
+			minetest.set_node(pos, {name = "stairs:stair_cobblestone_mossy", param2 = node.param2})
 		end
 	end
 })

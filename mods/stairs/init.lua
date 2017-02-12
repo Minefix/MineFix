@@ -272,10 +272,10 @@ stairs.register_stair(
 )
 
 stairs.register_stair(
-	"cobble",
-	"default:cobble",
+	"cobblestone",
+	"default:cobblestone",
 	{cracky = 3},
-	{"default_cobble.png"},
+	{"default_cobblestone.png"},
 	"Cobblestone Stair",
 	default.node_sound_stone_defaults()
 )
@@ -322,7 +322,7 @@ stairs.register_slab(
 	"cobblestone",
 	"default:cobblestone",
 	"Cobblestone Slab",
-	{"default_cobble.png"},
+	{"default_cobblestone.png"},
 	{cracky = 3},
 	default.node_sound_stone_defaults()
 )

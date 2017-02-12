@@ -3,7 +3,7 @@
 minetest.register_craft({
 	type = "shapeless",
 	output = "default:andesite 2",
-	recipe = {"default:diorite", "default:cobble"}
+	recipe = {"default:diorite", "default:cobblestone"}
 })
 
 minetest.register_craft({
@@ -1008,14 +1008,14 @@ minetest.register_craft({
 minetest.register_craft({
 	type = "cooking",
 	output = "default:stone",
-	recipe = "default:cobble",
+	recipe = "default:cobblestone",
 	cooktime = 10,
 })
 
 minetest.register_craft({
 	type = "cooking",
 	output = "default:stone",
-	recipe = "default:mossycobble",
+	recipe = "default:cobblestone_mossy",
 	cooktime = 10,
 })
 

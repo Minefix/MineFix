@@ -138,13 +138,13 @@ Jordach (CC BY-SA 3.0):
 PilzAdam (CC BY-SA 3.0):
   default_leaves_jungle.png
   default_sapling_jungle.png
-  default_mineral_gold.png
+  default_gold_ore.png
 
 jojoa1997 (CC BY-SA 3.0):
   default_obsidian.png
 
 InfinityProject (CC BY-SA 3.0):
-  default_mineral_diamond.png
+  default_diamond_ore.png
 
 Splizard (CC BY-SA 3.0):
   default_sapling_spruce.png
@@ -201,7 +201,7 @@ sofar (CC BY-SA 3.0):
 
 Neuromancer (CC BY-SA 2.0):
   default_cobble.png, based on texture by Brane praefect
-  default_mossycobble.png, based on texture by Brane praefect
+  default_cobblestone_mossy.png, based on texture by Brane praefect
 
 Neuromancer (CC BY-SA 3.0):
   default_dirt.png

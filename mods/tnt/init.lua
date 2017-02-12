@@ -9,7 +9,7 @@ end
 -- loss probabilities array (one in X will be lost)
 local loss_prob = {}
 
-loss_prob["default:cobble"] = 3
+loss_prob["default:cobblestone"] = 3
 loss_prob["default:dirt"] = 4
 
 local tnt_radius = tonumber(minetest.setting_get("tnt_radius") or 3)

@@ -28,9 +28,9 @@ local c_gravel = minetest.get_content_id("default:gravel")
 local c_dirt = minetest.get_content_id("default:dirt")
 local c_sand = minetest.get_content_id("default:sand")
 
-local c_cobble = minetest.get_content_id("default:cobble")
-local c_mossycobble = minetest.get_content_id("default:mossycobble")
-local c_stair_cobble = minetest.get_content_id("stairs:stair_cobble")
+local c_cobble = minetest.get_content_id("default:cobblestone")
+local c_mossycobble = minetest.get_content_id("default:cobblestone_mossy")
+local c_stair_cobble = minetest.get_content_id("stairs:stair_cobblestone")
 
 local c_lava_source = minetest.get_content_id("default:lava_source")
 local c_lava_flowing = minetest.get_content_id("default:lava_flowing")
