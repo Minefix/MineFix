@@ -73,31 +73,33 @@ if minetest.setting_getbool("enable_damage") then
 			-- Not sure how quick the following is, might cause lagg
 			-- It might be quicker to first check the timers and then check hunger level
 			-- Will have to be tested on a full server
-			if default.get_hunger(player) == 0 then -- Damage for having emtpy hunger
-				default.players[player_name].timer_damage = default.players[player_name].timer_damage + dtime
+			if player:get_hp() > 0 then
+				if default.get_hunger(player) == 0 then -- Damage for having emtpy hunger
+					default.players[player_name].timer_damage = default.players[player_name].timer_damage + dtime
 
-				if default.players[player_name].timer_damage >= HUNGER_DAMAGE_TICK then -- If the time since last damage is greater than HUNGER_DAMAGE_TICK
-					default.players[player_name].timer_damage = 0
+					if default.players[player_name].timer_damage >= HUNGER_DAMAGE_TICK then -- If the time since last damage is greater than HUNGER_DAMAGE_TICK
+						default.players[player_name].timer_damage = 0
 
-					player:set_hp(player:get_hp() - 1)
-				end
-			elseif default.get_hunger(player) >= HUNGER_MAX and default.get_saturation(player) ~= 0 and player:get_hp() ~= 20 then -- Quick health regen
-				default.players[player_name].timer_healthregen_quick = default.players[player_name].timer_healthregen_quick + dtime
+						player:set_hp(player:get_hp() - 1)
+					end
+				elseif default.get_hunger(player) >= HUNGER_MAX and default.get_saturation(player) ~= 0 and player:get_hp() ~= 20 then -- Quick health regen
+					default.players[player_name].timer_healthregen_quick = default.players[player_name].timer_healthregen_quick + dtime
 
-				if default.players[player_name].timer_healthregen_quick >= HUNGER_HEALTHREGEN_QUICK_TICK then
-					default.players[player_name].timer_healthregen_quick = 0
+					if default.players[player_name].timer_healthregen_quick >= HUNGER_HEALTHREGEN_QUICK_TICK then
+						default.players[player_name].timer_healthregen_quick = 0
 
-					player:set_hp(player:get_hp() + 1)
-					default.update_exhaustion(player, 6)
-				end
-			elseif default.get_hunger(player) >= (HUNGER_MAX / 10) * 9 and player:get_hp() ~= 20 then -- Slow health regen
-				default.players[player_name].timer_healthregen_slow = default.players[player_name].timer_healthregen_slow + dtime
+						player:set_hp(player:get_hp() + 1)
+						default.update_exhaustion(player, 6)
+					end
+				elseif default.get_hunger(player) >= (HUNGER_MAX / 10) * 9 and player:get_hp() ~= 20 then -- Slow health regen
+					default.players[player_name].timer_healthregen_slow = default.players[player_name].timer_healthregen_slow + dtime
 
-				if default.players[player_name].timer_healthregen_slow >= HUNGER_HEALTHREGEN_SLOW_TICK then
-					default.players[player_name].timer_healthregen_slow = 0
+					if default.players[player_name].timer_healthregen_slow >= HUNGER_HEALTHREGEN_SLOW_TICK then
+						default.players[player_name].timer_healthregen_slow = 0
 
-					player:set_hp(player:get_hp() + 1)
-					default.update_exhaustion(player, 6)
+						player:set_hp(player:get_hp() + 1)
+						default.update_exhaustion(player, 6)
+					end
 				end
 			end
 		end

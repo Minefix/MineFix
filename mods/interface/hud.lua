@@ -51,9 +51,9 @@ interface.createHud = function(player)
 	minetest.register_globalstep(function(dtime)
 		timer = timer + dtime
 
-		if timer > 0.5 then --Only update hud every half a second
+		if timer > 0.2 then --Only update hud every fifth of a second
 			timer = 0
-			
+
 			player:hud_change(health_hud, "number", player:get_hp())
 			player:hud_change(hunger_hud, "number", default.get_hunger(player))
 
