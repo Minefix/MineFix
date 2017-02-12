@@ -76,7 +76,9 @@ minetest.register_on_joinplayer(function(player)
 		interface.initializeCreativeInventory(player)
 		interface.fillCreativeInventory(player, "building")
 		interface.createCreativeInventory(player, "building", 0, 0)
+	end
 
+	if damage_enabled then
 		interface.createHud(player)
 	end
 end)

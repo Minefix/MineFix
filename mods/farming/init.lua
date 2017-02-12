@@ -28,7 +28,7 @@ minetest.register_craftitem("farming:bread", {
 	description = "Bread",
 	category = "foodstuff",
 	inventory_image = "farming_bread.png",
-	on_use = minetest.item_eat(5),
+	on_use = minetest.item_eat(5, 6),
 })
 
 minetest.register_craft({

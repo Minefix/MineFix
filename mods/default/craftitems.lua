@@ -155,14 +155,14 @@ minetest.register_craftitem("default:apple", {
 	description = "Apple",
 	category = "foodstuff",
 	inventory_image = "default_apple.png",
-	on_use = minetest.item_eat(2),
+	on_use = minetest.item_eat(4, 2.4),
 })
 
 minetest.register_craftitem("default:apple_gold", {
 	description = "Golden Apple",
 	category = "foodstuff",
 	inventory_image = "default_apple_gold.png",
-	on_use = minetest.item_eat(2),
+	on_use = minetest.item_eat(4, 9.6),
 })
 
 minetest.register_craftitem("default:paper", {
