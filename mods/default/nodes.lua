@@ -1097,7 +1097,8 @@ minetest.register_node("default:stone_with_coal", {
 	category = "building",
 	tiles = {"default_stone.png^default_mineral_coal.png"},
 	groups = {cracky = 3},
-	drop = 'default:coal',
+	drop = "default:coal",
+	experience = {0, 2}, -- Drop between 0 and 2 experience
 	sounds = default.node_sound_stone_defaults(),
 })
 
@@ -1116,7 +1117,7 @@ minetest.register_node("default:stone_with_iron", {
 	category = "building",
 	tiles = {"default_stone.png^default_mineral_iron.png"},
 	groups = {cracky = 2},
-	drop = 'default:stone_with_iron',
+	drop = "default:stone_with_iron",
 	sounds = default.node_sound_stone_defaults(),
 })
 
@@ -1155,6 +1156,7 @@ minetest.register_node("default:stone_with_diamond", {
 	tiles = {"default_stone.png^default_mineral_diamond.png"},
 	groups = {cracky = 1},
 	drop = "default:diamond",
+	experience = {3, 7}, -- Drop between 0 and 2 experience
 	sounds = default.node_sound_stone_defaults(),
 })
 
@@ -1183,6 +1185,7 @@ minetest.register_node("default:stone_with_lapis", {
 			{items = {'default:dye_blue 8'}, rarity = 8},
 		}
 	},
+	experience = {2, 5},
 	sounds = default.node_sound_stone_defaults(),
 })
 
