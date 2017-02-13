@@ -121,7 +121,6 @@ interface.createCreativeInventory = function(player, tab, startIndex, pageNumber
 		inventoryTab = "image[10.2,8.175;1.25,1.27;interface_creative_tab_inactive.png^[transformfy]]"
 	end
 	inventoryTab = inventoryTab .. "item_image_button[10.3,8.3;1,1;default:chest;inventory;]"
-	print(tab)
 
 	local background, itemlist, slider
 	if tab == "inventory" then

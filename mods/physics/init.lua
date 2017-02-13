@@ -17,10 +17,14 @@ minetest.register_on_joinplayer(function(player)
             player:set_physics_override({
                 speed = sprint_speed
             })
-        else 
+
+			default.players[player:get_player_name()].sprinting = true
+        else
             player:set_physics_override({
                 speed = 1.0
             })
+
+			default.players[player:get_player_name()].sprinting = false
         end
     end)
 end)
