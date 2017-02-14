@@ -1,0 +1,3 @@
+status?
+hunger?
+experience?

@@ -56,37 +56,42 @@ interface.tabs = {
 
 local startIndex = 0
 
-dofile(minetest.get_modpath("interface") .. "/survival.lua")
-dofile(minetest.get_modpath("interface") .. "/creative.lua")
-dofile(minetest.get_modpath("interface") .. "/hud.lua")
+if minetest.setting_getbool("enable_damage") then
+	dofile(minetest.get_modpath("interface") .. "/hud.lua")
 
-local creative_mode = minetest.setting_getbool("creative_mode")
-local damage_enabled = minetest.setting_getbool("enable_damage")
+	minetest.register_on_joinplayer(function(player)
+		interface.createHud(player)
+	end)
+end
 
-minetest.register_on_joinplayer(function(player)
-	player.hud_set_hotbar_itemcount(player, 9)
-	player:hud_set_hotbar_image("interface_hotbar.png")
-	player:hud_set_hotbar_selected_image("interface_hotbar_selected.png")
+if not minetest.setting_getbool("creative_mode") then
+	dofile(minetest.get_modpath("interface") .. "/survival.lua")
 
-	if not creative_mode then
+	minetest.register_on_joinplayer(function(player)
+		player.hud_set_hotbar_itemcount(player, 9)
+		player:hud_set_hotbar_image("interface_hotbar.png")
+		player:hud_set_hotbar_selected_image("interface_hotbar_selected.png")
+
 		interface.createSurvivalInventory(player)
-	else
+	end)
+else
+	dofile(minetest.get_modpath("interface") .. "/creative.lua")
+
+	minetest.register_on_joinplayer(function(player)
+		player.hud_set_hotbar_itemcount(player, 9)
+		player:hud_set_hotbar_image("interface_hotbar.png")
+		player:hud_set_hotbar_selected_image("interface_hotbar_selected.png")
+
 		player:get_inventory():set_size("main", 9 * 4)
 
 		interface.initializeCreativeInventory(player)
 		interface.fillCreativeInventory(player, "building")
 		interface.createCreativeInventory(player, "building", 0, 0)
-	end
+	end)
 
-	if damage_enabled then
-		interface.createHud(player)
-	end
-end)
-
---Gets called if a button is pressed in a player's inventory form
---If it returns true, remaining functions (other mods, etc) are not called
-minetest.register_on_player_receive_fields(function(player, formname, fields)
-	if creative_mode then
+	--Gets called if a button is pressed in a player's inventory form
+	--If it returns true, remaining functions (other mods, etc) are not called
+	minetest.register_on_player_receive_fields(function(player, formname, fields)
 		local tab = nil;
 
 		for key, value in pairs(fields) do
@@ -133,5 +138,5 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 		end
 
 		interface.createCreativeInventory(player, tab, startIndex, startIndex / (9*5) + 1)
-	end
-end)
+	end)
+end

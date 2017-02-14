@@ -1,7 +1,11 @@
 local sprint_speed = 1.77
 local gravity_rate = 1.17
 
+physics = {}
+local players = {}
+
 minetest.register_on_joinplayer(function(player)
+	players[player:get_player_name()] = {}
     minetest.register_globalstep(function(dtime)
         -- Jump tweak
         if player:get_player_control().jump then
@@ -18,13 +22,17 @@ minetest.register_on_joinplayer(function(player)
                 speed = sprint_speed
             })
 
-			default.players[player:get_player_name()].sprinting = true
+			players[player:get_player_name()].sprinting = true
         else
             player:set_physics_override({
                 speed = 1.0
             })
 
-			default.players[player:get_player_name()].sprinting = false
+			players[player:get_player_name()].sprinting = false
         end
     end)
 end)
+
+function physics.is_sprinting(player)
+	return players[player:get_player_name()].sprinting
+end

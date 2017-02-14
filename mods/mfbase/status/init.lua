@@ -1,22 +1,22 @@
 status = {}
+statuses = {}
 
-dofile(minetest.get_modpath("default") .. "/status/functions.lua")
-dofile(minetest.get_modpath("default") .. "/status/builtin.lua") -- Register built-in statuses
+dofile(minetest.get_modpath("status") .. "/functions.lua")
+dofile(minetest.get_modpath("status") .. "/builtin.lua")
 
 if minetest.setting_getbool("enable_damage") then
 	minetest.register_on_joinplayer(function(player)
 		local inventory = player:get_inventory()
-		inventory:set_size("status", #status)
+		inventory:set_size("status", #statuses)
 	end)
 
 	local timer = 0
 	minetest.register_globalstep(function(dtime)
 		timer = timer + dtime
-		for player_name, value in pairs(default.players) do
-			local player = minetest.get_player_by_name(player_name)
+		for _, player in pairs(minetest.get_connected_players()) do
 			local inventory = player:get_inventory()
 
-			for id, status_def in pairs(status) do
+			for id, status_def in pairs(statuses) do
 				if inventory:get_stack("status", id):get_count() ~= 0 then -- Check if the user has this status (status level 1 or higher)
 					local stack = inventory:get_stack("status", id)
 

@@ -1,25 +1,25 @@
-local item_eat = function(hunger_change, saturation_change, replace_with_item, chance_of_poison, user, pointed_thing)
+local item_eat = function(hunger_change, saturation_change, replace_with_item, user, pointed_thing)
 	return function(itemstack, user, pointed_thing)
-		if default.get_hunger(user) < HUNGER_MAX then -- Only eat when hunger isn't full
+		if hunger.get_hunger(user) < HUNGER_MAX then -- Only eat when hunger isn't full
 			if itemstack:take_item() ~= nil then
 				-- Update saturation
-				local old_saturation = default.get_saturation(user)
+				local old_saturation = hunger.get_saturation(user)
 				if old_saturation + saturation_change > HUNGER_SATURATION_MAX then
-					default.set_saturation(user, HUNGER_SATURATION_MAX)
+					hunger.set_saturation(user, HUNGER_SATURATION_MAX)
 				elseif old_saturation + saturation_change < 0 then
-					default.set_saturation(user, 0)
+					hunger.set_saturation(user, 0)
 				else
-					default.update_saturation(user, saturation_change)
+					hunger.update_saturation(user, saturation_change)
 				end
 
 				-- Update hunger
-				local old_hunger = default.get_hunger(user)
+				local old_hunger = hunger.get_hunger(user)
 				if old_hunger + hunger_change > HUNGER_MAX then
-					default.set_hunger(user, HUNGER_MAX)
+					hunger.set_hunger(user, HUNGER_MAX)
 				elseif old_hunger + hunger_change < 0 then
-					default.set_hunger(user, 0)
+					hunger.set_hunger(user, 0)
 				else
-					default.update_hunger(user, hunger_change)
+					hunger.update_hunger(user, hunger_change)
 				end
 
 				if replace_with_item then
@@ -55,7 +55,7 @@ local do_item_eat = function(hunger_change, saturation_change, replace_with_item
 
 	if itemstack:get_count() ~= itemstack_itemcount then -- Only call the other functions if the food is actually eaten
 		for _, callback in pairs(core.registered_on_item_eats) do
-			local result = callback(hunger_change, replace_with_item, itemstack, user, pointed_thing)
+			local result = callback(hunger_change, saturation_change, replace_with_item, itemstack, user, pointed_thing)
 			if result then
 				return result
 			end
@@ -75,5 +75,5 @@ function hunger.handle_blockbreak(pos, oldnode, player)
 		return
 	end
 
-	default.update_exhaustion(player, HUNGER_EXHAUST_BREAK)
+	hunger.update_exhaustion(player, HUNGER_EXHAUST_BREAK)
 end

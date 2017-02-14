@@ -90,6 +90,7 @@ mv blocks/cobblestone.png ${location_minetest_textures}/default_cobblestone.png
 mv blocks/cobblestone_mossy.png ${location_minetest_textures}/default_cobblestone_mossy.png
 
 mv items/apple.png ${location_minetest_textures}/default_apple.png
+mv items/apple_golden.png ${location_minetest_textures}/default_apple_golden.png
 mv items/book_normal.png ${location_minetest_textures}/default_book.png
 mv items/book_written.png ${location_minetest_textures}/default_book_written.png
 mv blocks/bookshelf.png ${location_minetest_textures}/default_bookshelf.png
@@ -393,7 +394,7 @@ for i in {0..3}
 do
 	for x in {0..3}
 	do
-		convert entity/experience_orb.png -crop 16x16+$((${i}*16))+$((${x}*16)) ${location_minetest_textures}/default_experience_orb_$((${i} * 4 + ${x} + 1)).png
+		convert entity/experience_orb.png -crop 16x16+$((${i}*16))+$((${x}*16)) ${location_minetest_textures}/experience_orb_$((${i} * 4 + ${x} + 1)).png
 	done
 done
 
@@ -409,6 +410,9 @@ convert gui/container/creative_inventory/tabs.png -crop 28x29+0+63 ${location_mi
 convert gui/container/creative_inventory/tabs.png -crop 28x32+0+96 ${location_minetest_textures}/interface_creative_tab_active_rotated.png
 convert gui/container/creative_inventory/tabs.png -crop 12x15+232+0 ${location_minetest_textures}/interface_creative_slider.png
 convert gui/container/creative_inventory/tabs.png -crop 12x15+244+0 ${location_minetest_textures}/interface_creative_slider_inactive.png
+convert gui/container/inventory.png -crop 120x33+0+165 ${location_minetest_textures}/default_status_bar_bg.png
+convert gui/container/inventory.png -crop 16x16+109+200 ${location_minetest_textures}/status_poison.png
+convert gui/container/inventory.png -crop 16x16+19+217 ${location_minetest_textures}/hunger_status_hunger.png
 
 mv blocks/jukebox_side.png ${location_minetest_textures}/jukebox.png
 mv blocks/jukebox_top.png ${location_minetest_textures}/jukebox_top.png
