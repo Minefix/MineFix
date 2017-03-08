@@ -293,7 +293,7 @@ stairs.register_stair(
 	"sandstone",
 	"default:sandstone",
 	{crumbly = 1, cracky = 3},
-	{"default_sandstone.png"},
+	{"default_sandstone_normal.png"},
 	"Sandstone Stair",
 	default.node_sound_stone_defaults()
 )
@@ -313,7 +313,7 @@ stairs.register_slab(
 	"stone",
 	"default:stone",
 	"Stone Slab",
-	{"stairs_stone_slab.png"},
+	{"default_stone.png"},
 	{cracky = 3},
 	default.node_sound_stone_defaults()
 )
@@ -403,7 +403,7 @@ stairs.register_slab(
 	"sandstone",
 	"default:sandstone",
 	"Sandstone Slab",
-	{"default_sandstone.png"},
+	{"default_sandstone_normal.png"},
 	{cracky = 3},
 	default.node_sound_stone_defaults()
 )

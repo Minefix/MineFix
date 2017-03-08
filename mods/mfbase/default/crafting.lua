@@ -788,15 +788,6 @@ minetest.register_craft({
 	}
 })
 
-
-
-minetest.register_craft({
-	output = 'default:paper',
-	recipe = {
-		{'default:papyrus', 'default:papyrus', 'default:papyrus'},
-	}
-})
-
 minetest.register_craft({
 	output = 'default:book',
 	recipe = {
@@ -1057,7 +1048,7 @@ minetest.register_craft({
 minetest.register_craft({
 	type = "cooking",
 	output = "default:dye_green",
-	recipe = "default:cactus",
+	recipe = "farming:cactus",
 	cooktime = 10,
 })
 

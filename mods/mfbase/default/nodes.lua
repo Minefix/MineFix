@@ -95,8 +95,6 @@ default:diamondblock
 Plantlife
 ---------
 
-default:cactus
-default:papyrus
 default:dry_shrub
 default:junglegrass
 
@@ -1202,39 +1200,6 @@ minetest.register_node("default:lapisblock", {
 -- Plantlife (non-cubic)
 --
 
-minetest.register_node("default:cactus", {
-	description = "Cactus",
-	category = "decoration",
-	tiles = {"default_cactus_top.png", "default_cactus_bottom.png",
-		"default_cactus_side.png"},
-	paramtype2 = "facedir",
-	groups = {snappy = 1, choppy = 3},
-	sounds = default.node_sound_wood_defaults(),
-	on_place = minetest.rotate_node,
-})
-
-minetest.register_node("default:papyrus", {
-	description = "Papyrus",
-	category = "materials",
-	drawtype = "plantlike",
-	tiles = {"default_papyrus.png"},
-	inventory_image = "default_papyrus.png",
-	wield_image = "default_papyrus.png",
-	paramtype = "light",
-	sunlight_propagates = true,
-	walkable = false,
-	selection_box = {
-		type = "fixed",
-		fixed = {-0.3, -0.5, -0.3, 0.3, 0.5, 0.3}
-	},
-	groups = {snappy = 3, flammable = 2},
-	sounds = default.node_sound_leaves_defaults(),
-
-	after_dig_node = function(pos, node, metadata, digger)
-		default.dig_up(pos, node, digger)
-	end,
-})
-
 minetest.register_node("default:dry_shrub", {
 	description = "Dry Shrub",
 	category = "decoration",
@@ -1965,6 +1930,7 @@ minetest.register_node("default:glass_black", {
 	description = "Black Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
+	use_texture_alpha = true,
 	tiles = {"default_glass_black.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -1978,6 +1944,7 @@ minetest.register_node("default:glass_blue", {
 	description = "Blue Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
+	use_texture_alpha = true,
 	tiles = {"default_glass_blue.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -1991,6 +1958,7 @@ minetest.register_node("default:glass_brown", {
 	description = "Brown Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
+	use_texture_alpha = true,
 	tiles = {"default_glass_brown.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -2004,6 +1972,7 @@ minetest.register_node("default:glass_cyan", {
 	description = "Cyan Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
+	use_texture_alpha = true,
 	tiles = {"default_glass_cyan.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -2017,6 +1986,7 @@ minetest.register_node("default:glass_gray", {
 	description = "Gray Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
+	use_texture_alpha = true,
 	tiles = {"default_glass_gray.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -2030,6 +2000,7 @@ minetest.register_node("default:glass_green", {
 	description = "Green Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
+	use_texture_alpha = true,
 	tiles = {"default_glass_green.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -2043,6 +2014,7 @@ minetest.register_node("default:glass_light_blue", {
 	description = "Light Blue Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
+	use_texture_alpha = true,
 	tiles = {"default_glass_light_blue.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -2056,6 +2028,7 @@ minetest.register_node("default:glass_light_gray", {
 	description = "Light Gray Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
+	use_texture_alpha = true,
 	tiles = {"default_glass_light_gray.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -2069,6 +2042,7 @@ minetest.register_node("default:glass_lime_green", {
 	description = "Lime Green Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
+	use_texture_alpha = true,
 	tiles = {"default_glass_lime_green.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -2082,6 +2056,7 @@ minetest.register_node("default:glass_magenta", {
 	description = "Magenta Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
+	use_texture_alpha = true,
 	tiles = {"default_glass_magenta.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -2095,6 +2070,7 @@ minetest.register_node("default:glass_orange", {
 	description = "Orange Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
+	use_texture_alpha = true,
 	tiles = {"default_glass_orange.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -2108,6 +2084,7 @@ minetest.register_node("default:glass_pink", {
 	description = "Pink Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
+	use_texture_alpha = true,
 	tiles = {"default_glass_pink.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -2121,6 +2098,7 @@ minetest.register_node("default:glass_purple", {
 	description = "Purple Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
+	use_texture_alpha = true,
 	tiles = {"default_glass_purple.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -2134,6 +2112,7 @@ minetest.register_node("default:glass_red", {
 	description = "Red Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
+	use_texture_alpha = true,
 	tiles = {"default_glass_red.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -2147,6 +2126,7 @@ minetest.register_node("default:glass_white", {
 	description = "White Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
+	use_texture_alpha = true,
 	tiles = {"default_glass_white.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -2160,6 +2140,7 @@ minetest.register_node("default:glass_yellow", {
 	description = "Yellow Stained Glass",
 	category = "building",
 	drawtype = "glasslike_framed_optional",
+	use_texture_alpha = true,
 	tiles = {"default_glass_yellow.png"},
 	paramtype = "light",
 	sunlight_propagates = true,

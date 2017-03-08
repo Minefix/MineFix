@@ -139,6 +139,7 @@ mv chest_part2.png ${location_minetest_textures}/default_chest_double_side_botto
 
 mv items/clay_ball.png ${location_minetest_textures}/default_clay.png
 mv blocks/clay.png ${location_minetest_textures}/default_clay_block.png
+mv items/charcoal.png ${location_minetest_textures}/default_charcoal.png
 mv items/coal.png ${location_minetest_textures}/default_coal.png
 mv blocks/coal_block.png ${location_minetest_textures}/default_coal_block.png
 mv blocks/coal_ore.png ${location_minetest_textures}/default_coal_ore.png
@@ -209,15 +210,16 @@ mv blocks/lava_flow.png ${location_minetest_textures}/default_lava_flowing_anima
 mv blocks/lava_still.png ${location_minetest_textures}/default_lava_source_animated.png
 mv blocks/obsidian.png ${location_minetest_textures}/default_obsidian.png
 mv items/paper.png ${location_minetest_textures}/default_paper.png
+mv items/reeds.png ${location_minetest_textures}/farming_reeds.png
 mv blocks/reeds.png ${location_minetest_textures}/default_papyrus.png
 mv blocks/planks_acacia.png ${location_minetest_textures}/default_planks_acacia.png
-mv blocks/planks_big_oak.png ${location_minetest_textures}/default_planks_oak_big.png
+mv blocks/planks_big_oak.png ${location_minetest_textures}/default_planks_darkoak.png
 mv blocks/planks_birch.png ${location_minetest_textures}/default_planks_birch.png
 mv blocks/planks_jungle.png ${location_minetest_textures}/default_planks_jungle.png
 mv blocks/planks_oak.png ${location_minetest_textures}/default_planks_oak.png
 mv blocks/planks_spruce.png ${location_minetest_textures}/default_planks_spruce.png
 mv blocks/sapling_acacia.png ${location_minetest_textures}/default_sapling_acacia.png
-mv blocks/sapling_roofed_oak.png ${location_minetest_textures}/default_sapling_oak_big.png
+mv blocks/sapling_roofed_oak.png ${location_minetest_textures}/default_sapling_darkoak.png
 mv blocks/sapling_birch.png ${location_minetest_textures}/default_sapling_birch.png
 mv blocks/sapling_jungle.png ${location_minetest_textures}/default_sapling_jungle.png
 mv blocks/sapling_oak.png ${location_minetest_textures}/default_sapling_oak.png
@@ -251,7 +253,7 @@ mv items/iron_sword.png ${location_minetest_textures}/default_tool_ironsword.png
 mv items/gold_axe.png ${location_minetest_textures}/default_tool_goldaxe.png
 mv items/gold_hoe.png ${location_minetest_textures}/farming_tool_goldhoe.png
 mv items/gold_pickaxe.png ${location_minetest_textures}/default_tool_goldpick.png
-mv items/gold_shovel.png ${location_minetest_textures}/default_tool_goldhovel.png
+mv items/gold_shovel.png ${location_minetest_textures}/default_tool_goldshovel.png
 mv items/gold_sword.png ${location_minetest_textures}/default_tool_goldsword.png
 mv items/diamond_axe.png ${location_minetest_textures}/default_tool_diamondaxe.png
 mv items/diamond_hoe.png ${location_minetest_textures}/farming_tool_diamondhoe.png
@@ -260,8 +262,8 @@ mv items/diamond_shovel.png ${location_minetest_textures}/default_tool_diamondsh
 mv items/diamond_sword.png ${location_minetest_textures}/default_tool_diamondsword.png
 mv blocks/log_acacia.png ${location_minetest_textures}/default_wood_acacia.png
 mv blocks/log_acacia_top.png ${location_minetest_textures}/default_wood_acacia_top.png
-mv blocks/log_big_oak.png ${location_minetest_textures}/default_wood_oak_big.png
-mv blocks/log_big_oak_top.png ${location_minetest_textures}/default_wood_oak_big_top.png
+mv blocks/log_big_oak.png ${location_minetest_textures}/default_wood_darkoak.png
+mv blocks/log_big_oak_top.png ${location_minetest_textures}/default_wood_darkoak_top.png
 mv blocks/log_birch.png ${location_minetest_textures}/default_wood_birch.png
 mv blocks/log_birch_top.png ${location_minetest_textures}/default_wood_birch_top.png
 mv blocks/log_jungle.png ${location_minetest_textures}/default_wood_jungle.png
@@ -380,10 +382,48 @@ mv blocks/iron_trapdoor.png ${location_minetest_textures}/doors_trapdoor_iron.pn
 mv items/bread.png ${location_minetest_textures}/farming_bread.png
 mv blocks/hay_block_side.png ${location_minetest_textures}/farming_haybale.png
 mv blocks/hay_block_top.png ${location_minetest_textures}/farming_haybale_top.png
-mv blocks/melon_side.png ${location_minetest_textures}/farming_melon.png
 mv blocks/melon_top.png ${location_minetest_textures}/farming_melon_top.png
+mv blocks/melon_side.png ${location_minetest_textures}/farming_melon_side.png
+mv items/seeds_melon.png ${location_minetest_textures}/farming_melon_seeds.png
+mv blocks/melon_stem_connected.png ${location_minetest_textures}/farming_melon_stem_connected.png
+mv blocks/melon_stem_disconnected.png ${location_minetest_textures}/farming_melon_stem_disconnected.png
+mv blocks/pumpkin_face_off.png ${location_minetest_textures}/farming_pumpkin_face_off.png
+mv blocks/pumpkin_face_on.png ${location_minetest_textures}/farming_pumpkin_face_on.png
+mv blocks/pumpkin_top.png ${location_minetest_textures}/farming_pumpkin_top.png
+mv blocks/pumpkin_side.png ${location_minetest_textures}/farming_pumpkin_side.png
+mv items/seeds_pumpkin.png ${location_minetest_textures}/farming_pumpkin_seeds.png
+mv blocks/pumpkin_stem_connected.png ${location_minetest_textures}/farming_pumpkin_stem_connected.png
+mv blocks/pumpkin_stem_disconnected.png ${location_minetest_textures}/farming_pumpkin_stem_disconnected.png
+mv blocks/wheat_stage_0.png ${location_minetest_textures}/farming_wheat_1.png
+mv blocks/wheat_stage_1.png ${location_minetest_textures}/farming_wheat_2.png
+mv blocks/wheat_stage_2.png ${location_minetest_textures}/farming_wheat_3.png
+mv blocks/wheat_stage_3.png ${location_minetest_textures}/farming_wheat_4.png
+mv blocks/wheat_stage_4.png ${location_minetest_textures}/farming_wheat_5.png
+mv blocks/wheat_stage_5.png ${location_minetest_textures}/farming_wheat_6.png
+mv blocks/wheat_stage_6.png ${location_minetest_textures}/farming_wheat_7.png
+mv blocks/wheat_stage_7.png ${location_minetest_textures}/farming_wheat_8.png
 mv items/wheat.png ${location_minetest_textures}/farming_wheat.png
 mv items/seeds_wheat.png ${location_minetest_textures}/farming_wheat_seed.png
+mv items/potato.png ${location_minetest_textures}/farming_potato.png
+mv items/potato_baked.png ${location_minetest_textures}/farming_potato_baked.png
+mv items/potato_poisonous.png ${location_minetest_textures}/farming_potato_poisonous.png
+cp blocks/potatoes_stage_0.png ${location_minetest_textures}/farming_potatoes_1.png
+mv blocks/potatoes_stage_0.png ${location_minetest_textures}/farming_potatoes_2.png
+cp blocks/potatoes_stage_1.png ${location_minetest_textures}/farming_potatoes_3.png
+mv blocks/potatoes_stage_1.png ${location_minetest_textures}/farming_potatoes_4.png
+cp blocks/potatoes_stage_2.png ${location_minetest_textures}/farming_potatoes_5.png
+cp blocks/potatoes_stage_2.png ${location_minetest_textures}/farming_potatoes_6.png
+mv blocks/potatoes_stage_2.png ${location_minetest_textures}/farming_potatoes_7.png
+cp blocks/potatoes_stage_3.png ${location_minetest_textures}/farming_potatoes_8.png
+mv items/carrot.png ${location_minetest_textures}/farming_carrot.png
+cp blocks/carrots_stage_0.png ${location_minetest_textures}/farming_carrots_1.png
+mv blocks/carrots_stage_0.png ${location_minetest_textures}/farming_carrots_2.png
+cp blocks/carrots_stage_1.png ${location_minetest_textures}/farming_carrots_3.png
+mv blocks/carrots_stage_1.png ${location_minetest_textures}/farming_carrots_4.png
+cp blocks/carrots_stage_2.png ${location_minetest_textures}/farming_carrots_5.png
+cp blocks/carrots_stage_2.png ${location_minetest_textures}/farming_carrots_6.png
+mv blocks/carrots_stage_2.png ${location_minetest_textures}/farming_carrots_7.png
+mv blocks/carrots_stage_3.png ${location_minetest_textures}/farming_carrots_8.png
 mv items/flint_and_steel.png ${location_minetest_textures}/fire_flint_steel.png
 
 
@@ -428,6 +468,7 @@ mv items/record_stal.png ${location_minetest_textures}/jukebox_disc_stal.png
 mv items/record_strad.png ${location_minetest_textures}/jukebox_disc_strad.png
 mv items/record_wait.png ${location_minetest_textures}/jukebox_disc_wait.png
 mv items/record_ward.png ${location_minetest_textures}/jukebox_disc_ward.png
+mv items/netherbrick.png ${location_minetest_textures}/nether_brick_bar.png
 mv blocks/nether_brick.png ${location_minetest_textures}/nether_brick.png
 mv blocks/netherrack.png ${location_minetest_textures}/nether_rack.png
 mv blocks/glowstone.png ${location_minetest_textures}/nether_glowstone.png
@@ -437,6 +478,37 @@ mv blocks/tnt_bottom.png ${location_minetest_textures}/tnt_bottom.png
 mv blocks/tnt_side.png ${location_minetest_textures}/tnt_side.png
 mv blocks/tnt_top.png ${location_minetest_textures}/tnt_top.png
 mv blocks/iron_bars.png ${location_minetest_textures}/xpanes_bar.png
+mv blocks/farmland_dry.png ${location_minetest_textures}/farming_farmland_dry.png
+mv blocks/farmland_wet.png ${location_minetest_textures}/farming_farmland_wet.png
+mv blocks/crafting_table_top.png ${location_minetest_textures}/default_craftingtable_top.png
+mv blocks/crafting_table_side.png ${location_minetest_textures}/default_craftingtable_side.png
+mv blocks/crafting_table_front.png ${location_minetest_textures}/default_craftingtable_front.png
+
+mv blocks/hardened_clay.png ${location_minetest_textures}/default_clay_block_hardened.png
+mv blocks/hardened_clay_stained_black.png ${location_minetest_textures}/default_clay_block_hardened_black.png
+mv blocks/hardened_clay_stained_blue.png ${location_minetest_textures}/default_clay_block_hardened_blue.png
+mv blocks/hardened_clay_stained_brown.png ${location_minetest_textures}/default_clay_block_hardened_brown.png
+mv blocks/hardened_clay_stained_cyan.png ${location_minetest_textures}/default_clay_block_hardened_cyan.png
+mv blocks/hardened_clay_stained_gray.png ${location_minetest_textures}/default_clay_block_hardened_gray.png
+mv blocks/hardened_clay_stained_green.png ${location_minetest_textures}/default_clay_block_hardened_green.png
+mv blocks/hardened_clay_stained_light_blue.png ${location_minetest_textures}/default_clay_block_hardened_light_blue.png
+mv blocks/hardened_clay_stained_lime.png ${location_minetest_textures}/default_clay_block_hardened_lime_green.png
+mv blocks/hardened_clay_stained_magenta.png ${location_minetest_textures}/default_clay_block_hardened_magenta.png
+mv blocks/hardened_clay_stained_orange.png ${location_minetest_textures}/default_clay_block_hardened_orange.png
+mv blocks/hardened_clay_stained_pink.png ${location_minetest_textures}/default_clay_block_hardened_pink.png
+mv blocks/hardened_clay_stained_purple.png ${location_minetest_textures}/default_clay_block_hardened_purple.png
+mv blocks/hardened_clay_stained_red.png ${location_minetest_textures}/default_clay_block_hardened_red.png
+mv blocks/hardened_clay_stained_silver.png ${location_minetest_textures}/default_clay_block_hardened_light_gray.png
+mv blocks/hardened_clay_stained_white.png ${location_minetest_textures}/default_clay_block_hardened_white.png
+mv blocks/hardened_clay_stained_yellow.png ${location_minetest_textures}/default_clay_block_hardened_yellow.png
+
+mv blocks/anvil_base.png ${location_minetest_textures}/default_anvil_base.png
+mv blocks/anvil_top_damaged_0.png ${location_minetest_textures}/default_anvil_top_0.png
+mv blocks/anvil_top_damaged_1.png ${location_minetest_textures}/default_anvil_top_1.png
+mv blocks/anvil_top_damaged_2.png ${location_minetest_textures}/default_anvil_top_2.png
+
+
+mogrify ${location_minetest_textures}/*.png # Remove any invalid iCCP chunks from the images
 
 # Clearing up
 rm -rf /tmp/mc-to-mt
