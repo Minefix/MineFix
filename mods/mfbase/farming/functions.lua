@@ -1,5 +1,5 @@
-local tick_time = 1 -- 20 default
-local tick_chance = 1 -- 4 default
+local tick_time = 20 -- 20 default
+local tick_chance = 4 -- 4 default
 
 local check_water_nearby = function(pos)
 	local water_found = false
