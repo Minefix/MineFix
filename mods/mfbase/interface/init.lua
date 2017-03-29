@@ -56,87 +56,38 @@ interface.tabs = {
 
 local startIndex = 0
 
-if minetest.setting_getbool("enable_damage") then
-	dofile(minetest.get_modpath("interface") .. "/hud.lua")
+dofile(minetest.get_modpath("interface") .. "/survival.lua")
+dofile(minetest.get_modpath("interface") .. "/creative.lua")
+dofile(minetest.get_modpath("interface") .. "/hud.lua")
 
-	minetest.register_on_joinplayer(function(player)
-		interface.createHud(player)
-	end)
-end
+minetest.register_on_joinplayer(function(player)
+	player:get_inventory():set_size("main", 9 * 4)
+	player.hud_set_hotbar_itemcount(player, 9)
+	player:hud_set_hotbar_image("interface_hotbar.png")
+	player:hud_set_hotbar_selected_image("interface_hotbar_selected.png")
 
-if not minetest.setting_getbool("creative_mode") then
-	dofile(minetest.get_modpath("interface") .. "/survival.lua")
-
-	minetest.register_on_joinplayer(function(player)
-		player.hud_set_hotbar_itemcount(player, 9)
-		player:hud_set_hotbar_image("interface_hotbar.png")
-		player:hud_set_hotbar_selected_image("interface_hotbar_selected.png")
-
+	if player:get_attribute("default:gamemode") == "survival" then -- If the creative mod isn't loaded, the gamemode will always be survival
 		interface.createSurvivalInventory(player)
-	end)
-else
-	dofile(minetest.get_modpath("interface") .. "/creative.lua")
+	end
 
-	minetest.register_on_joinplayer(function(player)
-		player.hud_set_hotbar_itemcount(player, 9)
-		player:hud_set_hotbar_image("interface_hotbar.png")
-		player:hud_set_hotbar_selected_image("interface_hotbar_selected.png")
+	if minetest.get_modpath("creative") ~= nil then
+		interface.registerCreativeInventory(player)
 
-		player:get_inventory():set_size("main", 9 * 4)
-
-		interface.initializeCreativeInventory(player)
-		interface.fillCreativeInventory(player, "building")
-		interface.createCreativeInventory(player, "building", 0, 0)
-	end)
-
-	--Gets called if a button is pressed in a player's inventory form
-	--If it returns true, remaining functions (other mods, etc) are not called
-	minetest.register_on_player_receive_fields(function(player, formname, fields)
-		local tab = nil;
-
-		for key, value in pairs(fields) do
-			if interface.tabs[key] then
-				tab = key
-				interface.fillCreativeInventory(player, tab)
-			end
+		if player:get_attribute("default:gamemode") == "creative" then
+			interface.fillCreativeInventory(player, "building", 0)
+			interface.createCreativeInventory(player, "building", 0, 0) -- Player, tab, startIndex, pageNumber
 		end
+	end
 
-		if fields.creative_prev or fields.creative_next then
-			tab = nil
-		elseif fields.inventory then
-			tab = "inventory"
-		elseif fields.search then
-			tab = "search"
-			interface.fillCreativeInventory(player, tab)
-			startIndex = 0; --The player clicked on a new tab, so make sure to set the startindex to 0
-		else
-			startIndex = 0;
-		end
+	if minetest.setting_getbool("enable_damage") then
+		interface.createHud(player)
+	end
+end)
 
-		local current_page = 0
-		local formspec = player:get_inventory_formspec()
-		local size = string.len(formspec)
-		local marker = string.sub(formspec, size - 2)
-		marker = string.sub(marker,1)
-
-		if marker ~= nil and marker == "p" then
-			local page = string.sub(formspec, size - 1)
-			startIndex = page
-		end
-		startIndex = tonumber(startIndex) or 0
-
-		if fields.creative_prev and startIndex >= 9 * 5 then
-			startIndex = startIndex - 9 * 5
-		elseif fields.creative_next and startIndex < interface.creative_inventory_size - 9 * 5 then
-			startIndex = startIndex + 9 * 5
-		end
-
-		if startIndex < 0 then
-			startIndex = startIndex + 9 * 5
-		elseif startIndex >= interface.creative_inventory_size then
-			startIndex = startIndex - 9 * 5
-		end
-
-		interface.createCreativeInventory(player, tab, startIndex, startIndex / (9*5) + 1)
-	end)
-end
+minetest.register_on_player_receive_fields(function(player, formname, fields)
+	if player:get_attribute("default:gamemode") == "creative" then
+		interface.handleCreativeInventory(player, formname, fields)
+	else
+		interface.createSurvivalInventory(player)
+	end
+end)
