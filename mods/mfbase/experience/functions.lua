@@ -23,7 +23,7 @@ function experience.set_experience(player, value)
 		value = 0
 	end
 
-	player:get_inventory():set_stack("experience", 1, ItemStack({name = ":", count = value}))
+	player:set_attribute("experience:life", value)
 end
 
 function experience.update_experience(player, modifier)
@@ -43,7 +43,7 @@ function experience.update_experience(player, modifier)
 end
 
 function experience.get_experience(player)
-	return player:get_inventory():get_stack("experience", 1):get_count()
+	return tonumber(player:get_attribute("experience:life"))
 end
 
 -- ===================================
@@ -53,7 +53,7 @@ function experience.set_experience_total(player, value)
 		value = 0
 	end
 
-	player:get_inventory():set_stack("experience", 2, ItemStack({name = ":", count = value}))
+	player:set_attribute("experience:total", value)
 end
 
 function experience.update_experience_total(player, modifier)
@@ -70,7 +70,7 @@ function experience.update_experience_total(player, modifier)
 end
 
 function experience.get_experience_total(player)
-	return player:get_inventory():get_stack("experience", 2):get_count()
+	return tonumber(player:get_attribute("experience:total"))
 end
 
 -- ===================================

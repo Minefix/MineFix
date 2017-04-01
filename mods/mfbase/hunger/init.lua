@@ -28,14 +28,12 @@ if minetest.setting_getbool("enable_damage") then
 	if minetest.get_modpath("status") ~= nil then
 		dofile(minetest.get_modpath("hunger") .. "/status.lua")
 	end
-	
+
 	position = {}
 	local players = {}
 
 	minetest.register_on_joinplayer(function(player)
-		local inventory = player:get_inventory()
-		inventory:set_size("hunger", 3) -- 3 slots: 1 for hunger, 1 for saturation, 1 for exhaustion
-		if not inventory:contains_item("hunger", ":") then
+		if not player:get_attribute("hunger:hunger") then
 			hunger.set_hunger(player, HUNGER_MAX)
 			hunger.set_saturation(player, HUNGER_SATURATION_MAX)
 			hunger.set_exhaustion(player, HUNGER_EXHAUSTION_MAX)

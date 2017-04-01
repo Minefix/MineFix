@@ -109,10 +109,7 @@ for _, value in pairs(experience_orbs) do
 end
 
 minetest.register_on_joinplayer(function(player)
-	local inventory = player:get_inventory()
-	inventory:set_size("experience", 2) -- 2 slots: 1 for current experience, 1 for total experience since last respawn
-
-	if not inventory:contains_item("experience", ":") then
+	if not player:get_attribute("experience:life") then
 		experience.set_experience(player, 0)
 		experience.set_experience_total(player, 0)
 	end

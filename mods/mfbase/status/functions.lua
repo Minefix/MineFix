@@ -18,27 +18,36 @@ end
 
 
 function status.init_status_by_id(status_id, player, level, duration)
-	player:get_inventory():set_stack("status", status_id, ItemStack({name = ":", count = level, wear = duration, metadata = "0"}))
+	player:set_attribute("status:" .. status_id, minetest.write_json({
+		level = level,
+		duration = duration,
+		ticks = 0
+	}))
 end
 
 function status.init_status_by_name(status_name, player, level, duration)
-	local id = nil
+	local status_id = nil
 
 	for key, value in pairs(statuses) do
 		if value.name == status_name then
-			id = key
+			status_id = key
 		end
 	end
 
-	if id then
-		player:get_inventory():set_stack("status", id, ItemStack({name = ":", count = level, wear = duration, metadata = "0"}))
+	if status_id then
+		player:set_attribute("status:" .. status_id, minetest.write_json({
+			level = level,
+			duration = duration,
+			ticks = 0
+		}))
 	else
 		minetest.log("FAILURE: No such status effect known")
 	end
 end
 
 function status.player_has_status_by_id(status_id, player)
-	if player:get_inventory():get_stack("status", status_id):get_count() ~= 0 then
+	local player_status = player:get_attribute("status:" .. status_id)
+	if player_status and minetest.parse_json(player_status).level ~= 0 then
 		return true
 	end
 
@@ -46,43 +55,38 @@ function status.player_has_status_by_id(status_id, player)
 end
 
 function status.player_has_status_by_name(status_name, player)
-	local id = nil
+	local status_id = nil
 
 	for key, value in pairs(statuses) do
 		if value.name == status_name then
-			id = key
+			status_id = key
 		end
 	end
 
-	if player:get_inventory():get_stack("status", id):get_count() ~= 0 then
-		return true
+	if status_id then
+		local player_status = player:get_attribute("status:" .. status_id)
+		if player_status and minetest.parse_json(player_status).level ~= 0 then
+			return true
+		end
+	else
+		minetest.log("FAILURE: No such status effect known")
 	end
 
 	return false
 end
 
 function status.get_player_status_length_by_id(status_id, player)
-	local stack = player:get_inventory():get_stack("status", status_id)
-	if stack:get_count() ~= 0 then
-		return stack:get_wear()
-	end
-
-	return false
+	return minetest.parse_json(player:get_attribute("status:" .. status_id)).duration
 end
 
 function status.get_player_status_length_by_name(status_name, player)
-	local id = nil
+	local status_id = nil
 
 	for key, value in pairs(statuses) do
 		if value.name == status_name then
-			id = key
+			status_id = key
 		end
 	end
 
-	local stack = player:get_inventory():get_stack("status", id)
-	if stack:get_count() ~= 0 then
-		return stack:get_wear()
-	end
-
-	return false
+	return minetest.parse_json(player:get_attribute("status:" .. status_id)).duration
 end

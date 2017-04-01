@@ -7,12 +7,10 @@ function hunger.set_hunger(player, value)
 		value = 0
 	end
 
-	local inventory = player:get_inventory()
-	inventory:set_stack("hunger", 1, ItemStack({name = ":", count = value}))
+	player:set_attribute("hunger:hunger", value)
 end
 
 function hunger.update_hunger(player, modifier)
-	local inventory = player:get_inventory()
 	local player_hunger = hunger.get_hunger(player)
 
 	local hunger_new = 0
@@ -28,7 +26,7 @@ function hunger.update_hunger(player, modifier)
 end
 
 function hunger.get_hunger(player)
-	return player:get_inventory():get_stack("hunger", 1):get_count()
+	return tonumber(player:get_attribute("hunger:hunger"))
 end
 
 -- ===================================
@@ -41,11 +39,10 @@ function hunger.set_saturation(player, value)
 		hunger.update_hunger(player, -1)
 	end
 
-	player:get_inventory():set_stack("hunger", 2, ItemStack({name = ":", count = value * 10})) -- We can't store decimal values in an inventory, so increase it by 10 times itself, we'll decrease it when reading again
+	player:set_attribute("hunger:saturation", value)
 end
 
 function hunger.update_saturation(player, modifier)
-	local inventory = player:get_inventory()
 	local player_saturation = hunger.get_saturation(player)
 
 	local saturation_new = 0
@@ -65,7 +62,7 @@ function hunger.update_saturation(player, modifier)
 end
 
 function hunger.get_saturation(player)
-	return player:get_inventory():get_stack("hunger", 2):get_count() / 10
+	return tonumber(player:get_attribute("hunger:saturation"))
 end
 
 -- ===================================
@@ -78,11 +75,10 @@ function hunger.set_exhaustion(player, value)
 		value = 0
 	end
 
-	player:get_inventory():set_stack("hunger", 3, ItemStack({name = ":", count = value * 1000})) -- We can't store decimal values in an inventory, so increase it by 1000 times itself, we'll decrease it when reading again
+	player:set_attribute("hunger:exhaustion", value)
 end
 
 function hunger.update_exhaustion(player, modifier)
-	local inventory = player:get_inventory()
 	local player_exhaustion = hunger.get_exhaustion(player)
 
 	local exhaustion_new = 0
@@ -100,5 +96,5 @@ function hunger.update_exhaustion(player, modifier)
 end
 
 function hunger.get_exhaustion(player)
-	return player:get_inventory():get_stack("hunger", 3):get_count() / 1000
+	return player:get_attribute("hunger:exhaustion")
 end
