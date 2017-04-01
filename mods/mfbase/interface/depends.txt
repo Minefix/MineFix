@@ -1,4 +1,4 @@
-creative?
+gamemode
 status?
 hunger?
 experience?

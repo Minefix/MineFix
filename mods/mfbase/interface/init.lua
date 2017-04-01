@@ -54,6 +54,8 @@ interface.tabs = {
 	}
 }
 
+interface.player_huds = {}
+
 local startIndex = 0
 
 dofile(minetest.get_modpath("interface") .. "/survival.lua")
@@ -66,26 +68,45 @@ minetest.register_on_joinplayer(function(player)
 	player:hud_set_hotbar_image("interface_hotbar.png")
 	player:hud_set_hotbar_selected_image("interface_hotbar_selected.png")
 
-	if player:get_attribute("default:gamemode") == "survival" then -- If the creative mod isn't loaded, the gamemode will always be survival
-		interface.createSurvivalInventory(player)
-	end
+	-- Hide built-in hud bars, so we can customize them to our likings instead
+	local hud_flags = player:hud_get_flags()
+	hud_flags.healthbar = false
+	hud_flags.breathbar = false
+	player:hud_set_flags(hud_flags)
 
-	if minetest.get_modpath("creative") ~= nil then
-		interface.registerCreativeInventory(player)
+	interface.registerCreativeInventory(player)
 
-		if player:get_attribute("default:gamemode") == "creative" then
+	gamemode.register_on_gamemode_change(function(player, gamemode)
+		if gamemode == "survival" then
+			interface.createSurvivalInventory(player)
+
+			interface.createHud(player)
+		elseif gamemode == "creative" then
 			interface.fillCreativeInventory(player, "building", 0)
 			interface.createCreativeInventory(player, "building", 0, 0) -- Player, tab, startIndex, pageNumber
-		end
-	end
 
-	if minetest.setting_getbool("enable_damage") then
+			for i=0,31,1 do
+				player:hud_remove(i)
+			end
+		end
+	end)
+
+	if gamemode.get_player_gamemode(player) == "survival" then -- If the gamemode mod isn't loaded, the gamemode will always be survival
+		interface.createSurvivalInventory(player)
+
 		interface.createHud(player)
+	elseif gamemode.get_player_gamemode(player) == "creative" then
+		interface.fillCreativeInventory(player, "building", 0)
+		interface.createCreativeInventory(player, "building", 0, 0) -- Player, tab, startIndex, pageNumber
+
+		for i=0,31,1 do
+			player:hud_remove(i)
+		end
 	end
 end)
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)
-	if player:get_attribute("default:gamemode") == "creative" then
+	if gamemode.get_player_gamemode(player) == "creative" then
 		interface.handleCreativeInventory(player, formname, fields)
 	else
 		interface.createSurvivalInventory(player)
