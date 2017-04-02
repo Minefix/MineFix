@@ -8,8 +8,8 @@ Registers a new creative inventory tab, useful for external mods. They will have
 @tablocation = can be top or bottom of the creative inventory
 @tabimage = the item to show on the tab
 ]]
-gamemode.registerCategory = function(categoryname, label, tablocation, tabimage)
-	--Example: interface.registerCategory("test", "test category", "top", "default:brick");
+gamemode.registerCreativeTab = function(categoryname, label, tablocation, tabimage)
+	--Example: interface.registerCreativeTab("test", "test category", "top", "default:brick");
 
 	for category in pairs(inventoryTabs) do
 		if category == categoryname then
