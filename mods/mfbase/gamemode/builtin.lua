@@ -1,5 +1,3 @@
-interface = {}
-
 dofile(minetest.get_modpath("gamemode") .. "/creative/init.lua")
 dofile(minetest.get_modpath("gamemode") .. "/survival/init.lua")
 
@@ -72,7 +70,7 @@ minetest.register_on_joinplayer(function(player)
 	if gamemode.get_player_gamemode(player) == "survival" then -- If the gamemode mod isn't loaded, the gamemode will always be survival
 		createSurvivalInventory(player)
 
-		createHud(player)
+		createSurvivalHud(player)
 	elseif gamemode.get_player_gamemode(player) == "creative" then
 		fillCreativeInventory(player, "building", 0)
 		createCreativeInventory(player, "building", 0, 0) -- Player, tab, startIndex, pageNumber

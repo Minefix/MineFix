@@ -1,6 +1,4 @@
-interface.creative_inventory_size = 0
-
-interface.tabs = {
+inventoryTabs = {
 	["building"] = {
 		["position"] = "top",
 		["label"] = "Building Blocks",

@@ -1,3 +1,4 @@
+local creative_inventory_size = {}
 local INVENTORYSIZE = 9 * 5
 
 --[[
@@ -7,17 +8,17 @@ Registers a new creative inventory tab, useful for external mods. They will have
 @tablocation = can be top or bottom of the creative inventory
 @tabimage = the item to show on the tab
 ]]
-interface.registerCategory = function(categoryname, label, tablocation, tabimage)
+gamemode.registerCategory = function(categoryname, label, tablocation, tabimage)
 	--Example: interface.registerCategory("test", "test category", "top", "default:brick");
 
-	for category in pairs(interface.tabs) do
+	for category in pairs(inventoryTabs) do
 		if category == categoryname then
 			minetest.log("[interface] ERROR: A category with this name already exists")
 			return
 		end
 	end
 
-	interface.tabs[categoryname] = {
+	inventoryTabs[categoryname] = {
 		["position"] = tablocation,
 		["label"] = label,
 		["image"] = tabimage
@@ -81,7 +82,7 @@ function fillCreativeInventory(player, tab, startIndex)
 		inventory:add_item("main", ItemStack(itemstring))
 	end
 
-	interface.creative_inventory_size = #creative_list_full
+	creative_inventory_size[player:get_player_name()] = #creative_list_full
 end
 
 -- Actually sets the inventory for the specified player
@@ -91,13 +92,13 @@ function createCreativeInventory(player, tab, startIndex, pageNumber)
 	end
 
 	pageNumber = pageNumber or 0
-	local pagemax = math.floor(math.floor((interface.creative_inventory_size / 9) / 5 + 1))
+	local pagemax = math.floor(math.floor(((creative_inventory_size[player:get_player_name()] or 0) / 9) / 5 + 1))
 	local slider_height = 4 / pagemax
 	local slider_pos = slider_height * (pageNumber) + 2.25
 
 	local activeTab, tabsTop, tabsBottom = "", "", ""
 	local tabsTopButtonX, tabsBottomButtonX = -0.1, -0.1
-	for key, value in pairs(interface.tabs) do
+	for key, value in pairs(inventoryTabs) do
 		if value.position == "top" then
 			if key == tab then
 				activeTab = "image[" .. tabsTopButtonX - 0.17 ..",-0.30;1.27,1.65;interface_creative_tab_active.png]"
@@ -169,7 +170,7 @@ function handleCreativeInventory(player, formname, fields)
 
 	local tab = nil;
 	for key, value in pairs(fields) do
-		if interface.tabs[key] then
+		if inventoryTabs[key] then
 			tab = key
 		end
 	end
@@ -190,7 +191,7 @@ function handleCreativeInventory(player, formname, fields)
 
 	if fields.creative_prev and fields.page > 0 then
 		fields.page = fields.page - 1
-	elseif fields.creative_next and (fields.page + 1) * INVENTORYSIZE < interface.creative_inventory_size then
+	elseif fields.creative_next and (fields.page + 1) * INVENTORYSIZE < (creative_inventory_size[player:get_player_name()] or 0) then
 		fields.page = fields.page + 1
 	end
 
