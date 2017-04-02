@@ -1,6 +1,6 @@
 local player_huds = {}
 
-interface.createHud = function(player)
+function createSurvivalHud(player)
 	player_huds[player:get_player_name()] = {}
 	local player_hudlist = player_huds[player:get_player_name()]
 

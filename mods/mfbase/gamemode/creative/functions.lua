@@ -1,4 +1,4 @@
-local inventorySize = 9 * 5
+local INVENTORYSIZE = 9 * 5
 
 --[[
 Registers a new creative inventory tab, useful for external mods. They will have to require this mod
@@ -24,7 +24,7 @@ interface.registerCategory = function(categoryname, label, tablocation, tabimage
 	}
 end
 
-interface.registerCreativeInventory = function(player)
+function registerCreativeInventory(player)
 	minetest.create_detached_inventory("creative_" .. player:get_player_name(), {
 		allow_move = function(inv, from_list, from_index, to_list, to_index, count, player)
 			return 0
@@ -51,7 +51,7 @@ interface.registerCreativeInventory = function(player)
 	})
 end
 
-interface.fillCreativeInventory = function(player, tab, startIndex)
+function fillCreativeInventory(player, tab, startIndex)
 	local inventory = minetest.get_inventory({type = "detached", name = "creative_" .. player:get_player_name()})
 	inventory:set_size("main", 0) -- First we'll empty whatever was in the inventory before by setting inventory size to 0, we'll resize it later
 
@@ -65,7 +65,7 @@ interface.fillCreativeInventory = function(player, tab, startIndex)
 	local creative_list_selection = {};
 	local iteration = 0
 	for _, value in pairs(creative_list_full) do
-		if iteration >= startIndex + inventorySize then
+		if iteration >= startIndex + INVENTORYSIZE then
 			break
 		elseif iteration >= startIndex then
 			table.insert(creative_list_selection, value)
@@ -74,8 +74,8 @@ interface.fillCreativeInventory = function(player, tab, startIndex)
 		iteration = iteration + 1
 	end
 
-	local creative_list_filledup = inventorySize - (#creative_list_selection % inventorySize) + #creative_list_selection -- Fill up empty spots
-	inventory:set_size("main", inventorySize) -- Set inventory size back to the correct size
+	local creative_list_filledup = INVENTORYSIZE - (#creative_list_selection % INVENTORYSIZE) + #creative_list_selection -- Fill up empty spots
+	inventory:set_size("main", INVENTORYSIZE) -- Set inventory size back to the correct size
 
 	for key, itemstring in ipairs(creative_list_selection) do
 		inventory:add_item("main", ItemStack(itemstring))
@@ -85,7 +85,7 @@ interface.fillCreativeInventory = function(player, tab, startIndex)
 end
 
 -- Actually sets the inventory for the specified player
-interface.createCreativeInventory = function(player, tab, startIndex, pageNumber)
+function createCreativeInventory(player, tab, startIndex, pageNumber)
 	if startIndex < 0 then
 		startIndex = 0
 	end
@@ -164,7 +164,7 @@ end
 
 --Gets called if a button is pressed in a player's inventory form, or the inventory is opened
 --If it returns true, remaining functions (other mods, etc) are not called
-interface.handleCreativeInventory = function(player, formname, fields)
+function handleCreativeInventory(player, formname, fields)
 	fields.page = tonumber(fields.page)
 
 	local tab = nil;
@@ -190,14 +190,14 @@ interface.handleCreativeInventory = function(player, formname, fields)
 
 	if fields.creative_prev and fields.page > 0 then
 		fields.page = fields.page - 1
-	elseif fields.creative_next and (fields.page + 1) * inventorySize < interface.creative_inventory_size then
+	elseif fields.creative_next and (fields.page + 1) * INVENTORYSIZE < interface.creative_inventory_size then
 		fields.page = fields.page + 1
 	end
 
-	local startIndex = (fields.page or 0) * inventorySize -- (fields.page or 0) is needed as fields.page is not set when closing the inventory
+	local startIndex = (fields.page or 0) * INVENTORYSIZE -- (fields.page or 0) is needed as fields.page is not set when closing the inventory
 	if tab ~= "inventory" then
-		interface.fillCreativeInventory(player, tab, startIndex)
+		fillCreativeInventory(player, tab, startIndex)
 	end
 
-	interface.createCreativeInventory(player, tab, startIndex, fields.page)
+	createCreativeInventory(player, tab, startIndex, fields.page)
 end

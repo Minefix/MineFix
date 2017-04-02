@@ -1,6 +1,8 @@
+dofile(minetest.get_modpath("gamemode") .. "/survival/hud.lua")
+
 formspec = ""
 
-interface.createSurvivalInventory = function(player)
+function createSurvivalInventory(player)
 	formspec = "size[9,8.5]"..
 		"bgcolor[#080808BB;true]" ..
 		"background[0,0;9,8.5;gui_formbg.png;true]" ..
@@ -24,7 +26,7 @@ minetest.register_globalstep(function(dtime)
 		for key, player in ipairs(minetest.get_connected_players()) do
 			if player:get_attribute("default:gamemode") == "survival" then
 				player:set_inventory_formspec(formspec)
-				
+
 				local status_formspec = ""
 				local bar_height = 0
 				if minetest.get_modpath("status") ~= nil then

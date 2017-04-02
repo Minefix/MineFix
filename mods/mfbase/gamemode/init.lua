@@ -1,7 +1,5 @@
 gamemode = {}
 
-local digtime = 5
-local caps = {times = {digtime, digtime, digtime}, uses = 0, maxlevel = 256}
 local callbacks = {}
 local gamemodes = {}
 
@@ -82,26 +80,3 @@ minetest.register_chatcommand("gamemode", {
 		return true, "Gamemode changed"
 	end
 })
-
-minetest.register_on_placenode(function(pos, newnode, placer, oldnode, itemstack)
-	if placer:get_attribute("default:gamemode") == "creative" then
-		return true
-	end
-end)
-
-function minetest.handle_node_drops(pos, drops, digger)
-	if not digger or not digger:is_player() then
-		return
-	end
-	if digger:get_attribute("default:gamemode") == "creative" then
-		local inv = digger:get_inventory()
-		if inv then
-			for _, item in ipairs(drops) do
-				item = ItemStack(item):get_name()
-				if not inv:contains_item("main", item) then
-					inv:add_item("main", item)
-				end
-			end
-		end
-	end
-end
