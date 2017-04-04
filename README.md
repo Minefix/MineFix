@@ -6,8 +6,10 @@ Note that we are **not** trying to be compatible with existing mods and modpacks
 
 ## Installation instructions
 
-Copy or clone this repository to `minetestdirectory/games/minefix`.
-Now go into the `minefix/mods` directory and read every README.md for every mod starting with `minefix` in the name for any further installation instructions.
+Copy or clone this repository to `~/.minetest/games/minefix`.
+Make sure you run a copy of Minetest compiled after the 22nd of March. The stable build lacks a feature we require, so you'll have to compile from source for now.
+
+Once installed, select the Minefix subgame, create a world, and start playing!
 
 ## License
 
