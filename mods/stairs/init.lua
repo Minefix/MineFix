@@ -291,7 +291,7 @@ stairs.register_stair(
 
 stairs.register_stair(
 	"sandstone",
-	"default:sandstone",
+	"default:sandstone_normal",
 	{crumbly = 1, cracky = 3},
 	{"default_sandstone_normal.png"},
 	"Sandstone Stair",
@@ -305,6 +305,15 @@ stairs.register_stair(
 	{"default_brick_block.png"},
 	"Brick Stair",
 	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair(
+        "sandstone_red",
+        "default:sandstone_red_normal",
+        {crumbly = 1, cracky = 3},
+        {"default_sandstone_red_normal.png"},
+        "Red Sandstone Stair",
+        default.node_sound_stone_defaults()
 )
 
 -- Slabs
@@ -401,9 +410,18 @@ stairs.register_slab(
 
 stairs.register_slab(
 	"sandstone",
-	"default:sandstone",
+	"default:sandstone_normal",
 	"Sandstone Slab",
 	{"default_sandstone_normal.png"},
 	{cracky = 3},
 	default.node_sound_stone_defaults()
+)
+
+stairs.register_slab(
+        "sandstone_red",
+        "default:sandstone_red_normal",
+        "Red Sandstone Slab",
+        {"default_sandstone_red_normal.png"},
+        {cracky = 3},
+        default.node_sound_stone_defaults()
 )

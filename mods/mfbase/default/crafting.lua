@@ -454,37 +454,52 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = 'default:sandstone',
+	output = 'default:sandstone_normal',
 	recipe = {
-		{'group:sand', 'group:sand'},
-		{'group:sand', 'group:sand'},
+		{'default:sand', 'default:sand'},
+		{'default:sand', 'default:sand'},
 	}
 })
 
 minetest.register_craft({
-	output = 'default:sand 4',
-	recipe = {
-		{'default:sandstone'},
-	}
+        output = 'default:sandstone_red_normal',
+        recipe = {
+                {'default:sand_red', 'default:sand_red'},
+                {'default:sand_red', 'default:sand_red'},
+        }
 })
 
 minetest.register_craft({
-	output = 'default:sandstonebrick 4',
-	recipe = {
-		{'default:sandstone', 'default:sandstone'},
-		{'default:sandstone', 'default:sandstone'},
-	}
+        output = 'default:sandstone_smooth 4',
+        recipe = {
+                {'default:sandstone_normal', 'default:sandstone_normal'},
+                {'default:sandstone_normal', 'default:sandstone_normal'},
+        }
 })
 
 minetest.register_craft({
-	output = 'default:sandstone_block 9',
-	recipe = {
-		{'default:sandstone', 'default:sandstone', 'default:sandstone'},
-		{'default:sandstone', 'default:sandstone', 'default:sandstone'},
-		{'default:sandstone', 'default:sandstone', 'default:sandstone'},
-	}
+        output = 'default:sandstone_red_smooth 4',
+        recipe = {
+                {'default:sandstone_red_normal', 'default:sandstone_red_normal'},
+                {'default:sandstone_red_normal', 'default:sandstone_red_normal'},
+        }
 })
 
+minetest.register_craft({
+        output = 'default:sandstone_chiseled',
+        recipe = {
+                {'stairs:slab_sandstone'},
+                {'stairs:slab_sandstone'},
+        }
+})
+
+minetest.register_craft({
+        output = 'default:sandstone_red_chiseled',
+        recipe = {
+                {'stairs:slab_sandstone_red'},
+                {'stairs:slab_sandstone_red'},
+        }
+})
 
 -- Clay
 

@@ -225,11 +225,17 @@ mv blocks/sapling_jungle.png ${location_minetest_textures}/default_sapling_jungl
 mv blocks/sapling_oak.png ${location_minetest_textures}/default_sapling_oak.png
 mv blocks/sapling_spruce.png ${location_minetest_textures}/default_sapling_spruce.png
 mv blocks/sand.png ${location_minetest_textures}/default_sand.png
+mv blocks/red_sand.png ${location_minetest_textures}/default_sand_red.png
 mv blocks/sandstone_top.png ${location_minetest_textures}/default_sandstone_top.png
 mv blocks/sandstone_bottom.png ${location_minetest_textures}/default_sandstone_bottom.png
 mv blocks/sandstone_normal.png ${location_minetest_textures}/default_sandstone_normal.png
 mv blocks/sandstone_carved.png ${location_minetest_textures}/default_sandstone_chiseled.png
 mv blocks/sandstone_smooth.png ${location_minetest_textures}/default_sandstone_smooth.png
+mv blocks/red_sandstone_top.png ${location_minetest_textures}/default_sandstone_red_top.png
+mv blocks/red_sandstone_bottom.png ${location_minetest_textures}/default_sandstone_red_bottom.png
+mv blocks/red_sandstone_normal.png ${location_minetest_textures}/default_sandstone_red_normal.png
+mv blocks/red_sandstone_carved.png ${location_minetest_textures}/default_sandstone_red_chiseled.png
+mv blocks/red_sandstone_smooth.png ${location_minetest_textures}/default_sandstone_red_smooth.png
 mv items/sign.png ${location_minetest_textures}/default_sign_wood.png
 mv blocks/snow.png ${location_minetest_textures}/default_snow.png
 mv items/snowball.png ${location_minetest_textures}/default_snowball.png

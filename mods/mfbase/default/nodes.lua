@@ -21,9 +21,13 @@ default:cobblestone
 default:stonebrick
 default:cobblestone_mossy
 
-default:sandstone
-default:sandstonebrick
-default:sandstone_block
+default:sandstone_normal
+default:sandstone_chiseled
+default:sandstone_smooth
+
+default:sandstone_red_normal
+default:sandstone_red_chiseled
+default:sandstone_red_smooth
 
 default:obsidian
 
@@ -36,6 +40,7 @@ default:dirt_with_grass
 default:dirt_with_snow
 
 default:sand
+default:sand_red
 
 default:gravel
 
@@ -267,6 +272,34 @@ minetest.register_node("default:sandstone_smooth", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
+minetest.register_node("default:sandstone_red_normal", {
+        description = "Red Sandstone",
+        category = "building",
+        tiles = {"default_sandstone_red_top.png", "default_sandstone_red_bottom.png", "default_sandstone_red_normal.png"},
+        groups = {crumbly = 1, cracky = 3},
+        sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("default:sandstone_red_chiseled", {
+        description = "Red Chiseled Sandstone",
+        category = "building",
+        paramtype2 = "facedir",
+        place_param2 = 0,
+        tiles = {"default_sandstone_red_top.png", "default_sandstone_red_bottom.png", "default_sandstone_red_chiseled.png"},
+        is_ground_content = false,
+        groups = {cracky = 2},
+        sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("default:sandstone_red_smooth", {
+        description = "Red Smooth Sandstone",
+        category = "building",
+        tiles = {"default_sandstone_red_top.png", "default_sandstone_red_bottom.png", "default_sandstone_red_smooth.png"},
+        is_ground_content = false,
+        groups = {cracky = 2},
+        sounds = default.node_sound_stone_defaults(),
+})
+
 minetest.register_node("default:obsidian", {
 	description = "Obsidian",
 	category = "building",
@@ -321,6 +354,13 @@ minetest.register_node("default:sand", {
 	sounds = default.node_sound_sand_defaults(),
 })
 
+minetest.register_node("default:sand_red", {
+        description = "Red Sand",
+        category = "building",
+        tiles = {"default_sand_red.png"},
+        groups = {crumbly = 3, falling_node = 1, sand = 1},
+        sounds = default.node_sound_sand_defaults(),
+})
 
 minetest.register_node("default:gravel", {
 	description = "Gravel",
