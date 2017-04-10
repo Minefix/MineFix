@@ -57,7 +57,7 @@ minetest.register_craftitem("default:apple", {
 })
 ```
 
-To manually make the player hungry call `default.init_status_by_name("hunger", player, level, duration)`. To manually poison the player call `default.poison("poison", player, level, duration)`.
+To manually make the player hungry call `default.init_status_by_name("hunger", player, level, duration)`. To manually poison the player call `default.init_status_by_name("poison", player, level, duration)`.
 
 When hungry, the player will gain 0.005 saturation multiplied by his hunger level per game tick (each 0.05 seconds).
 
