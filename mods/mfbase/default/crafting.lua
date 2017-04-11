@@ -1,6 +1,14 @@
 -- mods/default/crafting.lua
 
 minetest.register_craft({
+	output = "default:dirt_coarse 4",
+	recipe = {
+		{"default:dirt", "default:gravel"},
+		{"default:gravel", "default:dirt"}
+	}
+})
+
+minetest.register_craft({
 	type = "shapeless",
 	output = "default:andesite 2",
 	recipe = {"default:diorite", "default:cobblestone"}

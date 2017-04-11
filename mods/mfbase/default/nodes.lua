@@ -1,6 +1,5 @@
 -- mods/default/nodes.lua
 
-
 --[[ Node name convention:
 
 Although many node names are in combined-word form, the required form for new
@@ -36,6 +35,7 @@ Soft / Non-Stone
 (1. Material 2. Modified forms)
 
 default:dirt
+default:dirt_coarse
 default:dirt_with_grass
 default:dirt_with_snow
 
@@ -318,6 +318,24 @@ minetest.register_node("default:dirt", {
 	tiles = {"default_dirt.png"},
 	groups = {crumbly = 3, soil = 1},
 	sounds = default.node_sound_dirt_defaults(),
+})
+
+minetest.register_node("default:dirt_coarse", {
+        description = "Coarse Dirt",
+        category = "building",
+        tiles = {"default_dirt_coarse.png"},
+        groups = {crumbly = 3, soil = 1},
+        sounds = default.node_sound_dirt_defaults(),
+        on_rightclick = default.tilltodirt
+})
+
+minetest.register_node("default:podzol", {
+        description = "Podzol",
+        category = "building",
+        tiles = {"default_podzol_top.png", "default_podzol_side.png"},
+        groups = {crumbly = 3, soil = 1},
+        sounds = default.node_sound_dirt_defaults(),
+        on_rightclick = default.tilltodirt
 })
 
 minetest.register_node("default:dirt_with_grass", {

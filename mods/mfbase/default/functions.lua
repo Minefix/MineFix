@@ -396,3 +396,37 @@ function default.intersects_protection(minp, maxp, player_name, interval)
 
 	return false
 end
+
+--
+-- Coarse Dirt and Podzol tilling logic
+--
+
+function default.tilltodirt(pos, node, clicker, itemstack, pointed_thing)
+        if itemstack:get_tool_capabilities().groupcaps.farming then
+                local tool_uses = itemstack:get_tool_capabilities().groupcaps.farming.uses
+
+                if tool_uses == 0 then
+                        return itemstack
+                end
+
+                local check_above = {x = pos.x, y = pos.y + 1, z = pos.z}
+                if minetest.get_node(check_above).name == "air" then
+                        block = minetest.get_node(pointed_thing.under)
+                        if (block.name == "default:podzol" or block.name == "default:dirt_coarse") then
+                                minetest.set_node(pointed_thing.under, {name = "default:dirt"})
+                                minetest.sound_play("default_dig_crumbly", {
+                                        pos = pointed_thing.under,
+                                        gain = 0.5,
+                                })
+
+                                if not minetest.setting_getbool("creative_mode") then
+                                        itemstack:add_wear(65535 / (tool_uses - 1))
+                                end
+                        end
+                end
+        else -- If the wielded item while right clicking is no farming tool, just place the block like normal
+                minetest.item_place_node(itemstack, clicker, pointed_thing)
+        end
+
+        return itemstack
+end
