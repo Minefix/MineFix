@@ -211,6 +211,8 @@ mv blocks/ladder.png ${location_minetest_textures}/default_ladder_wood.png
 mv blocks/lapis_block.png ${location_minetest_textures}/default_lapis_block.png
 mv blocks/lava_flow.png ${location_minetest_textures}/default_lava_flowing_animated.png
 mv blocks/lava_still.png ${location_minetest_textures}/default_lava_source_animated.png
+mv blocks/water_flow.png ${location_minetest_textures}/default_water_flowing_animated.png
+mv blocks/water_still.png ${location_minetest_textures}/default_water_source_animated.png
 mv blocks/obsidian.png ${location_minetest_textures}/default_obsidian.png
 mv items/paper.png ${location_minetest_textures}/default_paper.png
 mv items/reeds.png ${location_minetest_textures}/farming_reeds.png
