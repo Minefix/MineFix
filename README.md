@@ -4,6 +4,8 @@ MineFix is a project that tries to (slowly) implement all missing features from 
 
 Note that we are **not** trying to be compatible with existing mods and modpacks. Mods will have to be made compatible with this subgame instead.
 
+Join the development on #minefix on Snoonet (IRC), or #minefix:matrix.org (Matrix)!
+
 ## Installation instructions
 
 Copy or clone this repository to `~/.minetest/games/minefix`.
