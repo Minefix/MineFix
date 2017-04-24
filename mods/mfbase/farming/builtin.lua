@@ -235,6 +235,7 @@ minetest.register_tool("farming:hoe_wood", {
 		},
 		damage_groups = {fleshy = 1},
 	},
+	on_place = farming.till
 })
 
 minetest.register_craft({
@@ -268,6 +269,7 @@ minetest.register_tool("farming:hoe_stone", {
 		},
 		damage_groups = {fleshy = 1},
 	},
+	on_place = farming.till
 })
 
 minetest.register_craft({
@@ -301,6 +303,7 @@ minetest.register_tool("farming:hoe_iron", {
 		},
 		damage_groups = {fleshy = 1},
 	},
+	on_place = farming.till
 })
 
 minetest.register_craft({
@@ -334,6 +337,7 @@ minetest.register_tool("farming:hoe_gold", {
 		},
 		damage_groups = {fleshy = 1},
 	},
+	on_place = farming.till
 })
 
 minetest.register_craft({
@@ -367,6 +371,7 @@ minetest.register_tool("farming:hoe_diamond", {
 		},
 		damage_groups = {fleshy = 1},
 	},
+	on_place = farming.till
 })
 
 minetest.register_craft({

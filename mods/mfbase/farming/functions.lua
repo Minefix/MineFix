@@ -629,15 +629,15 @@ minetest.register_on_placenode(function(pos, newnode) -- Check if a block is pla
 	end
 end)
 
-farming.till = function(pos, node, clicker, itemstack, pointed_thing)
-	if itemstack:get_tool_capabilities().groupcaps.farming then
+farming.till = function(itemstack, placer, pointed_thing)
+	if (minetest.get_node(pointed_thing.under).name == "default:dirt" or minetest.get_node(pointed_thing.under).name == "default:dirt_with_grass") then
 		local tool_uses = itemstack:get_tool_capabilities().groupcaps.farming.uses
 
 		if tool_uses == 0 then
 			return itemstack
 		end
 
-		local check_above = {x = pos.x, y = pos.y + 1, z = pos.z}
+		local check_above = {x = pointed_thing.under.x, y = pointed_thing.under.y + 1, z = pointed_thing.under.z}
 		if minetest.get_node(check_above).name == "air" then
 			minetest.set_node(pointed_thing.under, {name = "farming:farmland_dry"})
 			minetest.sound_play("default_dig_crumbly", {
@@ -650,17 +650,8 @@ farming.till = function(pos, node, clicker, itemstack, pointed_thing)
 			end
 		end
 	else -- If the wielded item while right clicking is no farming tool, just place the block like normal
-		minetest.item_place_node(itemstack, clicker, pointed_thing)
+		minetest.item_place_node(itemstack, placer, pointed_thing)
 	end
 
 	return itemstack
 end
-
-minetest.override_item("default:dirt", {
-	on_rightclick = farming.till,
-	growth_boost = 1
-})
-
-minetest.override_item("default:dirt_with_grass", {
-	on_rightclick = farming.till
-})
