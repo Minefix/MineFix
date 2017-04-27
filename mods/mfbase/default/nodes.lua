@@ -364,6 +364,23 @@ minetest.register_node("default:dirt_with_snow", {
 	}),
 })
 
+minetest.register_node("default:grasspath", {
+	description = "Grass path",
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, 0.5, 0.4375, 0.5}, -- Block
+		}
+	},
+	tiles = {"default_grasspath_top.png", "default_grasspath_side.png"},
+	groups = {crumbly = 3, soil = 1, spreading_dirt_type = 1},
+	drop = 'default:dirt',
+	sounds = default.node_sound_dirt_defaults({
+		footstep = {name = "default_grass_footstep", gain = 0.25},
+	}),
+})
+
 minetest.register_node("default:sand", {
 	description = "Sand",
 	category = "building",

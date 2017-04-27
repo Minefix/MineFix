@@ -91,12 +91,42 @@ minetest.register_tool("default:pick_diamond", {
 --
 -- Shovels
 --
+default.makegrasspath = function(itemstack, placer, pointed_thing) -- Change grass into a grasspath when rightclicked on with a shovel
+	if minetest.get_node(pointed_thing.under).name == "default:dirt_with_grass" then
+		local tool_uses = itemstack:get_tool_capabilities().groupcaps.crumbly.uses -- All shovels have the crumbly groupcap
+
+		if tool_uses == 0 then
+			return itemstack
+		end
+
+		local check_above = {x = pointed_thing.under.x, y = pointed_thing.above.y, z = pointed_thing.under.z}
+		if minetest.get_node(check_above).name == "air" then
+			minetest.set_node(pointed_thing.under, {name = "default:grasspath"})
+			minetest.sound_play("default_dig_crumbly", {
+				pos = pointed_thing.under,
+				gain = 0.5,
+			})
+
+			if minetest.get_modpath("gamemode") ~= nil then
+				if gamemode.get_player_gamemode(player) == "survival" then
+					itemstack:add_wear(65535 / (tool_uses - 1))
+				end
+			else
+				if not minetest.setting_getbool("creative_mode") then
+					itemstack:add_wear(65535 / (tool_uses - 1))
+				end
+			end
+		end
+	else
+		minetest.item_place_node(itemstack, placer, pointed_thing)
+	end
+end
 
 minetest.register_tool("default:shovel_wood", {
 	description = "Wooden Shovel",
 	category = "tools",
+	types = {"shovel"},
 	inventory_image = "default_tool_woodshovel.png",
-	wield_image = "default_tool_woodshovel.png^[transformR90",
 	tool_capabilities = {
 		full_punch_interval = 1.2,
 		max_drop_level=0,
@@ -105,12 +135,13 @@ minetest.register_tool("default:shovel_wood", {
 		},
 		damage_groups = {fleshy=2},
 	},
+	on_place = default.makegrasspath,
 })
 minetest.register_tool("default:shovel_stone", {
 	description = "Stone Shovel",
 	category = "tools",
+	types = {"shovel"},
 	inventory_image = "default_tool_stoneshovel.png",
-	wield_image = "default_tool_stoneshovel.png^[transformR90",
 	tool_capabilities = {
 		full_punch_interval = 1.4,
 		max_drop_level=0,
@@ -119,12 +150,13 @@ minetest.register_tool("default:shovel_stone", {
 		},
 		damage_groups = {fleshy=2},
 	},
+	on_place = default.makegrasspath,
 })
 minetest.register_tool("default:shovel_iron", {
 	description = "Iron Shovel",
 	category = "tools",
+	types = {"shovel"},
 	inventory_image = "default_tool_ironshovel.png",
-	wield_image = "default_tool_ironshovel.png^[transformR90",
 	tool_capabilities = {
 		full_punch_interval = 1.1,
 		max_drop_level=1,
@@ -133,9 +165,12 @@ minetest.register_tool("default:shovel_iron", {
 		},
 		damage_groups = {fleshy=3},
 	},
+	on_place = default.makegrasspath,
 })
 minetest.register_tool("default:shovel_gold", {
 	description = "Golden shovel",
+	category = "tools",
+	types = {"shovel"},
 	inventory_image = "default_tool_goldshovel.png",
 	tool_capabilities = {
 		full_punch_interval = 1.0,
@@ -145,13 +180,13 @@ minetest.register_tool("default:shovel_gold", {
 		},
 		damage_groups = {fleshy = 4},
 	},
-	category = "tools"
+	on_place = default.makegrasspath,
 })
 minetest.register_tool("default:shovel_diamond", {
 	description = "Diamond Shovel",
 	category = "tools",
+	types = {"shovel"},
 	inventory_image = "default_tool_diamondshovel.png",
-	wield_image = "default_tool_diamondshovel.png^[transformR90",
 	tool_capabilities = {
 		full_punch_interval = 1.0,
 		max_drop_level=1,
@@ -160,6 +195,7 @@ minetest.register_tool("default:shovel_diamond", {
 		},
 		damage_groups = {fleshy=4},
 	},
+	on_place = default.makegrasspath,
 })
 
 --

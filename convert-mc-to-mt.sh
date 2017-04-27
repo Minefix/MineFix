@@ -2,7 +2,7 @@
 
 # Dependencies: java (extracting the MC jar), imagemagick
 
-minecraft_version="1.8.9"
+minecraft_version="1.11.2"
 location_minecraft="$HOME/.minecraft/versions"
 location_minetest="$HOME/.minetest"
 texturepack_name="Minecraft"
@@ -150,6 +150,8 @@ mv blocks/dirt.png ${location_minetest_textures}/default_dirt.png
 mv blocks/coarse_dirt.png ${location_minetest_textures}/default_dirt_coarse.png
 mv blocks/dirt_podzol_top.png ${location_minetest_textures}/default_podzol_top.png
 mv blocks/dirt_podzol_side.png ${location_minetest_textures}/default_podzol_side.png
+mv blocks/grass_path_side.png ${location_minetest_textures}/default_grasspath_side.png
+mv blocks/grass_path_top.png ${location_minetest_textures}/default_grasspath_top.png
 mv blocks/grass_side.png ${location_minetest_textures}/default_grass_side.png
 # Since the default MC grass texture is gray, we can't just copy it. MC decides it's grass color depending on the biome the block is in, and from the grass gradiant located in `colormap/grass.png`
 # Minefix's grass will have to be altered to get the same effect. We'll use Minetest's default grass texture for now
