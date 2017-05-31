@@ -1,11 +1,9 @@
-License of source code
+License of source code in this folder
 ----------------------
 
 The MIT License (MIT)
-Copyright (C) 2014-2016 PilzAdam
-Copyright (C) 2014-2016 ShadowNinja
-Copyright (C) 2016 sofar (sofar@foo-projects.org)
-Copyright (C) 2014-2016 Various Minetest developers and contributors
+Copyright© 2012-2016 Ironzorg, VanessaE
+Copyright© 2012-2016 Various Minetest developers and contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this
 software and associated documentation files (the "Software"), to deal in the Software
@@ -27,14 +25,13 @@ For more details:
 https://opensource.org/licenses/MIT
 
 
-Licenses of media (textures)
+Licenses of media (textures) in this folder
 ----------------------------
 
 Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
-Copyright (C) 2014-2016 BlockMen
-Copyright (C) 2014-2016 ShadowNinja
-Copyright (C) 2015-2016 Wuzzy
-Copyright (C) 2016 sofar (sofar@foo-projects.org)
+Copyright© 2014-2016 RHRhino
+Copyright© 2015-2016 Gambit
+Copyright© 2016 yyt16384
 
 You are free to:
 Share — copy and redistribute the material in any medium or format.
@@ -62,4 +59,4 @@ for your intended use. For example, other rights such as publicity, privacy, or 
 rights may limit how you use the material.
 
 For more details:
-http://creativecommons.org/licenses/by-sa/3.0/
+https://creativecommons.org/licenses/by-sa/3.0/

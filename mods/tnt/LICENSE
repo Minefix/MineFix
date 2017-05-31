@@ -2,8 +2,10 @@ License of source code
 ----------------------
 
 The MIT License (MIT)
-Copyright (C) 2012-2016 PilzAdam
-Copyright (C) 2012-2016 Various Minetest developers and contributors
+Copyright© 2014-2016 PilzAdam
+Copyright© 2014-2016 ShadowNinja
+Copyright© 2016 sofar (sofar@foo-projects.org)
+Copyright© 2014-2016 Various Minetest developers and contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this
 software and associated documentation files (the "Software"), to deal in the Software
@@ -25,14 +27,14 @@ For more details:
 https://opensource.org/licenses/MIT
 
 
-Licenses of media (textures and model)
---------------------------------------
+Licenses of media (textures)
+----------------------------
 
 Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
-Copyright (C) 2012-2016 Zeg9
-Copyright (C) 2012-2016 thetoon
-Copyright (C) 2012-2016 PavelS(SokolovPavel)
-Copyright (C) 2016 sofar (sofar@foo-projects.org)
+Copyright© 2014-2016 BlockMen
+Copyright© 2014-2016 ShadowNinja
+Copyright© 2015-2016 Wuzzy
+Copyright© 2016 sofar (sofar@foo-projects.org)
 
 You are free to:
 Share — copy and redistribute the material in any medium or format.
@@ -60,4 +62,4 @@ for your intended use. For example, other rights such as publicity, privacy, or 
 rights may limit how you use the material.
 
 For more details:
-http://creativecommons.org/licenses/by-sa/3.0/
+https://creativecommons.org/licenses/by-sa/3.0/
