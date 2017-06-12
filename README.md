@@ -8,10 +8,12 @@ Join the development on #minefix on Snoonet (IRC), or [#minefix:matrix.org](http
 
 ## Installation instructions
 
-Copy or clone this repository to `~/.minetest/games/minefix`.
+Copy or clone this repository to `~/.minetest/games/minefix` (make sure there isn't a minefix folder inside a minefix folder).
 Make sure you run a copy of Minetest compiled after the 22nd of March. The stable build lacks features we require, so you'll have to compile from source for now.
 
-Once installed, select the Minefix subgame, create a world, and start playing!
+Edit the convert-mc-to-mt script to properly reflect how Minetest and Minecraft are both located on your system and then run it.
+
+Once installed, select the Minefix subgame and the Minecraft texture pack, create a world, and start playing!
 
 ## License
 
