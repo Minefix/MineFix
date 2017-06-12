@@ -202,7 +202,7 @@ minetest.register_node("default:andesite", {
 minetest.register_node("default:andesite_polished", {
 	description = "Polished Andesite",
 	category = "building",
-	tiles = {"default_andesite_polished.png"},
+	tiles = {"amf_default_andesite_polished.png"},
 	is_ground_content = false,
 	groups = {cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
