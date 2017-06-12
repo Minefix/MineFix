@@ -427,7 +427,7 @@ minetest.register_node("default:clayblock", {
 minetest.register_node("default:clayblock_hardened", {
 	description = "Terracotta",
 	category = "building",
-	tiles = {"default_clay_block_hardened.png"},
+	tiles = {"amf_default_clay_block_hardened.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:clayblock_hardened',
 	sounds = default.node_sound_stone_defaults(),
@@ -436,7 +436,7 @@ minetest.register_node("default:clayblock_hardened", {
 minetest.register_node("default:clayblock_hardened_black", {
 	description = "Black Terracotta",
 	category = "building",
-	tiles = {"default_clay_block_hardened_black.png"},
+	tiles = {"amf_default_clay_block_hardened_black.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:clayblock_hardened_black',
 	sounds = default.node_sound_stone_defaults(),
@@ -445,7 +445,7 @@ minetest.register_node("default:clayblock_hardened_black", {
 minetest.register_node("default:clayblock_hardened_blue", {
 	description = "Blue Terracotta",
 	category = "building",
-	tiles = {"default_clay_block_hardened_blue.png"},
+	tiles = {"amf_default_clay_block_hardened_blue.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:clayblock_hardened_blue',
 	sounds = default.node_sound_stone_defaults(),
@@ -454,7 +454,7 @@ minetest.register_node("default:clayblock_hardened_blue", {
 minetest.register_node("default:clayblock_hardened_brown", {
 	description = "Brown Terracotta",
 	category = "building",
-	tiles = {"default_clay_block_hardened_brown.png"},
+	tiles = {"amf_default_clay_block_hardened_brown.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:clayblock_hardened_brown',
 	sounds = default.node_sound_stone_defaults(),
@@ -463,7 +463,7 @@ minetest.register_node("default:clayblock_hardened_brown", {
 minetest.register_node("default:clayblock_hardened_cyan", {
 	description = "Cyan Terracotta",
 	category = "building",
-	tiles = {"default_clay_block_hardened_cyan.png"},
+	tiles = {"amf_default_clay_block_hardened_cyan.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:clayblock_hardened_cyan',
 	sounds = default.node_sound_stone_defaults(),
@@ -472,7 +472,7 @@ minetest.register_node("default:clayblock_hardened_cyan", {
 minetest.register_node("default:clayblock_hardened_gray", {
 	description = "Gray Terracotta",
 	category = "building",
-	tiles = {"default_clay_block_hardened_gray.png"},
+	tiles = {"amf_default_clay_block_hardened_gray.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:clayblock_hardened_gray',
 	sounds = default.node_sound_stone_defaults(),
@@ -481,7 +481,7 @@ minetest.register_node("default:clayblock_hardened_gray", {
 minetest.register_node("default:clayblock_hardened_green", {
 	description = "Green Terracotta",
 	category = "building",
-	tiles = {"default_clay_block_hardened_green.png"},
+	tiles = {"amf_default_clay_block_hardened_green.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:clayblock_hardened_green',
 	sounds = default.node_sound_stone_defaults(),
@@ -490,7 +490,7 @@ minetest.register_node("default:clayblock_hardened_green", {
 minetest.register_node("default:clayblock_hardened_light_blue", {
 	description = "Light Blue Terracotta",
 	category = "building",
-	tiles = {"default_clay_block_hardened_light_blue.png"},
+	tiles = {"amf_default_clay_block_hardened_light_blue.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:clayblock_hardened_light_blue',
 	sounds = default.node_sound_stone_defaults(),
@@ -499,7 +499,7 @@ minetest.register_node("default:clayblock_hardened_light_blue", {
 minetest.register_node("default:clayblock_hardened_light_gray", {
 	description = "Light Gray Terracotta",
 	category = "building",
-	tiles = {"default_clay_block_hardened_light_gray.png"},
+	tiles = {"amf_default_clay_block_hardened_light_gray.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:clayblock_hardened_light_gray',
 	sounds = default.node_sound_stone_defaults(),
@@ -508,7 +508,7 @@ minetest.register_node("default:clayblock_hardened_light_gray", {
 minetest.register_node("default:clayblock_hardened_lime_green", {
 	description = "Lime Green Terracotta",
 	category = "building",
-	tiles = {"default_clay_block_hardened_lime_green.png"},
+	tiles = {"amf_default_clay_block_hardened_lime_green.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:clayblock_hardened_lime_green',
 	sounds = default.node_sound_stone_defaults(),
@@ -517,7 +517,7 @@ minetest.register_node("default:clayblock_hardened_lime_green", {
 minetest.register_node("default:clayblock_hardened_magenta", {
 	description = "Magenta Terracotta",
 	category = "building",
-	tiles = {"default_clay_block_hardened_magenta.png"},
+	tiles = {"amf_default_clay_block_hardened_magenta.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:clayblock_hardened_magenta',
 	sounds = default.node_sound_stone_defaults(),
@@ -526,7 +526,7 @@ minetest.register_node("default:clayblock_hardened_magenta", {
 minetest.register_node("default:clayblock_hardened_orange", {
 	description = "Orange Terracotta",
 	category = "building",
-	tiles = {"default_clay_block_hardened_orange.png"},
+	tiles = {"amf_default_clay_block_hardened_orange.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:clayblock_hardened_orange',
 	sounds = default.node_sound_stone_defaults(),
@@ -535,7 +535,7 @@ minetest.register_node("default:clayblock_hardened_orange", {
 minetest.register_node("default:clayblock_hardened_pink", {
 	description = "Pink Terracotta",
 	category = "building",
-	tiles = {"default_clay_block_hardened_pink.png"},
+	tiles = {"amf_default_clay_block_hardened_pink.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:clayblock_hardened_pink',
 	sounds = default.node_sound_stone_defaults(),
@@ -544,7 +544,7 @@ minetest.register_node("default:clayblock_hardened_pink", {
 minetest.register_node("default:clayblock_hardened_purple", {
 	description = "Purple Terracotta",
 	category = "building",
-	tiles = {"default_clay_block_hardened_purple.png"},
+	tiles = {"amf_default_clay_block_hardened_purple.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:clayblock_hardened_purple',
 	sounds = default.node_sound_stone_defaults(),
@@ -553,7 +553,7 @@ minetest.register_node("default:clayblock_hardened_purple", {
 minetest.register_node("default:clayblock_hardened_red", {
 	description = "Red Terracotta",
 	category = "building",
-	tiles = {"default_clay_block_hardened_red.png"},
+	tiles = {"amf_default_clay_block_hardened_red.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:clayblock_hardened_red',
 	sounds = default.node_sound_stone_defaults(),
@@ -562,7 +562,7 @@ minetest.register_node("default:clayblock_hardened_red", {
 minetest.register_node("default:clayblock_hardened_white", {
 	description = "White Terracotta",
 	category = "building",
-	tiles = {"default_clay_block_hardened_white.png"},
+	tiles = {"amf_default_clay_block_hardened_white.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:clayblock_hardened_white',
 	sounds = default.node_sound_stone_defaults(),
@@ -571,7 +571,7 @@ minetest.register_node("default:clayblock_hardened_white", {
 minetest.register_node("default:clayblock_hardened_yellow", {
 	description = "Yellow Terracotta",
 	category = "building",
-	tiles = {"default_clay_block_hardened_yellow.png"},
+	tiles = {"amf_default_clay_block_hardened_yellow.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:clayblock_hardened_yellow',
 	sounds = default.node_sound_stone_defaults(),
