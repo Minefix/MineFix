@@ -124,7 +124,7 @@ farming.register_block("farming:reeds", {
 	drop = "farming:reeds",
 	texture = {"default_papyrus.png"},
 	inventory_image = "farming_reeds.png",
-	baseblocks = {"default:sand", "farming:reeds"},
+	baseblocks = {"default:sand", "default:sand_red", "default:dirt", "default:dirt_coarse", "default:dirt_with_grass", "farming:reeds"},
 	maxheight = 3,
 	allowneighbours = true,
 	requirewater = true
