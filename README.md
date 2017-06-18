@@ -18,7 +18,7 @@ Please note that MineFix is still in early stages of development and is subject 
 Copy or clone this repository to `~/.minetest/games/minefix` (make sure there isn't a minefix folder inside a minefix folder).
 Make sure you run a copy of Minetest compiled after the 22nd of March. The stable build lacks features we require, so you'll have to compile from source for now.
 
-In order to copy resources over from Minecraft, make use of the [Minecraft2Mintest conversion script](/MineFix-MC2MTConvertScript).
+In order to copy resources over from Minecraft, make use of the [Minecraft2Mintest conversion script](https://github.com/Minefix/MineFix-MC2MTConvertScript).
 A detailed listing of options can be found with the `./mc2mt.py -h` command.
 
 Once installed, select the Minefix subgame and the Minecraft texture pack, create a world, and start playing!
