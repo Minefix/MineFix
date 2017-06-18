@@ -1,13 +1,12 @@
-interface.createHud = function(player)
-	-- Hide built-in hud bars, so we can customize them to our likings instead
-	local hud_flags = player:hud_get_flags()
-	hud_flags.healthbar = false
-	hud_flags.breathbar = false
-	player:hud_set_flags(hud_flags)
+local player_huds = {}
+
+function createSurvivalHud(player)
+	player_huds[player:get_player_name()] = {}
+	local player_hudlist = player_huds[player:get_player_name()]
 
 	local health_hud_height = -90
 	local breath_hud_height = -90
-	if minetest.get_modpath("experience") ~= nil and not minetest.setting_getbool("creative_mode") then
+	if minetest.get_modpath("experience") ~= nil then
 		health_hud_height = health_hud_height - 20
 		breath_hud_height = breath_hud_height - 20
 
@@ -36,13 +35,17 @@ interface.createHud = function(player)
 			offset = {x = 0, y = -77},
 			scale = {x = 1, y = 1}
 		})
+
+		player_hudlist["experience_empty_hud"] = experience_empty_hud
+		player_hudlist["experience_full_hud"] = experience_full_hud
+		player_hudlist["experiencetext_hud"] = experiencetext_hud
 	end
 
-	if minetest.get_modpath("hunger") ~= nil and minetest.setting_getbool("enable_damage") then
+	if minetest.get_modpath("hunger") ~= nil then
 		breath_hud_height = breath_hud_height - 30
 
 		local hunger_hud_height = -90
-		if not minetest.get_modpath("experience") ~= nil and not minetest.setting_getbool("creative_mode") then
+		if not minetest.get_modpath("experience") ~= nil then
 			hunger_hud_height = hunger_hud_height - 20
 		end
 
@@ -67,6 +70,9 @@ interface.createHud = function(player)
 			alignment = {x = 0, y = 1},
 			offset = {x = 230, y = hunger_hud_height}
 		})
+
+		player_hudlist["hunger_empty_hud"] = hunger_empty_hud
+		player_hudlist["hunger_hud"] = hunger_hud
 	end
 
 	health_hud = player:hud_add({
@@ -89,26 +95,33 @@ interface.createHud = function(player)
 		offset = {x = 230, y = breath_hud_height}
 	})
 
-	local timer = 0
-	minetest.register_globalstep(function(dtime)
-		timer = timer + dtime
+	player_hudlist["health_hud"] = health_hud
+	player_hudlist["breath_hud"] = breath_hud
+end
 
-		if timer > 0.2 then --Only update hud every fifth of a second
-			timer = 0
+local timer = 0
+minetest.register_globalstep(function(dtime)
+	timer = timer + dtime
 
-			for _, player in pairs(minetest.get_connected_players()) do
+	if timer > 0.2 then --Only update hud every fifth of a second
+		timer = 0
+
+		for _, player in pairs(minetest.get_connected_players()) do
+			if gamemode.get_player_gamemode(player) == "survival" then
+				local player_hudlist = player_huds[player:get_player_name()]
+
 				-- Health bar
-				player:hud_change(health_hud, "number", player:get_hp())
+				player:hud_change(player_hudlist["health_hud"], "number", player:get_hp())
 
 				-- Breath bar
 				if player:get_breath() == 11 then
-					player:hud_change(breath_hud, "number", 0)
+					player:hud_change(player_hudlist["breath_hud"], "number", 0)
 				else
-					player:hud_change(breath_hud, "number", player:get_breath() * 2) --Minetest only uses 10 units for breath instead of 20
+					player:hud_change(player_hudlist["breath_hud"], "number", player:get_breath() * 2) --Minetest only uses 10 units for breath instead of 20
 				end
 
 
-				if minetest.get_modpath("experience") ~= nil and not minetest.setting_getbool("creative_mode") then
+				if minetest.get_modpath("experience") ~= nil then
 					-- Experience bar
 					local player_level = experience.get_level(player)
 					local experience_previous_level = experience.get_experience_for_level(player_level)
@@ -129,28 +142,28 @@ interface.createHud = function(player)
 					player:hud_change(experiencetext_hud, "text", player_level)
 				end
 
-				if minetest.get_modpath("hunger") ~= nil and minetest.setting_getbool("enable_damage") then
-					player:hud_change(hunger_hud, "number", hunger.get_hunger(player))
+				if minetest.get_modpath("hunger") ~= nil then
+					player:hud_change(player_hudlist["hunger_hud"], "number", hunger.get_hunger(player))
 				end
 
 				if minetest.get_modpath("status") ~= nil then
 					-- Poison status
 					if status.player_has_status_by_name("poison", player) then
-						player:hud_change(health_hud, "text", "heart_poison_full.png")
+						player:hud_change(player_hudlist["health_hud"], "text", "heart_poison_full.png")
 					else
-						player:hud_change(health_hud, "text", "heart.png")
+						player:hud_change(player_hudlist["health_hud"], "text", "heart.png")
 					end
 
 					if minetest.get_modpath("hunger") ~= nil then
 						-- Hunger status
 						if status.player_has_status_by_name("hunger", player) then
-							player:hud_change(hunger_hud, "text", "hunger_poison_full.png")
+							player:hud_change(player_hudlist["hunger_hud"], "text", "hunger_poison_full.png")
 						else
-							player:hud_change(hunger_hud, "text", "hunger_full.png")
+							player:hud_change(player_hudlist["hunger_hud"], "text", "hunger_full.png")
 						end
 					end
 				end
 			end
 		end
-	end)
-end
+	end
+end)
